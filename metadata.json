@@ -1,0 +1,11 @@
+{
+  "name": "Resyume AI - Professional Resume Builder",
+  "description": "A high-performance, elegant, multi-language resume builder with customizable themes, content spacing, typography metrics, and vector PDF design exports.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
