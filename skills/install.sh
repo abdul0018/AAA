@@ -7,6 +7,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 mkdir -p "$DEST"
 rm -rf "$DEST/explainer-reel" && cp -r "$HERE/explainer-reel" "$DEST/"
 echo "installed explainer-reel -> $DEST/explainer-reel"
+rm -rf "$DEST/toon-xray-reel" && cp -r "$HERE/toon-xray-reel" "$DEST/" && echo "installed toon-xray-reel"
 rm -rf "$DEST/sfx-kit" && cp -r "$HERE/sfx-kit" "$DEST/" && bash "$DEST/sfx-kit/fetch.sh"
 TMP="$(mktemp -d)"
 git clone --depth 1 https://github.com/remotion-dev/skills.git "$TMP/remotion-skills" >/dev/null 2>&1 && {

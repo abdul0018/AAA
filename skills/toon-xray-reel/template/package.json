@@ -1,0 +1,22 @@
+{
+  "name": "toon-xray-reel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio --props=public/props.json",
+    "still": "remotion still ToonReel out/still.png --props=public/props.json",
+    "render": "remotion render ToonReel out/reel.mp4 --props=public/props.json --codec=h264 --crf=18",
+    "sfx": "python3 ../scripts/make_sfx.py public/sfx --music 62"
+  },
+  "dependencies": {
+    "remotion": "4.0.540",
+    "@remotion/cli": "4.0.540",
+    "@remotion/media": "4.0.540",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "@types/react": "18.3.12"
+  }
+}
