@@ -73,6 +73,12 @@ into the voiceover at a word boundary with ffmpeg concat, word times shifted) �
 Steps: re-transcribe the reference → clean up the Uzbek text → ElevenLabs `/with-timestamps` in the user's voice → insert
 the reference's silent beats → map each reference beat to a shot.
 
+## Matching a specific reference exactly
+Use the **`style-match`** skill first: de-watermarked reference frames as `image_references` for every key frame,
+rear 3/4 x-ray framing if the reference uses it, the cutaway **in-scene** (`glass: true`, `springSide` when the
+reference shows the spring beside the shock, background = the x-ray close-up with a light `tint`, no blur), then
+`color_match.py` + `compare.py`. Blueprint: `template/examples/remake-lejachiy-v2-stylematched.json`.
+
 ## Gotchas
 - Kling clips are 24 fps, 1076x1924: `full: true` covers them. `rate < 0.75` looks floaty, so prefer `freezeAt` + a camera
   push for extra length.

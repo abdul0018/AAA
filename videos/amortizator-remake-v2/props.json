@@ -1,0 +1,488 @@
+{
+ "_style": "reference: lejachiy/amortizator (tomchi). Cream wall+white trim+yellow pipe, cypress+lowpoly trees, teal gates, white Cobalt-like sedan rear 3/4 from high behind, dark cracked asphalt, yellow-black bump; x-ray = grey glass body, red coil spring + blue shock beside rear wheel; cutaway in-scene over ghost car; muted daylight, haze, light grain.",
+ "handle": "@autopodveska.uzb",
+ "voiceover": "vo.wav",
+ "muteAll": true,
+ "grain": 0.05,
+ "vignette": 0.35,
+ "warmth": 0.0,
+ "beds": [
+  {
+   "src": "sfx_pro/street_ambience.wav",
+   "from": 0,
+   "to": 7.75,
+   "gain_db": -15
+  },
+  {
+   "src": "sfx_pro/street_ambience.wav",
+   "from": 14.4,
+   "to": 16.4,
+   "gain_db": -15
+  },
+  {
+   "src": "sfx_pro/street_ambience.wav",
+   "from": 20.6,
+   "to": 25.05,
+   "gain_db": -14
+  }
+ ],
+ "shots": [
+  {
+   "name": "hook_boat",
+   "dur": 4.35,
+   "layers": [
+    {
+     "type": "video",
+     "src": "vid/V1_boat.mp4",
+     "full": true,
+     "startFrom": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "src": "sfx_pro/speedbump.wav",
+     "at": 2.3,
+     "gain_db": -1,
+     "why": "speed bump"
+    },
+    {
+     "src": "sfx_pro/body_bounce.wav",
+     "at": 2.6,
+     "gain_db": -2,
+     "why": "rocking"
+    }
+   ]
+  },
+  {
+   "name": "xray_spring",
+   "dur": 3.4,
+   "tf": 10,
+   "layers": [
+    {
+     "type": "video",
+     "src": "vid/V3_xray.mp4",
+     "full": true,
+     "startFrom": 0.3
+    }
+   ],
+   "sfx": [
+    {
+     "src": "kit:whoosh-medium-soft",
+     "at": 0.1,
+     "gain_db": -5,
+     "why": "x-ray"
+    },
+    {
+     "src": "kit:shimmer-medium-soft",
+     "at": 0.3,
+     "gain_db": -8
+    },
+    {
+     "src": "kit:impact-heavy-soft",
+     "at": 1.1,
+     "gain_db": -6,
+     "why": "spring takes hit"
+    },
+    {
+     "src": "kit:move-spring",
+     "at": 2.3,
+     "gain_db": -5,
+     "why": "gives it back"
+    }
+   ]
+  },
+  {
+   "name": "to_shock",
+   "dur": 1.15,
+   "tf": 10,
+   "camera": {
+    "x": [
+     [
+      0,
+      540
+     ],
+     [
+      1.15,
+      544
+     ]
+    ],
+    "y": [
+     [
+      0,
+      960
+     ],
+     [
+      1.15,
+      1000
+     ]
+    ],
+    "zoom": [
+     [
+      0,
+      1.0
+     ],
+     [
+      1.15,
+      1.25
+     ]
+    ]
+   },
+   "layers": [
+    {
+     "type": "image",
+     "src": "img/K3_xray_close.png",
+     "full": true
+    }
+   ],
+   "sfx": [
+    {
+     "src": "kit:shimmer-short-bright",
+     "at": 0.2,
+     "gain_db": -7,
+     "why": "focus shock"
+    }
+   ]
+  },
+  {
+   "name": "cutaway_good",
+   "dur": 5.5,
+   "tf": 12,
+   "camera": {
+    "x": 544,
+    "y": 1000,
+    "zoom": 1.25
+   },
+   "layers": [
+    {
+     "type": "image",
+     "src": "img/K3_xray_close.png",
+     "full": true,
+     "tint": [
+      [
+       0,
+       0
+      ],
+      [
+       0.6,
+       0.3
+      ]
+     ]
+    },
+    {
+     "type": "cutaway",
+     "x": 544,
+     "y": 1040,
+     "h": 760,
+     "glass": true,
+     "opacity": [
+      [
+       0,
+       0
+      ],
+      [
+       0.15,
+       0
+      ],
+      [
+       0.7,
+       1
+      ]
+     ],
+     "piston": [
+      [
+       0,
+       0.3
+      ],
+      [
+       1.2,
+       0.3
+      ],
+      [
+       1.55,
+       0.85
+      ],
+      [
+       1.95,
+       0.15
+      ],
+      [
+       2.35,
+       0.8
+      ],
+      [
+       2.75,
+       0.2
+      ],
+      [
+       3.15,
+       0.72
+      ],
+      [
+       3.55,
+       0.3
+      ],
+      [
+       3.95,
+       0.6
+      ],
+      [
+       4.35,
+       0.4
+      ],
+      [
+       4.75,
+       0.5
+      ],
+      [
+       5.2,
+       0.46
+      ],
+      [
+       5.5,
+       0.47
+      ]
+     ],
+     "flowAt": 1.2,
+     "flowOut": 4.6,
+     "glow": {
+      "color": "#ff6a1a",
+      "at": 4.1,
+      "size": 24
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "src": "kit:transform-morph",
+     "at": 0.2,
+     "gain_db": -9,
+     "why": "cut open"
+    },
+    {
+     "src": "sfx_pro/oil_squeeze.wav",
+     "at": 1.25,
+     "gain_db": -5
+    },
+    {
+     "src": "sfx_pro/oil_squeeze.wav",
+     "at": 2.4,
+     "gain_db": -8
+    },
+    {
+     "src": "kit:shimmer-long-soft",
+     "at": 4.1,
+     "gain_db": -9,
+     "why": "heat"
+    }
+   ]
+  },
+  {
+   "name": "healthy_calm",
+   "dur": 2.0,
+   "tf": 12,
+   "layers": [
+    {
+     "type": "video",
+     "src": "vid/V2_calm.mp4",
+     "full": true,
+     "startFrom": 2.4
+    }
+   ],
+   "sfx": [
+    {
+     "src": "sfx_pro/speedbump.wav",
+     "at": 0.55,
+     "gain_db": -6,
+     "max_len": 1.1
+    }
+   ]
+  },
+  {
+   "name": "cutaway_old",
+   "dur": 4.2,
+   "tf": 10,
+   "camera": {
+    "x": 544,
+    "y": 1000,
+    "zoom": 1.25
+   },
+   "layers": [
+    {
+     "type": "image",
+     "src": "img/K3_xray_close.png",
+     "full": true,
+     "tint": 0.45
+    },
+    {
+     "type": "image",
+     "src": "img/shock_old.png",
+     "x": 544,
+     "y": 1040,
+     "w": 200,
+     "opacity": [
+      [
+       0,
+       1
+      ],
+      [
+       0.8,
+       1
+      ],
+      [
+       1.3,
+       0
+      ]
+     ],
+     "glow": {
+      "color": "#ff3b2f",
+      "at": 0.1
+     }
+    },
+    {
+     "type": "cutaway",
+     "x": 544,
+     "y": 1040,
+     "h": 760,
+     "glass": true,
+     "oilColor": "#5A3A12",
+     "opacity": [
+      [
+       0,
+       0
+      ],
+      [
+       0.8,
+       0
+      ],
+      [
+       1.3,
+       1
+      ]
+     ],
+     "piston": [
+      [
+       0,
+       0.4
+      ],
+      [
+       1.6,
+       0.4
+      ],
+      [
+       2.0,
+       0.95
+      ],
+      [
+       2.3,
+       0.05
+      ],
+      [
+       2.6,
+       0.92
+      ],
+      [
+       2.9,
+       0.08
+      ],
+      [
+       3.2,
+       0.9
+      ],
+      [
+       3.5,
+       0.1
+      ],
+      [
+       3.8,
+       0.88
+      ],
+      [
+       4.2,
+       0.12
+      ]
+     ],
+     "oil": 0.22,
+     "leakAt": 0.9
+    }
+   ],
+   "sfx": [
+    {
+     "src": "kit:notification-failure-low",
+     "at": 0.15,
+     "gain_db": -6
+    },
+    {
+     "src": "kit:transform-deflate",
+     "at": 0.9,
+     "gain_db": -8
+    },
+    {
+     "src": "kit:pop-small-bubble",
+     "at": 1.4,
+     "gain_db": -9
+    },
+    {
+     "src": "kit:move-spring",
+     "at": 2.0,
+     "gain_db": -4
+    },
+    {
+     "src": "kit:move-spring",
+     "at": 3.2,
+     "gain_db": -6
+    }
+   ]
+  },
+  {
+   "name": "boat_silent",
+   "dur": 2.4,
+   "tf": 12,
+   "layers": [
+    {
+     "type": "video",
+     "src": "vid/V1_boat.mp4",
+     "full": true,
+     "startFrom": 5.2
+    }
+   ],
+   "sfx": [
+    {
+     "src": "sfx_pro/body_bounce.wav",
+     "at": 0.2,
+     "gain_db": 0,
+     "why": "rocking"
+    },
+    {
+     "src": "kit:impact-heavy-soft",
+     "at": 1.7,
+     "gain_db": -9,
+     "why": "dip"
+    }
+   ]
+  },
+  {
+   "name": "ending_street",
+   "dur": 2.05,
+   "tf": 12,
+   "camera": {
+    "zoom": [
+     [
+      0,
+      1.12
+     ],
+     [
+      2.05,
+      1.0
+     ]
+    ]
+   },
+   "layers": [
+    {
+     "type": "image",
+     "src": "img/K1_street.png",
+     "full": true
+    }
+   ]
+  }
+ ]
+}

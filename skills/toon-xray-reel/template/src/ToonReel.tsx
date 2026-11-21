@@ -79,7 +79,7 @@ const LayerView: React.FC<{l: Layer; t: number}> = ({l, t}) => {
     const flow = c.flowAt === undefined ? 0 : t < c.flowAt ? 0 : c.flowOut !== undefined ? interpolate(t, [c.flowOut, c.flowOut + 0.3], [1, 0], clamp) : 1;
     return (
       <div style={{...base, left: x, top: y, transform: `scale(${sc}) rotate(${rot}deg)`}}>
-        <CutawaySVG h={c.h} p={p} v={v} oil={ev(c.oil, t, 1)} flow={flow * Math.min(1, 0.25 + Math.abs(v))} leak={c.leakAt === undefined ? -1 : t - c.leakAt} spring={!!c.spring} t={t} oilColor={c.oilColor} />
+        <CutawaySVG h={c.h} p={p} v={v} oil={ev(c.oil, t, 1)} flow={flow * Math.min(1, 0.25 + Math.abs(v))} leak={c.leakAt === undefined ? -1 : t - c.leakAt} spring={!!c.spring} t={t} oilColor={c.oilColor} springSide={c.springSide} glass={c.glass} />
       </div>
     );
   }

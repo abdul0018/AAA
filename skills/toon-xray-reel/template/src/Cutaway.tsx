@@ -17,7 +17,9 @@ export const CutawaySVG: React.FC<{
   spring: boolean;
   t: number; // seconds (for animated details)
   oilColor?: string;
-}> = ({h, p, v, oil, flow, leak, spring, t, oilColor = '#E89A2E'}) => {
+  springSide?: boolean; // reference look: zig-zag red spring standing beside the shock
+  glass?: boolean; // translucent body so the ghost scene shows through
+}> = ({h, p, v, oil, flow, leak, spring, t, oilColor = '#E89A2E', springSide = false, glass = false}) => {
   const S = h * 0.012; // outline width
   const W = h * 0.3; // body width
   const wall = W * 0.12;
@@ -87,6 +89,17 @@ export const CutawaySVG: React.FC<{
     coil.push(<rect key="sp2" x={-R * 1.15} y={sBot} width={R * 2.3} height={S * 3} rx={S} fill="#4A4E53" stroke={ink} strokeWidth={S * 0.7} />);
   }
 
+  const side = [];
+  if (springSide) {
+    const sx = W * 1.35, sTop = top + h * 0.05 - (p - 0.4) * h * 0.25, sBot = bot - h * 0.02, turns = 8, R = W * 0.55;
+    let d = `M ${sx - R} ${sTop}`;
+    for (let i = 0; i < turns; i++) {
+      const y1 = sTop + ((sBot - sTop) * (i + 0.5)) / turns, y2 = sTop + ((sBot - sTop) * (i + 1)) / turns;
+      d += ` L ${sx + R} ${y1} L ${sx - R} ${y2}`;
+    }
+    side.push(<path key="sz" d={d} stroke={ink} strokeWidth={S * 2.4} fill="none" strokeLinejoin="round" />);
+    side.push(<path key="sz2" d={d} stroke="#D9322B" strokeWidth={S * 1.3} fill="none" strokeLinejoin="round" />);
+  }
   return (
     <svg width={W * 4} height={h * 2.2} viewBox={`${-W * 2} ${-h * 1.2} ${W * 4} ${h * 2.2}`} style={{overflow: 'visible', position: 'absolute', left: -W * 2, top: -h * 1.2}}>
       <defs>
@@ -100,12 +113,13 @@ export const CutawaySVG: React.FC<{
       <rect x={-rodW / 2 + rodW * 0.55} y={rodTop} width={rodW * 0.18} height={pY - rodTop} fill="#FFFFFF" opacity={0.7} />
       <rect x={-W * 0.32} y={rodTop - h * 0.05} width={W * 0.64} height={h * 0.06} rx={S * 1.5} fill="#2B2D30" stroke={ink} strokeWidth={S} />
       {coil}
+      {side}
       {/* outer body (cut open): walls with hatching */}
-      <rect x={-W / 2} y={top} width={W} height={h} rx={S} fill="#8D9297" stroke={ink} strokeWidth={S} />
+      <rect x={-W / 2} y={top} width={W} height={h} rx={S} fill="#8D9297" fillOpacity={glass ? 0.35 : 1} stroke={ink} strokeWidth={S} />
       <rect x={-W / 2} y={top} width={wall} height={h} fill={`url(#${hatch})`} stroke={ink} strokeWidth={S * 0.6} />
       <rect x={W / 2 - wall} y={top} width={wall} height={h} fill={`url(#${hatch})`} stroke={ink} strokeWidth={S * 0.6} />
       {/* chamber */}
-      <rect x={inL} y={chTop} width={inR - inL} height={chBot - chTop} fill="#4E5358" stroke={ink} strokeWidth={S * 0.6} />
+      <rect x={inL} y={chTop} width={inR - inL} height={chBot - chTop} fill={glass ? "#C9CCCF" : "#4E5358"} fillOpacity={glass ? 0.35 : 1} stroke={ink} strokeWidth={S * 0.6} />
       {/* oil */}
       <rect x={inL} y={oilTop} width={inR - inL} height={Math.max(0, chBot - oilTop)} fill={oilColor} />
       <rect x={inL} y={oilTop} width={(inR - inL) * 0.18} height={Math.max(0, chBot - oilTop)} fill="#FFFFFF" opacity={oilColor === "#E89A2E" ? 0.25 : 0.08} />

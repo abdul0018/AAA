@@ -54,6 +54,8 @@ export interface CutawayLayer extends BaseLayer {
   leakAt?: number; // the seal fails: red flashing seal + drips running down the outside
   spring?: boolean; // red coil spring around it (compresses with the piston)
   oilColor?: string; // default '#E89A2E'; dark '#5A3A12' for old, burnt oil
+  springSide?: boolean; // zig-zag spring beside the shock (reference look)
+  glass?: boolean; // translucent tube/chamber
 }
 
 export interface DripsLayer extends BaseLayer {
