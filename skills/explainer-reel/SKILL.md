@@ -101,6 +101,18 @@ python3 -I $SK/scripts/pro_mix.py --video out/silent.mp4 --vo public/vo.wav --cu
 - Send `out/final.mp4` with SendUserFile, plus a suggested caption (the hook question + 3-5 hashtags in the user's
   language) and the pinned-comment question.
 
+## Remaking a reference video (use `style-match` too)
+Verified 2026-11-21 on the original "tok uradi" reel, with an average ΔE of **0.9** against the original:
+1. Crop each beat's object from the reference frames, without titles or handles. Upload the crops to Higgsfield and
+   generate every cut-out with its crop as `image_references` ("exactly the same illustration style… WITHOUT yellow
+   charge dots / glow / rain"; the kit draws those). gpt_image_2_6 allows about 3-4 concurrent jobs, so batch ≤ 4.
+2. VO = the reference script via ElevenLabs `/with-timestamps`. Restore the reference's dramatic pauses (e.g. 0.9 s
+   after "Chirs!") by splicing silence at word boundaries.
+3. Warp `template/examples/storyboard-static-shock.json` onto the new VO with sentence anchors (reference segment start →
+   new word time), then place the layers at positions measured from the reference frames
+   (`template/examples/remake-tok-uradi-stylematched.json` is the result).
+4. Measure with `style-match/scripts/compare.py`. Only colour-grade if ΔE > 6.
+
 ## Gotchas (learned the hard way)
 - **Fonts**: the sandbox's headless Chrome can't reach fonts.gstatic.com (proxy CA), so Manrope is bundled in
   `public/fonts` and loaded with `FontFace` + `delayRender` (`src/theme.ts`). Don't switch back to

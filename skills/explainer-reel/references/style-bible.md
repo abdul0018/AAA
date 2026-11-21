@@ -29,7 +29,7 @@ yellow and red so the accents carry the meaning.
 
 ## 3. Typography
 - Font: geometric grotesk, ExtraBold 800, ALL CAPS, tracking -1.5 %. Bundled: **Manrope** (`template/public/fonts`).
-- 1-2 lines, **2-4 words**. Size about 84-88 px on 1080 wide; long titles drop to 64-72.
+- 1-2 lines, **2-4 words**. Big: about **120-124 px** on 1080 wide (re-measured against the reference: 'TOK URADIMI?' spans ~78 % of the width). The kit multiplies `size` by 1.4 and auto-fits long lines to ≤ 1000 px.
 - Kicker variant (small line above, 52 % size) only for the final question: "SIZNI BOSHQA NARSA HAM / TOK URADIMI?".
 - Sub line: grey, 36 % size, appears about 0.5 s after the title ("10 000 VOLT" → "ZARARI YO'Q").
 - Numbers count up/down with thin-space thousands ("10 000 VOLT") and a soft white glow.

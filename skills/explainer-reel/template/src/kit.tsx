@@ -93,7 +93,9 @@ export const TitleText: React.FC<Title> = ({text, at, out, size, underline, colo
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const lines = text.toUpperCase().split('\n');
-  const fs = size ?? (lines.length > 1 ? 84 : 88);
+  // reference-measured: headline caps ≈ 0.78 of frame width for 'TOK URADIMI?' -> ~120 px; auto-fit long lines
+  const maxLen = Math.max(...lines.map((l) => l.length), 1);
+  const fs = Math.min((size ?? 88) * 1.4, 1000 / (0.64 * maxLen));
   const d = f - sec(at);
   const vis = presence(f, at, out, 3, 6);
   if (vis <= 0) return null;
@@ -141,12 +143,12 @@ export const CounterText: React.FC<Counter> = ({at, dur, from, to, prefix = '', 
   const subOp = sub ? presence(f, subAt ?? at + dur, out, 8, 6) : 0;
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: y, transform: 'translateY(-50%)', textAlign: 'center', fontFamily: FONT, opacity: vis}}>
-      <div style={{fontWeight: 800, fontSize: 88, letterSpacing: '-0.015em', color: C.white, textShadow: glow ? '0 0 22px rgba(255,255,240,0.45)' : undefined, fontVariantNumeric: 'tabular-nums'}}>
+      <div style={{fontWeight: 800, fontSize: 124, letterSpacing: '-0.015em', color: C.white, textShadow: glow ? '0 0 22px rgba(255,255,240,0.45)' : undefined, fontVariantNumeric: 'tabular-nums'}}>
         {prefix}
         {fmt(v)}
         {suffix}
       </div>
-      {sub && <div style={{marginTop: 6, fontWeight: 800, fontSize: 32, color: C.sub, opacity: subOp}}>{sub.toUpperCase()}</div>}
+      {sub && <div style={{marginTop: 6, fontWeight: 800, fontSize: 42, color: C.sub, opacity: subOp}}>{sub.toUpperCase()}</div>}
     </div>
   );
 };
