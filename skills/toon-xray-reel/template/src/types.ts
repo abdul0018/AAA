@@ -21,6 +21,7 @@ export interface BaseLayer {
   full?: boolean; // cover the whole frame (backgrounds, video plates)
   opacity?: Track;
   scale?: Track;
+  scaleY?: Track; // extra vertical squash/stretch (spring compress/rebound), multiplies scale
   rotate?: Track;
   z?: number;
   glow?: {color: string; at: number; out?: number; pulse?: boolean; size?: number}; // toon outline glow
@@ -52,6 +53,7 @@ export interface CutawayLayer extends BaseLayer {
   oil?: Track; // oil level 1 = full, 0 = empty
   leakAt?: number; // the seal fails: red flashing seal + drips running down the outside
   spring?: boolean; // red coil spring around it (compresses with the piston)
+  oilColor?: string; // default '#E89A2E'; dark '#5A3A12' for old, burnt oil
 }
 
 export interface DripsLayer extends BaseLayer {

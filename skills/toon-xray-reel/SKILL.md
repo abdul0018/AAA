@@ -30,7 +30,9 @@ Topic and script (or re-use a script/voiceover from style #1), @handle, and the 
    - **Composites by reference**: "place the exact car from ref 2 onto the street from ref 1" (`medias` with both job
      ids) gives a start frame that matches the plate, so the x-ray ghost lines up.
    - Variants (a mechanic pressing the car…) from that composite as the reference.
-   - Trim the alpha margin of the cut-outs. Look at every image before using it.
+   - Trim the alpha margin of the cut-outs **with a threshold** (generated PNGs can carry a near-invisible haze, so a
+     plain getbbox() keeps the whole canvas and the part renders tiny): `a.point(lambda v: 255 if v > 40 else 0).getbbox()`,
+     then zero alpha below ~12. Look at every image before using it.
 3. **AI live shots**: `generate_video` with `kling3_0_turbo`, `start_image` = a key-art job id, 9:16, 1080p, 5 or 8 s.
    Describe one physical action + the camera, and end with "keep the exact stylized cel-shaded 3D toon look… no
    style change, no text". **Check every clip** with a 4 fps contact strip and a motion trace: Kling can cut away,
@@ -61,6 +63,15 @@ python3 -I $K1/pro_mix.py --video out/silent.mp4 --vo public/vo.wav --cues cues.
 7. **QA**: stills from every shot as a sheet (Read it), a 1 fps contact sheet of the final, stems (voice ≈ -16 LUFS,
    master -14), and check the x-ray part sits on the wheel and nothing shows outside the frame. Deliver with
    SendUserFile.
+
+## Remaking a reference 1:1 (same script and beats, our own visuals)
+`template/examples/remake-lejachiy.json` (25 s) mirrors the reference shot for shot: boat-rocking hook (AI) → x-ray,
+spring squashes on "oladi" and springs back on "qaytarib beradi" (`scaleY` track + ghost car `y`) → shock pull-out →
+healthy cutaway (strokes + flow, orange heat `glow` on "issiqqa aylanadi") → healthy car settles (AI) → rusty shock
+pull-out → worn cutaway (`oilColor` dark, `oil` 0.22, `leakAt`, free strokes) → silent 2.4 s boat beat (pause inserted
+into the voiceover at a word boundary with ffmpeg concat, word times shifted) → mechanic → end.
+Steps: re-transcribe the reference → clean up the Uzbek text → ElevenLabs `/with-timestamps` in the user's voice → insert
+the reference's silent beats → map each reference beat to a shot.
 
 ## Gotchas
 - Kling clips are 24 fps, 1076x1924: `full: true` covers them. `rate < 0.75` looks floaty, so prefer `freezeAt` + a camera

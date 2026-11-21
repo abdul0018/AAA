@@ -16,7 +16,8 @@ export const CutawaySVG: React.FC<{
   leak: number; // seconds since the seal failed (<0 = intact)
   spring: boolean;
   t: number; // seconds (for animated details)
-}> = ({h, p, v, oil, flow, leak, spring, t}) => {
+  oilColor?: string;
+}> = ({h, p, v, oil, flow, leak, spring, t, oilColor = '#E89A2E'}) => {
   const S = h * 0.012; // outline width
   const W = h * 0.3; // body width
   const wall = W * 0.12;
@@ -106,8 +107,8 @@ export const CutawaySVG: React.FC<{
       {/* chamber */}
       <rect x={inL} y={chTop} width={inR - inL} height={chBot - chTop} fill="#4E5358" stroke={ink} strokeWidth={S * 0.6} />
       {/* oil */}
-      <rect x={inL} y={oilTop} width={inR - inL} height={Math.max(0, chBot - oilTop)} fill="#E89A2E" />
-      <rect x={inL} y={oilTop} width={(inR - inL) * 0.18} height={Math.max(0, chBot - oilTop)} fill="#F6C063" opacity={0.8} />
+      <rect x={inL} y={oilTop} width={inR - inL} height={Math.max(0, chBot - oilTop)} fill={oilColor} />
+      <rect x={inL} y={oilTop} width={(inR - inL) * 0.18} height={Math.max(0, chBot - oilTop)} fill="#FFFFFF" opacity={oilColor === "#E89A2E" ? 0.25 : 0.08} />
       {oil < 0.999 && <path d={`M ${inL} ${oilTop} Q ${(inL + inR) / 2} ${oilTop + Math.sin(t * 6) * S * 1.5} ${inR} ${oilTop}`} stroke="#B8701B" strokeWidth={S * 0.8} fill="none" />}
       {/* piston with holes */}
       <rect x={inL} y={pY - pH / 2} width={inR - inL} height={pH} fill="#767B80" stroke={ink} strokeWidth={S} />

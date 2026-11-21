@@ -41,6 +41,7 @@ const LayerView: React.FC<{l: Layer; t: number}> = ({l, t}) => {
   const y = ev(l.y, t, 960);
   const op = ev(l.opacity, t, 1);
   const sc = ev(l.scale, t, 1);
+  const sy = ev(l.scaleY, t, 1);
   const rot = ev(l.rotate, t, 0);
   const blur = ev(l.blur, t, 0);
   const tint = ev(l.tint, t, 0);
@@ -57,7 +58,7 @@ const LayerView: React.FC<{l: Layer; t: number}> = ({l, t}) => {
   if (l.type === 'image' || l.type === 'video') {
     const style: React.CSSProperties = l.full
       ? {...base, left: 0, top: 0, width: 1080, height: 1920, objectFit: 'cover', transform: `scale(${sc}) rotate(${rot}deg)`}
-      : {...base, left: x, top: y, width: l.w, transform: `translate(-50%,-50%) scale(${sc}) rotate(${rot}deg)`};
+      : {...base, left: x, top: y, width: l.w, transformOrigin: '50% 100%', transform: `translate(-50%,-50%) translateY(${(1 - sy) * 0}px) scale(${sc}, ${sc * sy}) rotate(${rot}deg)`};
     if (l.type === 'image') return <Img src={src(l.src)} style={style} />;
     const rate = l.rate ?? 1;
     const clipT = (l.startFrom ?? 0) + t * rate;
@@ -78,7 +79,7 @@ const LayerView: React.FC<{l: Layer; t: number}> = ({l, t}) => {
     const flow = c.flowAt === undefined ? 0 : t < c.flowAt ? 0 : c.flowOut !== undefined ? interpolate(t, [c.flowOut, c.flowOut + 0.3], [1, 0], clamp) : 1;
     return (
       <div style={{...base, left: x, top: y, transform: `scale(${sc}) rotate(${rot}deg)`}}>
-        <CutawaySVG h={c.h} p={p} v={v} oil={ev(c.oil, t, 1)} flow={flow * Math.min(1, 0.25 + Math.abs(v))} leak={c.leakAt === undefined ? -1 : t - c.leakAt} spring={!!c.spring} t={t} />
+        <CutawaySVG h={c.h} p={p} v={v} oil={ev(c.oil, t, 1)} flow={flow * Math.min(1, 0.25 + Math.abs(v))} leak={c.leakAt === undefined ? -1 : t - c.leakAt} spring={!!c.spring} t={t} oilColor={c.oilColor} />
       </div>
     );
   }
