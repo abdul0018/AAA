@@ -46,17 +46,31 @@ Use each `found` time as the `at` of the matching headline/counter (scene-relati
 Put headlines 0-0.15 s **before** the word (they read faster than they are heard). Whisper misspells Uzbek
 (o→o', q→k, ş): the fuzzy finder copes, but read the word list if a match score is below 0.5.
 
-## The user's ElevenLabs subscription (direct API, key already configured)
-The key is a network secret for `api.elevenlabs.io`: send `-H "xi-api-key: proxy-injected"` and the proxy swaps in the
-real key. The key lacks `user_read`, so don't call `/v1/user`. Use it for: `eleven_v3` / the newest multilingual model with
-voice-library voices (search native Uzbek voices: `GET /v1/shared-voices?language=uz`), voice cloning of the user's
-own voice, `/v1/sound-generation` (SFX), `/v1/music`, and `/v1/audio-isolation` to clean a phone recording. TTS:
+## The user's ElevenLabs subscription (direct API, preferred for natural Uzbek)
+The key is a network secret for `api.elevenlabs.io`: send `-H "xi-api-key: proxy-injected"` and the proxy swaps in the real
+key. It has the voices + TTS + SFX permissions but **not** `user_read` or `models_read`, so skip `/v1/user` and `/v1/models`.
+The plan is below Creator, so use `output_format=mp3_44100_128` (192 is refused). Max 4 concurrent requests.
+
+- **Model: `eleven_v4` with `"language_code": "uz"`** (verified). `eleven_v3` rejects `uz`.
+- **Native Uzbek voices** from the voice library (`GET /v1/shared-voices?language=uz&sort=trending`), samples tested
+  2026-11-21 on the same hook line:
+  | Voice | id | Character |
+  |---|---|---|
+  | Samariddin Siroj (casual) | `tQBN3grEhnGrrqn0n2Rw` | young, expressive storyteller |
+  | Sarhad Siz (narrator) | `rwtcHtZgYU6HN2zLNBlf` | young, natural, clear |
+  | Adizzbek (social media) | `v4cqTf6wc2CXwA2tR7TF` | young, studio quality |
+  | Davronbek (journalist) | `agoC45V78njTIxYzwmSb` | confident, the most used |
+  | Asilbek (ads) | `fytsqG6MLzC2aCSw7MLa` | young, calm advert tone |
+  | Sardor (the user's own generated voice) | `UjuEL3hLLUaDED9iW4Yb` | cheerful, bright |
+  The user's other voices: `GET /v2/voices?search=<name>` (Jahongir - Calm, Proud, Deep; "uz").
+- TTS (speed 1.05-1.15 in settings, then the mastering chain above with atempo ≈ 1.0-1.1):
 ```bash
-curl -s -o public/vo_raw.mp3 -X POST "https://api.elevenlabs.io/v1/text-to-speech/<voice_id>?output_format=mp3_44100_192" \
+curl -s -o public/vo_raw.mp3 -X POST "https://api.elevenlabs.io/v1/text-to-speech/<voice_id>?output_format=mp3_44100_128" \
   -H "xi-api-key: proxy-injected" -H "Content-Type: application/json" \
-  -d '{"text":"<script>","model_id":"eleven_v3","language_code":"uz"}'
+  -d '{"text":"<script>","model_id":"eleven_v4","language_code":"uz","voice_settings":{"stability":0.45,"similarity_boost":0.8,"style":0.3,"speed":1.1}}'
 ```
-Max 4 concurrent requests on this plan.
+- Also available: `/v1/sound-generation` (SFX), `/v1/music`, `/v1/audio-isolation` (clean a phone recording), and
+  instant voice cloning of the user's own voice (`POST /v1/voices/add` with 1-3 clean samples, only with their consent).
 
 ## Alternatives (only if Higgsfield is unavailable)
 | Option | Uzbek | Needs from the user |
