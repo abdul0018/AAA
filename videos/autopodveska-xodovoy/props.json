@@ -1,0 +1,709 @@
+{
+ "handle": "@autopodveska.uzb",
+ "voiceover": "vo.mp3",
+ "music": "sfx/music_bed.wav",
+ "musicVolume": 0.09,
+ "scenes": [
+  {
+   "_beat": "HOOK",
+   "dur": 2.9,
+   "ground": {
+    "y": 1300
+   },
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Chuqurda\ntaqillaydimi?",
+     "at": 0.0,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 540,
+     "y": 1060,
+     "anim": "fade",
+     "moves": [
+      {
+       "at": 1.85,
+       "dur": 0.14,
+       "y": 1030
+      },
+      {
+       "at": 1.9900000000000002,
+       "dur": 0.14,
+       "y": 1075.0
+      },
+      {
+       "at": 2.1300000000000003,
+       "dur": 0.14,
+       "y": 1042.0
+      },
+      {
+       "at": 2.2700000000000005,
+       "dur": 0.14,
+       "y": 1069.0
+      },
+      {
+       "at": 2.4100000000000006,
+       "dur": 0.14,
+       "y": 1060
+      }
+     ]
+    }
+   ],
+   "shakeAt": [
+    1.9
+   ],
+   "sfx": [
+    {
+     "src": "sfx/thud.wav",
+     "at": 1.85,
+     "volume": 0.9
+    }
+   ]
+  },
+  {
+   "_beat": "SHOCK",
+   "dur": 6.0,
+   "ground": {
+    "y": 1300
+   },
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Bu shunchaki\novoz emas",
+     "at": 0.05,
+     "out": 1.8
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 540,
+     "y": 1060,
+     "anim": "none",
+     "moves": [
+      {
+       "at": 2.0,
+       "dur": 3.2,
+       "x": 600
+      }
+     ]
+    }
+   ],
+   "counters": [
+    {
+     "at": 3.95,
+     "dur": 0.9,
+     "from": 0,
+     "to": 20,
+     "prefix": "+",
+     "suffix": "%",
+     "sub": "tormoz yo'li",
+     "subAt": 4.4
+    }
+   ],
+   "glows": [
+    {
+     "at": 4.0,
+     "x": 660,
+     "y": 1180,
+     "r": 380,
+     "color": "rgba(255,77,77,0.45)"
+    }
+   ]
+  },
+  {
+   "_beat": "PROMISE",
+   "dur": 4.4,
+   "ground": {
+    "y": 1300
+   },
+   "titles": [
+    {
+     "text": "5 soniyalik\ntest",
+     "at": 1.2,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 600,
+     "y": 1060,
+     "anim": "none",
+     "moves": [
+      {
+       "at": 0.2,
+       "dur": 0.8,
+       "x": 540
+      }
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "type": "question",
+     "at": 2.9,
+     "x": 540,
+     "y": 760,
+     "size": 120
+    }
+   ]
+  },
+  {
+   "_beat": "MYTH",
+   "dur": 1.8,
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Prujina?",
+     "at": 0.5
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/spring.png",
+     "w": 360,
+     "x": 540,
+     "y": 1030,
+     "anim": "pop"
+    }
+   ],
+   "marks": [
+    {
+     "type": "question",
+     "at": 0.7,
+     "x": 790,
+     "y": 820,
+     "size": 110
+    }
+   ]
+  },
+  {
+   "_beat": "ROLES",
+   "dur": 4.5,
+   "titles": [
+    {
+     "text": "Prujina\nushlaydi",
+     "at": 0.5,
+     "out": 2.2
+    },
+    {
+     "text": "Amortizator\nso'ndiradi",
+     "at": 2.3,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/strut.png",
+     "w": 430,
+     "x": 540,
+     "y": 1010,
+     "anim": "zoomOut",
+     "animDur": 0.5
+    }
+   ],
+   "boxes": [
+    {
+     "at": 2.6,
+     "x": 545,
+     "y": 965,
+     "w": 120,
+     "h": 210
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 3.3,
+     "x": 760,
+     "y": 930,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "_beat": "MECHANISM",
+   "dur": 6.1,
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Ichida moy",
+     "at": 1.1,
+     "out": 4.6,
+     "underline": true
+    },
+    {
+     "text": "Zarbani\nso'ndiradi",
+     "at": 4.75
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/cutaway.png",
+     "w": 330,
+     "x": 540,
+     "y": 1010,
+     "anim": "fade",
+     "moves": [
+      {
+       "at": 2.4,
+       "dur": 0.35,
+       "y": 985
+      },
+      {
+       "at": 2.75,
+       "dur": 0.35,
+       "y": 1020
+      },
+      {
+       "at": 3.1,
+       "dur": 0.35,
+       "y": 995
+      },
+      {
+       "at": 3.45,
+       "dur": 0.35,
+       "y": 1010
+      }
+     ]
+    }
+   ],
+   "glows": [
+    {
+     "at": 1.4,
+     "x": 540,
+     "y": 1060,
+     "r": 300
+    }
+   ]
+  },
+  {
+   "_beat": "WEAR",
+   "dur": 3.3,
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Salnik\nyeyiladi",
+     "at": 0.7
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/cutaway.png",
+     "w": 330,
+     "x": 540,
+     "y": 1010,
+     "anim": "none"
+    }
+   ],
+   "insets": [
+    {
+     "src": "img/leak.png",
+     "at": 2.0,
+     "x": 800,
+     "y": 680,
+     "r": 150,
+     "zoom": 1.15,
+     "focusY": 0.35,
+     "target": {
+      "x": 560,
+      "y": 740
+     }
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 2.3,
+     "x": 300,
+     "y": 760,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "_beat": "CONTRAST",
+   "dur": 2.7,
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Yo'lga\nyopishadi",
+     "at": 0.9,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/wheel.png",
+     "w": 600,
+     "x": 540,
+     "y": 1050,
+     "anim": "fade"
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 1.9,
+     "x": 860,
+     "y": 800,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "_beat": "BOUNCE",
+   "dur": 4.6,
+   "ground": {
+    "y": 1300
+   },
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "To'pdek\nsakraydi",
+     "at": 0.4,
+     "out": 2.6
+    },
+    {
+     "text": "Yo'ldan uziladi",
+     "at": 2.65,
+     "size": 72
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 540,
+     "y": 1060,
+     "anim": "fade",
+     "moves": [
+      {
+       "at": 1.0,
+       "dur": 0.17,
+       "y": 990
+      },
+      {
+       "at": 1.17,
+       "dur": 0.17,
+       "y": 1095.0
+      },
+      {
+       "at": 1.3399999999999999,
+       "dur": 0.17,
+       "y": 1018.0
+      },
+      {
+       "at": 1.5099999999999998,
+       "dur": 0.17,
+       "y": 1081.0
+      },
+      {
+       "at": 1.6799999999999997,
+       "dur": 0.17,
+       "y": 1034.8
+      },
+      {
+       "at": 1.8499999999999996,
+       "dur": 0.17,
+       "y": 1072.6
+      },
+      {
+       "at": 2.0199999999999996,
+       "dur": 0.17,
+       "y": 1044.88
+      },
+      {
+       "at": 2.1899999999999995,
+       "dur": 0.17,
+       "y": 1067.56
+      },
+      {
+       "at": 2.3599999999999994,
+       "dur": 0.17,
+       "y": 1060
+      }
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 3.3,
+     "x": 540,
+     "y": 1380,
+     "size": 70
+    }
+   ],
+   "sfx": [
+    {
+     "src": "sfx/thud.wav",
+     "at": 1.0,
+     "volume": 0.6
+    },
+    {
+     "src": "sfx/thud.wav",
+     "at": 1.34,
+     "volume": 0.5
+    },
+    {
+     "src": "sfx/thud.wav",
+     "at": 1.68,
+     "volume": 0.4
+    }
+   ]
+  },
+  {
+   "_beat": "PAYOFF",
+   "dur": 1.7,
+   "ground": {
+    "y": 1300
+   },
+   "autoSfx": false,
+   "titles": [
+    {
+     "text": "Taq!",
+     "at": 0.8,
+     "color": "red",
+     "size": 110
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 540,
+     "y": 1060,
+     "anim": "none",
+     "shakeAt": [
+      0.8
+     ],
+     "moves": [
+      {
+       "at": 0.8,
+       "dur": 0.1,
+       "y": 1015
+      },
+      {
+       "at": 0.9,
+       "dur": 0.1,
+       "y": 1082.5
+      },
+      {
+       "at": 1.0,
+       "dur": 0.1,
+       "y": 1060
+      }
+     ]
+    }
+   ],
+   "shakeAt": [
+    0.8
+   ],
+   "sfx": [
+    {
+     "src": "sfx/whoosh_rev.wav",
+     "at": 0.35,
+     "volume": 0.5
+    },
+    {
+     "src": "sfx/thud.wav",
+     "at": 0.8,
+     "volume": 1.0
+    },
+    {
+     "src": "sfx/error.wav",
+     "at": 0.8,
+     "volume": 0.35
+    }
+   ]
+  },
+  {
+   "_beat": "TEST",
+   "dur": 9.4,
+   "ground": {
+    "y": 1318
+   },
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "O'sha test",
+     "at": 0.1,
+     "out": 1.3
+    },
+    {
+     "text": "Burchagini\nbosing",
+     "at": 1.4,
+     "out": 4.0,
+     "underline": true
+    },
+    {
+     "text": "1 marta = joyida",
+     "at": 4.1,
+     "out": 6.0,
+     "size": 70
+    },
+    {
+     "text": "2-3 marta =\ncharchagan",
+     "at": 6.1,
+     "size": 76
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/press.png",
+     "w": 960,
+     "x": 520,
+     "y": 1060,
+     "anim": "fade",
+     "moves": [
+      {
+       "at": 2.6,
+       "dur": 0.35,
+       "y": 1088
+      },
+      {
+       "at": 3.0,
+       "dur": 0.18,
+       "y": 1042
+      },
+      {
+       "at": 3.18,
+       "dur": 0.25,
+       "y": 1060
+      },
+      {
+       "at": 6.3,
+       "dur": 0.3,
+       "y": 1088
+      },
+      {
+       "at": 6.65,
+       "dur": 0.18,
+       "y": 1030
+      },
+      {
+       "at": 6.83,
+       "dur": 0.2,
+       "y": 1078
+      },
+      {
+       "at": 7.03,
+       "dur": 0.2,
+       "y": 1046
+      },
+      {
+       "at": 7.23,
+       "dur": 0.2,
+       "y": 1068
+      },
+      {
+       "at": 7.43,
+       "dur": 0.2,
+       "y": 1060
+      }
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 5.8,
+     "x": 540,
+     "y": 780,
+     "size": 80,
+     "out": 6.0
+    },
+    {
+     "type": "cross",
+     "at": 8.2,
+     "x": 540,
+     "y": 780,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "_beat": "BONUS",
+   "dur": 4.1,
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Moyli korpus",
+     "at": 1.0,
+     "underline": true,
+     "sub": "= oqyapti",
+     "subAt": 3.0
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/strut.png",
+     "w": 430,
+     "x": 540,
+     "y": 1050,
+     "anim": "fade"
+    }
+   ],
+   "insets": [
+    {
+     "src": "img/leak.png",
+     "at": 1.1,
+     "x": 800,
+     "y": 700,
+     "r": 150,
+     "zoom": 1.15,
+     "focusY": 0.35,
+     "target": {
+      "x": 560,
+      "y": 940
+     }
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 3.0,
+     "x": 280,
+     "y": 720,
+     "size": 70
+    }
+   ]
+  },
+  {
+   "_beat": "CTA",
+   "dur": 3.4,
+   "ground": {
+    "y": 1300
+   },
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "qayerdan\ntaqillaydi?",
+     "kicker": "sizning mashinangiz",
+     "at": 0.05,
+     "size": 80,
+     "sub": "izohda yozing",
+     "subAt": 2.2
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/car.png",
+     "w": 880,
+     "x": 540,
+     "y": 1060,
+     "anim": "fade"
+    }
+   ]
+  }
+ ]
+}
