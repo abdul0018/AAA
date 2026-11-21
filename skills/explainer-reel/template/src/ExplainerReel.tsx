@@ -98,9 +98,9 @@ export const ExplainerReel: React.FC<ReelProps> = (p) => {
   return (
     <AbsoluteFill style={{backgroundColor: '#1F2121'}}>
       {seqs}
-      {sounds}
-      {p.voiceover && <Audio src={src(p.voiceover)} volume={p.voVolume ?? 1} />}
-      {p.music && <Audio src={src(p.music)} volume={p.musicVolume ?? 0.1} loop />}
+      {!p.muteAll && sounds}
+      {!p.muteAll && p.voiceover && <Audio src={src(p.voiceover)} volume={p.voVolume ?? 1} />}
+      {!p.muteAll && p.music && <Audio src={src(p.music)} volume={p.musicVolume ?? 0.1} loop />}
     </AbsoluteFill>
   );
 };

@@ -1,8 +1,6 @@
 {
  "handle": "@autopodveska.uzb",
  "voiceover": "vo.mp3",
- "music": "sfx/music_bed.wav",
- "musicVolume": 0.09,
  "scenes": [
   {
    "_beat": "HOOK",
@@ -59,9 +57,16 @@
    ],
    "sfx": [
     {
-     "src": "sfx/thud.wav",
+     "src": "sfx_pro/pothole_drop.wav",
      "at": 1.85,
-     "volume": 0.9
+     "gain_db": -2,
+     "why": "wheel drops into pothole (ElevenLabs)"
+    },
+    {
+     "src": "sfx_pro/suspension_clunk.wav",
+     "at": 1.97,
+     "gain_db": -3,
+     "why": "suspension clunk (ElevenLabs)"
     }
    ]
   },
@@ -283,6 +288,14 @@
      "y": 1060,
      "r": 300
     }
+   ],
+   "sfx": [
+    {
+     "src": "sfx_pro/oil_squeeze.wav",
+     "at": 2.4,
+     "gain_db": -6,
+     "why": "oil through valves (ElevenLabs)"
+    }
    ]
   },
   {
@@ -326,6 +339,14 @@
      "x": 300,
      "y": 760,
      "size": 80
+    }
+   ],
+   "sfx": [
+    {
+     "src": "kit:pop-small-bubble",
+     "at": 2.25,
+     "gain_db": -6,
+     "why": "oil drip"
     }
    ]
   },
@@ -445,19 +466,16 @@
    ],
    "sfx": [
     {
-     "src": "sfx/thud.wav",
+     "src": "sfx_pro/body_bounce.wav",
      "at": 1.0,
-     "volume": 0.6
+     "gain_db": -3,
+     "why": "car body bouncing (ElevenLabs)"
     },
     {
-     "src": "sfx/thud.wav",
-     "at": 1.34,
-     "volume": 0.5
-    },
-    {
-     "src": "sfx/thud.wav",
-     "at": 1.68,
-     "volume": 0.4
+     "src": "kit:move-bounce",
+     "at": 1.0,
+     "gain_db": -11,
+     "why": "ball-bounce metaphor layer"
     }
    ]
   },
@@ -467,7 +485,6 @@
    "ground": {
     "y": 1300
    },
-   "autoSfx": false,
    "titles": [
     {
      "text": "Taq!",
@@ -510,19 +527,10 @@
    ],
    "sfx": [
     {
-     "src": "sfx/whoosh_rev.wav",
-     "at": 0.35,
-     "volume": 0.5
-    },
-    {
-     "src": "sfx/thud.wav",
+     "src": "sfx_pro/metal_knock_big.wav",
      "at": 0.8,
-     "volume": 1.0
-    },
-    {
-     "src": "sfx/error.wav",
-     "at": 0.8,
-     "volume": 0.35
+     "gain_db": -1,
+     "why": "metal TAQ (ElevenLabs)"
     }
    ]
   },
@@ -629,6 +637,21 @@
      "y": 780,
      "size": 80
     }
+   ],
+   "sfx": [
+    {
+     "src": "sfx_pro/body_bounce.wav",
+     "at": 2.6,
+     "gain_db": -9,
+     "max_len": 0.7,
+     "why": "one soft rebound (healthy)"
+    },
+    {
+     "src": "sfx_pro/body_bounce.wav",
+     "at": 6.3,
+     "gain_db": -3,
+     "why": "wobbly rebounds (worn)"
+    }
    ]
   },
   {
@@ -705,5 +728,6 @@
     }
    ]
   }
- ]
+ ],
+ "muteAll": true
 }

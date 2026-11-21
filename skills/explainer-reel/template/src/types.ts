@@ -172,5 +172,6 @@ export type ReelProps = {
   autoSfx?: boolean; // default true
   showPill?: boolean; // default true
   transitionFrames?: number; // default 10
+  muteAll?: boolean; // render picture only (audio is built by scripts/pro_mix.py)
   scenes: Scene[];
 };

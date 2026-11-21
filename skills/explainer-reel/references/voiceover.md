@@ -46,6 +46,18 @@ Use each `found` time as the `at` of the matching headline/counter (scene-relati
 Put headlines 0-0.15 s **before** the word (they read faster than they are heard). Whisper misspells Uzbek
 (o→o', q→k, ş): the fuzzy finder copes, but read the word list if a match score is below 0.5.
 
+## The user's ElevenLabs subscription (direct API, key already configured)
+The key is a network secret for `api.elevenlabs.io`: send `-H "xi-api-key: proxy-injected"` and the proxy swaps in the
+real key. The key lacks `user_read`, so don't call `/v1/user`. Use it for: `eleven_v3` / the newest multilingual model with
+voice-library voices (search native Uzbek voices: `GET /v1/shared-voices?language=uz`), voice cloning of the user's
+own voice, `/v1/sound-generation` (SFX), `/v1/music`, and `/v1/audio-isolation` to clean a phone recording. TTS:
+```bash
+curl -s -o public/vo_raw.mp3 -X POST "https://api.elevenlabs.io/v1/text-to-speech/<voice_id>?output_format=mp3_44100_192" \
+  -H "xi-api-key: proxy-injected" -H "Content-Type: application/json" \
+  -d '{"text":"<script>","model_id":"eleven_v3","language_code":"uz"}'
+```
+Max 4 concurrent requests on this plan.
+
 ## Alternatives (only if Higgsfield is unavailable)
 | Option | Uzbek | Needs from the user |
 |---|---|---|

@@ -18,8 +18,10 @@ Read these before building (they hold the details this page only summarises):
 - `references/props-api.md`: the props.json schema, animation names, placement cheatsheet, recipes, commands
 - `template/examples/storyboard-static-shock.json`: the full 59.6 s reference rebuilt as props (the blueprint to copy)
 
-Related skills installed alongside (use them for Remotion API questions): `remotion-best-practices`,
-`remotion-markup` (animations, audio, sfx, fonts, transitions), `remotion-render`, `remotion-create`.
+Related skills installed alongside: `sfx-kit` (320 pro CC0 sound effects with sync points, **the default SFX
+source**), `elevenlabs-sound-effects` / `elevenlabs-music` / `elevenlabs-text-to-speech` / `elevenlabs-voice-isolator`
+(the user's ElevenLabs key is a network secret for api.elevenlabs.io: send `xi-api-key: proxy-injected`),
+`remotion-best-practices`, `remotion-markup`, `remotion-render`, `remotion-create`.
 
 ## What you need from the user (ask only for what's missing)
 1. **Topic** (or let them pick from the ideas in script-formula.md) and language (default Uzbek Latin).
@@ -70,7 +72,14 @@ and timings. Style rules that must hold:
 - the last scene asks the hook question again (loop)
 - move `handlePos` between scenes. The IG pill is automatic
 
-### 7. Preview stills → fix → render
+### 7. Sound design (pro): read `references/sound-design.md`
+- Music: ElevenLabs Music (instrumental, reel + 3 s), key-shifted to C major/A minor with rubberband so it agrees
+  with the kit's tuned sounds.
+- Topic-specific SFX (e.g. a suspension clunk, oil squelch): ElevenLabs `/v1/sound-generation` (4 or fewer at a time) →
+  `scripts/match_sfx.py` → custom `sfx` entries in props. Everything else comes automatically from `sfx-kit`.
+- Set `"muteAll": true` in props. The audio is built after the render by `sfx_cues.py` + `pro_mix.py`.
+
+### 8. Preview stills → fix → render
 ```bash
 B=$(ls -d /opt/pw-browsers/chromium_headless_shell-*/chrome-headless-shell-linux64 2>/dev/null | head -1)/chrome-headless-shell
 npx remotion still ExplainerReel out/f.png --frame=<N> --props=public/props.json ${B:+--browser-executable=$B}
@@ -79,13 +88,16 @@ Render one still per scene, combine them into a sheet with PIL, and Read it. Che
 size of the hero (650-880 px wide), charges sitting on the body, the inset pointing at the right detail, and text
 not overflowing 1000 px. Then:
 ```bash
-npx remotion render ExplainerReel out/reel.mp4 --props=public/props.json --codec=h264 --crf=18 ${B:+--browser-executable=$B}
-ffmpeg -y -i out/reel.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=9" -c:a aac -b:a 192k out/final.mp4
+npx remotion render ExplainerReel out/silent.mp4 --props=public/props.json --codec=h264 --crf=17 --muted ${B:+--browser-executable=$B}
+python3 -I $SK/scripts/sfx_cues.py public/props.json --kit ~/.claude/skills/sfx-kit --out cues.json   # read the cue list
+python3 -I $SK/scripts/pro_mix.py --video out/silent.mp4 --vo public/vo.wav --cues cues.json --music public/music_C.wav --out out/final.mp4 --stems out/stems
 ```
+(Quick draft without the pro chain: drop `muteAll`, render with audio, then loudnorm.)
 
-### 8. QA and deliver
+### 9. QA and deliver
 - `ffprobe` (1080x1920, 30 fps, duration ≈ VO), a 2 fps contact sheet (`fps=2,scale=270:-1,tile=6x4`) → Read it
-- Integrated loudness ≈ -14 LUFS. The voice is clearly above the music/SFX
+- pro_mix prints the stems: voice ≈ -16 LUFS, music ≈ -31 LUFS, master -14.0 LUFS / -1.5 dBTP. Check the voice in
+  15 s chunks with Whisper (a full-length transcription of a music-backed file can hallucinate)
 - Send `out/final.mp4` with SendUserFile, plus a suggested caption (the hook question + 3-5 hashtags in the user's
   language) and the pinned-comment question.
 
@@ -106,7 +118,8 @@ ffmpeg -y -i out/reel.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=9" -c:a aac 
 ```
 SKILL.md
 references/   style-bible · script-formula · illustrations · voiceover · sound-design · props-api
-scripts/      make_sfx.py (SFX pack + music bed) · vo_timing.py (word timings, fuzzy find) · analyze_reference.sh (break down any new reference reel)
+scripts/      sfx_cues.py (props → kit cue sheet) · pro_mix.py (voice chain, SFX bus, ducked music, master) · match_sfx.py (any SFX → kit loudness)
+              make_sfx.py (procedural zap/rain/hum + fallback pack) · vo_timing.py (word timings, fuzzy find) · analyze_reference.sh
 template/     Remotion project: src/{ExplainerReel,kit,theme,types,Root,index}.tsx, public/fonts, public/img (door + hand samples), examples/*.json
 assets/       reference contact sheets + close-ups, demo render + frames, component test frames
 ```
