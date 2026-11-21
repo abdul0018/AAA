@@ -1,0 +1,167 @@
+{
+  "_about": "Full 59.6 s blueprint of the reference reel rebuilt with the kit. Asset files are placeholders: generate them (references/illustrations.md) with these names. Times follow the reference VO; re-time from vo_timing.py for a new voice.",
+  "_assets": {
+    "img/door.png": "white sedan front door, side view (have it: template/public/img/door.png)",
+    "img/hand_point.png": "hand pointing right, cream puffer cuff (have it: template/public/img/hand.png)",
+    "img/hand_key.png": "same hand holding a car key, tip pointing right",
+    "img/car_side.png": "the same white sedan, full side view facing left",
+    "img/man_stand.png": "young man, cream puffer jacket, grey trousers, tan boots, standing, side view facing right",
+    "img/man_seated.png": "same man seated in a grey car seat holding a steering wheel, side view",
+    "img/boot.png": "tan leather boot with a thick black rubber sole, grey trouser hem, side view",
+    "img/man_walk.png": "same man mid-stride, side view facing right",
+    "img/man_point.png": "same man standing, arm extended, index finger pointing right",
+    "img/car_open_seated.png": "same sedan, driver door open, the man seated sideways gripping the door frame, legs out",
+    "img/closeup_grip.png": "close-up: hand gripping the metal door frame (square)"
+  },
+  "handle": "@yourhandle",
+  "voiceover": "vo.wav",
+  "music": "sfx/music_bed.wav",
+  "musicVolume": 0.09,
+  "scenes": [
+    {
+      "_beat": "HOOK 0.0-4.5",
+      "dur": 4.5,
+      "handlePos": "center",
+      "titles": [{"text": "Sizni ham\ntok uradimi?", "at": 0.05, "underline": true}],
+      "layers": [
+        {"src": "img/door.png", "w": 780, "x": 660, "y": 1060, "anim": "fade"},
+        {"src": "img/hand_point.png", "w": 560, "x": 340, "y": 1193, "at": 0.5, "anim": "slideLeft", "z": 2, "shakeAt": [1.2, 2.9]}
+      ],
+      "marks": [{"type": "spark", "at": 1.2, "x": 622, "y": 1058, "size": 60}, {"type": "spark", "at": 2.9, "x": 622, "y": 1058, "size": 60, "out": 3.4}]
+    },
+    {
+      "_beat": "SHOCK FACT + REASSURE 4.5-9.0",
+      "dur": 4.5,
+      "handlePos": "left",
+      "layers": [
+        {"src": "img/door.png", "w": 780, "x": 660, "y": 1060, "anim": "none"},
+        {"src": "img/hand_point.png", "w": 560, "x": 340, "y": 1193, "anim": "none", "z": 2, "glow": {"at": 0.1, "r": 400, "dx": -20}}
+      ],
+      "counters": [{"at": 0.0, "dur": 1.4, "from": 3, "to": 10000, "suffix": " VOLT", "sub": "zarari yo'q", "subAt": 2.6}],
+      "charges": [{"at": 0.3, "x": 300, "y": 1200, "w": 400, "h": 210, "count": 12}]
+    },
+    {
+      "_beat": "PROMISE 9.0-12.5",
+      "dur": 3.5,
+      "titles": [{"text": "Bitta harakat", "at": 0.3, "underline": true}],
+      "layers": [{"src": "img/door.png", "w": 780, "x": 660, "y": 1060, "anim": "none"}],
+      "marks": [{"type": "question", "at": 0.4, "x": 760, "y": 860, "size": 110}]
+    },
+    {
+      "_beat": "MYTH-BUST 12.5-15.5",
+      "dur": 3.0,
+      "handlePos": "right",
+      "ground": {"y": 1290},
+      "layers": [
+        {"src": "img/door.png", "w": 780, "x": 660, "y": 1060, "anim": "none", "out": 0.15},
+        {"src": "img/car_side.png", "w": 900, "x": 540, "y": 1110, "anim": "zoomOut", "animDur": 0.6}
+      ],
+      "titles": [{"text": "Mashina aybdor emas", "at": 1.6, "size": 66}],
+      "marks": [{"type": "check", "at": 2.4, "x": 540, "y": 820, "size": 90}]
+    },
+    {
+      "_beat": "TWIST 15.5-17.0",
+      "dur": 1.5,
+      "ground": {"y": 1290},
+      "layers": [
+        {"src": "img/car_side.png", "w": 900, "x": 600, "y": 1110, "anim": "none"},
+        {"src": "img/man_stand.png", "w": 150, "x": 210, "y": 1090, "anim": "fade", "z": 3, "glow": {"at": 0.1, "r": 300}}
+      ],
+      "titles": [{"text": "Tok sizda", "at": 0.1, "underline": true}],
+      "charges": [{"at": 0.3, "x": 210, "y": 1060, "w": 90, "h": 260, "count": 8}]
+    },
+    {
+      "_beat": "MECHANISM 1: friction 17.0-21.5",
+      "dur": 4.5,
+      "handlePos": "right",
+      "layers": [{"src": "img/man_seated.png", "w": 700, "x": 540, "y": 1080, "anim": "fade"}],
+      "titles": [
+        {"text": "Kiyim ishqalanadi", "at": 0.9, "out": 3.3, "size": 70},
+        {"text": "Zaryad", "at": 3.4, "underline": true}
+      ],
+      "charges": [
+        {"at": 1.4, "x": 470, "y": 1010, "w": 200, "h": 300, "count": 14, "stagger": 0.12},
+        {"at": 3.5, "x": 330, "y": 1150, "w": 120, "h": 260, "count": 6, "sign": "+"}
+      ]
+    },
+    {
+      "_beat": "CONDITION: humid air 21.5-26.0",
+      "dur": 4.5,
+      "handlePos": "center",
+      "ground": {"y": 1330, "x0": 300, "x1": 780},
+      "layers": [{"src": "img/man_stand.png", "w": 280, "x": 540, "y": 960, "anim": "fade"}],
+      "rain": [{"at": 0.4}],
+      "titles": [{"text": "Nam havo", "at": 1.0}],
+      "charges": [{"at": 0.0, "x": 540, "y": 930, "w": 170, "h": 420, "count": 12, "flowTo": {"x": 540, "y": 420, "at": 1.6, "dur": 1.6}}]
+    },
+    {
+      "_beat": "CONTRAST: dry winter air 26.0-27.5",
+      "dur": 1.5,
+      "ground": {"y": 1330, "x0": 300, "x1": 780},
+      "layers": [{"src": "img/man_stand.png", "w": 280, "x": 540, "y": 960, "anim": "none", "glow": {"at": 0.2, "r": 420}}],
+      "titles": [{"text": "Qishda havo quruq", "at": 0.0, "underline": true, "size": 66}],
+      "charges": [{"at": 0.2, "x": 540, "y": 930, "w": 170, "h": 420, "count": 12}]
+    },
+    {
+      "_beat": "MECHANISM 2: rubber sole 27.5-32.0",
+      "dur": 4.5,
+      "handlePos": "left",
+      "ground": {"y": 1290, "x0": 230, "x1": 850},
+      "layers": [{"src": "img/boot.png", "w": 620, "x": 540, "y": 1040, "anim": "fade"}],
+      "charges": [{"at": 0.2, "x": 520, "y": 1000, "w": 380, "h": 300, "count": 12}],
+      "titles": [{"text": "Rezina", "at": 1.4, "underline": true}],
+      "boxes": [{"at": 1.7, "x": 540, "y": 1245, "w": 600, "h": 72}],
+      "marks": [{"type": "cross", "at": 3.0, "x": 540, "y": 1360, "size": 70}]
+    },
+    {
+      "_beat": "PAYOFF 32.0-36.5",
+      "dur": 4.5,
+      "handlePos": "center",
+      "ground": {"y": 1330},
+      "layers": [
+        {"src": "img/door.png", "w": 640, "x": 760, "y": 1080, "anim": "fade"},
+        {"src": "img/man_walk.png", "w": 230, "x": 330, "y": 960, "anim": "walkIn", "animDur": 1.0, "out": 1.6, "glow": {"at": 0.2, "r": 320}},
+        {"src": "img/man_point.png", "w": 360, "x": 380, "y": 960, "at": 1.6, "anim": "none", "glow": {"at": 1.6, "r": 320}, "shakeAt": [3.5]}
+      ],
+      "counters": [{"at": 0.5, "dur": 0.1, "from": 10000, "to": 10000, "suffix": " VOLT", "out": 3.4}],
+      "titles": [{"text": "Chirs!", "at": 3.5, "color": "red"}],
+      "charges": [{"at": 0.3, "x": 330, "y": 930, "w": 150, "h": 380, "count": 12, "flowTo": {"x": 560, "y": 900, "at": 3.3, "dur": 0.25}}],
+      "marks": [{"type": "spark", "at": 3.5, "x": 565, "y": 900, "size": 80}],
+      "shakeAt": [3.5]
+    },
+    {
+      "_beat": "SOLUTION 36.5-47.0",
+      "dur": 10.5,
+      "handlePos": "right",
+      "ground": {"y": 1290},
+      "layers": [{"src": "img/car_open_seated.png", "w": 920, "x": 540, "y": 1120, "anim": "fade"}],
+      "titles": [
+        {"text": "O'sha harakat", "at": 1.0, "out": 3.6},
+        {"text": "Temirdan ushlang", "at": 4.0, "out": 5.4, "underline": true, "size": 70}
+      ],
+      "insets": [{"src": "img/closeup_grip.png", "at": 4.1, "x": 540, "y": 700, "r": 150, "target": {"x": 430, "y": 1000}}],
+      "counters": [{"at": 5.5, "dur": 4.0, "from": 10000, "to": 0, "suffix": " VOLT"}],
+      "charges": [{"at": 5.6, "x": 470, "y": 1080, "w": 160, "h": 220, "count": 10, "flowTo": {"x": 430, "y": 1000, "at": 7.5, "dur": 1.5}}]
+    },
+    {
+      "_beat": "BONUS TIP 47.0-54.0",
+      "dur": 7.0,
+      "handlePos": "left",
+      "layers": [
+        {"src": "img/door.png", "w": 780, "x": 660, "y": 1060, "anim": "zoomOut"},
+        {"src": "img/hand_key.png", "w": 560, "x": 340, "y": 1180, "at": 3.0, "anim": "slideLeft", "z": 2}
+      ],
+      "titles": [{"text": "Kalit", "at": 3.5, "underline": true}],
+      "marks": [{"type": "spark", "at": 5.2, "x": 640, "y": 1060, "size": 50}]
+    },
+    {
+      "_beat": "LOOP CTA 54.0-59.6",
+      "dur": 5.6,
+      "handlePos": "center",
+      "ground": {"y": 1290},
+      "layers": [{"src": "img/car_open_seated.png", "w": 920, "x": 540, "y": 1120, "anim": "fade"}],
+      "insets": [{"src": "img/closeup_grip.png", "at": 0.0, "x": 540, "y": 700, "r": 150, "target": {"x": 430, "y": 1000}}],
+      "titles": [{"text": "Tok uradimi?", "kicker": "sizni boshqa narsa ham", "at": 0.5}]
+    }
+  ]
+}

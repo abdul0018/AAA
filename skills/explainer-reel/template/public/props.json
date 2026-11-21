@@ -1,0 +1,104 @@
+{
+ "handle": "@yourhandle",
+ "voiceover": "vo_demo.mp3",
+ "music": "sfx/music_bed.wav",
+ "musicVolume": 0.09,
+ "scenes": [
+  {
+   "dur": 3.1,
+   "titles": [
+    {
+     "text": "Sizni ham\ntok uradimi?",
+     "at": 0.1,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/door.png",
+     "w": 780,
+     "x": 660,
+     "y": 1060,
+     "anim": "fade"
+    },
+    {
+     "src": "img/hand.png",
+     "w": 560,
+     "x": 340,
+     "y": 1193,
+     "at": 0.6,
+     "anim": "slideLeft",
+     "animDur": 0.55,
+     "z": 2,
+     "shakeAt": [
+      2.15
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "type": "spark",
+     "at": 2.15,
+     "x": 622,
+     "y": 1058,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "dur": 5.3,
+   "layers": [
+    {
+     "src": "img/door.png",
+     "w": 780,
+     "x": 660,
+     "y": 1060,
+     "anim": "none"
+    },
+    {
+     "src": "img/hand.png",
+     "w": 560,
+     "x": 340,
+     "y": 1193,
+     "anim": "none",
+     "z": 2,
+     "glow": {
+      "at": 1.7,
+      "r": 400,
+      "dx": -20
+     }
+    }
+   ],
+   "counters": [
+    {
+     "at": 1.7,
+     "dur": 1.1,
+     "from": 3,
+     "to": 10000,
+     "suffix": " VOLT",
+     "sub": "zarari yo'q",
+     "subAt": 4.0
+    }
+   ],
+   "charges": [
+    {
+     "at": 2.0,
+     "x": 300,
+     "y": 1200,
+     "w": 400,
+     "h": 210,
+     "count": 11
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 4.1,
+     "x": 540,
+     "y": 650,
+     "size": 80
+    }
+   ]
+  }
+ ]
+}

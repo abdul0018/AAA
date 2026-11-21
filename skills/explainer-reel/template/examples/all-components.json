@@ -1,0 +1,127 @@
+{
+ "handle": "@yourhandle",
+ "scenes": [
+  {
+   "dur": 2,
+   "ground": {
+    "y": 1290
+   },
+   "titles": [
+    {
+     "text": "Chirs!",
+     "at": 0.3,
+     "color": "red"
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/door.png",
+     "w": 700,
+     "x": 700,
+     "y": 1000,
+     "anim": "zoomOut"
+    },
+    {
+     "src": "img/hand.png",
+     "w": 420,
+     "x": 300,
+     "y": 1100,
+     "anim": "walkIn",
+     "animDur": 0.8,
+     "z": 2
+    }
+   ],
+   "marks": [
+    {
+     "type": "spark",
+     "at": 0.3,
+     "x": 505,
+     "y": 1000
+    }
+   ],
+   "shakeAt": [
+    0.3
+   ]
+  },
+  {
+   "dur": 2.5,
+   "rain": [
+    {
+     "at": 0
+    }
+   ],
+   "titles": [
+    {
+     "text": "Temirdan ushlang",
+     "at": 0.1,
+     "underline": true,
+     "size": 70,
+     "kicker": "sizni boshqa narsa ham"
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/door.png",
+     "w": 700,
+     "x": 600,
+     "y": 1150
+    }
+   ],
+   "insets": [
+    {
+     "src": "img/hand.png",
+     "at": 0.4,
+     "x": 540,
+     "y": 700,
+     "r": 150,
+     "zoom": 1.6,
+     "focusX": 0.8,
+     "focusY": 0.3,
+     "target": {
+      "x": 560,
+      "y": 1050
+     }
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 0.8,
+     "x": 300,
+     "y": 1420
+    },
+    {
+     "type": "question",
+     "at": 0.5,
+     "x": 760,
+     "y": 980
+    }
+   ],
+   "charges": [
+    {
+     "at": 0.5,
+     "x": 600,
+     "y": 1150,
+     "w": 300,
+     "h": 200,
+     "sign": "+",
+     "flowTo": {
+      "x": 900,
+      "y": 1500,
+      "at": 1.4,
+      "dur": 0.6
+     }
+    }
+   ],
+   "boxes": [
+    {
+     "at": 0.6,
+     "x": 600,
+     "y": 1420,
+     "w": 640,
+     "h": 60
+    }
+   ]
+  }
+ ]
+}
