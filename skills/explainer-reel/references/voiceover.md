@@ -69,6 +69,10 @@ curl -s -o public/vo_raw.mp3 -X POST "https://api.elevenlabs.io/v1/text-to-speec
   -H "xi-api-key: proxy-injected" -H "Content-Type: application/json" \
   -d '{"text":"<script>","model_id":"eleven_v4","language_code":"uz","voice_settings":{"stability":0.45,"similarity_boost":0.8,"style":0.3,"speed":1.1}}'
 ```
+- **Use `/with-timestamps`** (same body, JSON response with `audio_base64` + per-character `alignment`): exact word
+  times straight from the script text, so no Whisper needed (Whisper can collapse on long Uzbek files). Divide the
+  times by any atempo factor you apply afterwards. Re-timing an existing props.json to a new voice = map the old
+  word times to the new ones and warp every `at`, then hand-check the payoff scene.
 - Also available: `/v1/sound-generation` (SFX), `/v1/music`, `/v1/audio-isolation` (clean a phone recording), and
   instant voice cloning of the user's own voice (`POST /v1/voices/add` with 1-3 clean samples, only with their consent).
 

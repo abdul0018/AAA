@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "duration": 54.9,
+ "duration": 50.36666666666667,
  "cues": [
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
@@ -26,7 +26,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/pothole_drop.wav",
-   "start": 1.85,
+   "start": 1.668,
    "rate": 1,
    "gain_db": -2,
    "uvo_db": -3,
@@ -38,7 +38,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/impacts/impact-heavy-firm.wav",
    "id": "impact-heavy-firm",
-   "start": 1.889,
+   "start": 1.694,
    "rate": 1.0,
    "gain_db": -4,
    "uvo_db": -4,
@@ -48,7 +48,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/suspension_clunk.wav",
-   "start": 1.97,
+   "start": 1.768,
    "rate": 1,
    "gain_db": -3,
    "uvo_db": -3,
@@ -60,7 +60,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 2.6147,
+   "start": 2.3813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -71,7 +71,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 2.94,
+   "start": 2.7007,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -82,7 +82,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/data/data-countup-medium.wav",
    "id": "data-countup-medium",
-   "start": 6.85,
+   "start": 6.2927,
    "rate": 1.2,
    "gain_db": -2,
    "uvo_db": -2,
@@ -93,7 +93,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/data/data-number-land.wav",
    "id": "data-number-land",
-   "start": 7.739,
+   "start": 7.1817,
    "rate": 1.0,
    "gain_db": -1,
    "uvo_db": -2,
@@ -104,7 +104,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 8.6147,
+   "start": 7.9813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -115,7 +115,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 10.09,
+   "start": 9.5047,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -126,7 +126,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 10.2333,
+   "start": 9.648,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -137,7 +137,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-medium-bubble.wav",
    "id": "pop-medium-bubble",
-   "start": 11.789,
+   "start": 11.1467,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -148,7 +148,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 13.0147,
+   "start": 12.2147,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -159,7 +159,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-medium-in.wav",
    "id": "pop-medium-in",
-   "start": 13.289,
+   "start": 12.489,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -2,
@@ -170,7 +170,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 13.79,
+   "start": 12.95,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -181,7 +181,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-medium-bubble.wav",
    "id": "pop-medium-bubble",
-   "start": 13.989,
+   "start": 13.147,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -192,7 +192,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 14.8147,
+   "start": 13.8813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -203,7 +203,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-out.wav",
    "id": "move-zoom-out",
-   "start": 15.1,
+   "start": 14.1667,
    "rate": 0.85,
    "gain_db": -4,
    "uvo_db": -3,
@@ -214,7 +214,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 15.59,
+   "start": 14.6877,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -225,7 +225,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 17.39,
+   "start": 16.3787,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -236,7 +236,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 17.5333,
+   "start": 16.522,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -247,7 +247,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-marker-draw.wav",
    "id": "writing-marker-draw",
-   "start": 17.7,
+   "start": 16.7467,
    "rate": 1.0,
    "gain_db": -4,
    "uvo_db": -1,
@@ -258,7 +258,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-success-soft.wav",
    "id": "notification-success-soft",
-   "start": 18.4,
+   "start": 17.4487,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -269,7 +269,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 19.3147,
+   "start": 18.2813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -280,7 +280,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 20.69,
+   "start": 19.5697,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -291,7 +291,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 20.8333,
+   "start": 19.713,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -301,7 +301,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/oil_squeeze.wav",
-   "start": 22.0,
+   "start": 20.7767,
    "rate": 1,
    "gain_db": -6,
    "uvo_db": -3,
@@ -313,7 +313,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 24.34,
+   "start": 22.8317,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -324,7 +324,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 25.4147,
+   "start": 23.8147,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -335,7 +335,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 26.39,
+   "start": 24.758,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -346,7 +346,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-in.wav",
    "id": "move-zoom-in",
-   "start": 27.391,
+   "start": 25.455,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -357,7 +357,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-bubble.wav",
    "id": "pop-small-bubble",
-   "start": 27.94,
+   "start": 26.074,
    "rate": 1.0,
    "gain_db": -6,
    "uvo_db": -2,
@@ -368,7 +368,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-failure-knock.wav",
    "id": "notification-failure-knock",
-   "start": 28.0,
+   "start": 26.128,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -3,
@@ -379,7 +379,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 28.7147,
+   "start": 26.6147,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -390,7 +390,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 29.89,
+   "start": 27.7,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -401,7 +401,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 30.0333,
+   "start": 27.8433,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -412,7 +412,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-success-soft.wav",
    "id": "notification-success-soft",
-   "start": 30.9,
+   "start": 28.601,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -423,7 +423,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 31.4147,
+   "start": 29.048,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -434,7 +434,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 32.09,
+   "start": 30.5933,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -445,7 +445,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-bounce.wav",
    "id": "move-bounce",
-   "start": 32.689,
+   "start": 31.0723,
    "rate": 1.0,
    "gain_db": -11,
    "uvo_db": -3,
@@ -455,7 +455,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/body_bounce.wav",
-   "start": 32.7,
+   "start": 31.0833,
    "rate": 1,
    "gain_db": -3,
    "uvo_db": -3,
@@ -467,7 +467,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 34.34,
+   "start": 31.7433,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -478,7 +478,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-failure-knock.wav",
    "id": "notification-failure-knock",
-   "start": 35.0,
+   "start": 32.5833,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -3,
@@ -489,7 +489,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 36.0147,
+   "start": 32.8147,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -500,7 +500,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/reverse-whooshes/reverse-whoosh-short-strong.wav",
    "id": "reverse-whoosh-short-strong",
-   "start": 36.76,
+   "start": 33.73,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -5,
@@ -511,7 +511,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/booms-and-bass/bass-sub-drop-short.wav",
    "id": "bass-sub-drop-short",
-   "start": 37.079,
+   "start": 34.049,
    "rate": 1.0,
    "gain_db": -6,
    "uvo_db": -8,
@@ -522,7 +522,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/impacts/impact-deep-hard.wav",
    "id": "impact-deep-hard",
-   "start": 37.09,
+   "start": 34.06,
    "rate": 1.0,
    "gain_db": -1,
    "uvo_db": -7,
@@ -532,7 +532,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/metal_knock_big.wav",
-   "start": 37.1,
+   "start": 34.07,
    "rate": 1,
    "gain_db": -1,
    "uvo_db": -3,
@@ -544,7 +544,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 37.7147,
+   "start": 34.448,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -555,7 +555,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 38.09,
+   "start": 34.8233,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -566,7 +566,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 39.39,
+   "start": 35.7533,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -577,7 +577,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 39.5333,
+   "start": 35.8967,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -587,7 +587,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/body_bounce.wav",
-   "start": 40.6,
+   "start": 37.5333,
    "rate": 1,
    "gain_db": -9,
    "uvo_db": -3,
@@ -599,7 +599,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 42.09,
+   "start": 38.3433,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -610,7 +610,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-success-soft.wav",
    "id": "notification-success-soft",
-   "start": 43.8,
+   "start": 39.8633,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -621,7 +621,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 44.09,
+   "start": 40.4933,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -631,7 +631,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/podveska/public/sfx_pro/body_bounce.wav",
-   "start": 44.3,
+   "start": 41.0833,
    "rate": 1,
    "gain_db": -3,
    "uvo_db": -3,
@@ -643,7 +643,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-failure-knock.wav",
    "id": "notification-failure-knock",
-   "start": 46.2,
+   "start": 42.5233,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -3,
@@ -654,7 +654,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 47.1147,
+   "start": 42.8813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -665,7 +665,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-in.wav",
    "id": "move-zoom-in",
-   "start": 48.191,
+   "start": 43.9177,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -676,7 +676,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 48.39,
+   "start": 44.1167,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -687,7 +687,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 48.5333,
+   "start": 44.26,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -698,7 +698,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 50.39,
+   "start": 45.9977,
    "rate": 1.0,
    "gain_db": -6,
    "uvo_db": -2,
@@ -709,7 +709,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-failure-knock.wav",
    "id": "notification-failure-knock",
-   "start": 50.4,
+   "start": 46.0077,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -3,
@@ -720,7 +720,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
    "id": "whoosh-slow-soft",
-   "start": 51.2147,
+   "start": 46.6813,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
@@ -731,7 +731,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 51.54,
+   "start": 47.0007,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -742,7 +742,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 53.69,
+   "start": 48.9117,
    "rate": 1.0,
    "gain_db": -6,
    "uvo_db": -2,

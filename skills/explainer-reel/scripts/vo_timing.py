@@ -61,7 +61,9 @@ def main():
 
     audio, dur = load_audio(a.audio)
     model = WhisperModel(a.model, device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(audio, language=a.lang, word_timestamps=True)
+    # condition_on_previous_text=False + VAD: stops Whisper's repetition/hallucination collapse on long files
+    segs, _ = model.transcribe(audio, language=a.lang, word_timestamps=True, condition_on_previous_text=False,
+                               vad_filter=True, vad_parameters={"min_silence_duration_ms": 250})
     words, segments = [], []
     for s in segs:
         segments.append({"text": s.text.strip(), "s": round(s.start, 2), "e": round(s.end, 2)})

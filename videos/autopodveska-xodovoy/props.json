@@ -1,10 +1,10 @@
 {
  "handle": "@autopodveska.uzb",
- "voiceover": "vo.mp3",
+ "voiceover": "vo_adizzbek.mp3",
  "scenes": [
   {
    "_beat": "HOOK",
-   "dur": 2.9,
+   "dur": 2.654,
    "ground": {
     "y": 1300
    },
@@ -25,27 +25,27 @@
      "anim": "fade",
      "moves": [
       {
-       "at": 1.85,
+       "at": 1.668,
        "dur": 0.14,
        "y": 1030
       },
       {
-       "at": 1.9900000000000002,
+       "at": 1.787,
        "dur": 0.14,
        "y": 1075.0
       },
       {
-       "at": 2.1300000000000003,
+       "at": 1.92,
        "dur": 0.14,
        "y": 1042.0
       },
       {
-       "at": 2.2700000000000005,
+       "at": 2.054,
        "dur": 0.14,
        "y": 1069.0
       },
       {
-       "at": 2.4100000000000006,
+       "at": 2.187,
        "dur": 0.14,
        "y": 1060
       }
@@ -53,18 +53,18 @@
     }
    ],
    "shakeAt": [
-    1.9
+    1.705
    ],
    "sfx": [
     {
      "src": "sfx_pro/pothole_drop.wav",
-     "at": 1.85,
+     "at": 1.668,
      "gain_db": -2,
      "why": "wheel drops into pothole (ElevenLabs)"
     },
     {
      "src": "sfx_pro/suspension_clunk.wav",
-     "at": 1.97,
+     "at": 1.768,
      "gain_db": -3,
      "why": "suspension clunk (ElevenLabs)"
     }
@@ -72,7 +72,7 @@
   },
   {
    "_beat": "SHOCK",
-   "dur": 6.0,
+   "dur": 5.584,
    "ground": {
     "y": 1300
    },
@@ -80,8 +80,8 @@
    "titles": [
     {
      "text": "Bu shunchaki\novoz emas",
-     "at": 0.05,
-     "out": 1.8
+     "at": 0.044,
+     "out": 1.627
     }
    ],
    "layers": [
@@ -93,7 +93,7 @@
      "anim": "none",
      "moves": [
       {
-       "at": 2.0,
+       "at": 1.803,
        "dur": 3.2,
        "x": 600
       }
@@ -102,19 +102,19 @@
    ],
    "counters": [
     {
-     "at": 3.95,
+     "at": 3.626,
      "dur": 0.9,
      "from": 0,
      "to": 20,
      "prefix": "+",
      "suffix": "%",
      "sub": "tormoz yo'li",
-     "subAt": 4.4
+     "subAt": 4.028
     }
    ],
    "glows": [
     {
-     "at": 4.0,
+     "at": 3.671,
      "x": 660,
      "y": 1180,
      "r": 380,
@@ -124,14 +124,14 @@
   },
   {
    "_beat": "PROMISE",
-   "dur": 4.4,
+   "dur": 4.234,
    "ground": {
     "y": 1300
    },
    "titles": [
     {
      "text": "5 soniyalik\ntest",
-     "at": 1.2,
+     "at": 1.248,
      "underline": true
     }
    ],
@@ -144,7 +144,7 @@
      "anim": "none",
      "moves": [
       {
-       "at": 0.2,
+       "at": 0.208,
        "dur": 0.8,
        "x": 540
       }
@@ -154,7 +154,7 @@
    "marks": [
     {
      "type": "question",
-     "at": 2.9,
+     "at": 2.891,
      "x": 540,
      "y": 760,
      "size": 120
@@ -163,12 +163,12 @@
   },
   {
    "_beat": "MYTH",
-   "dur": 1.8,
+   "dur": 1.666,
    "handlePos": "right",
    "titles": [
     {
      "text": "Prujina?",
-     "at": 0.5
+     "at": 0.46
     }
    ],
    "layers": [
@@ -183,7 +183,7 @@
    "marks": [
     {
      "type": "question",
-     "at": 0.7,
+     "at": 0.658,
      "x": 790,
      "y": 820,
      "size": 110
@@ -192,16 +192,16 @@
   },
   {
    "_beat": "ROLES",
-   "dur": 4.5,
+   "dur": 4.387,
    "titles": [
     {
      "text": "Prujina\nushlaydi",
-     "at": 0.5,
-     "out": 2.2
+     "at": 0.531,
+     "out": 2.15
     },
     {
      "text": "Amortizator\nso'ndiradi",
-     "at": 2.3,
+     "at": 2.222,
      "underline": true
     }
    ],
@@ -217,7 +217,7 @@
    ],
    "boxes": [
     {
-     "at": 2.6,
+     "at": 2.58,
      "x": 545,
      "y": 965,
      "w": 120,
@@ -227,7 +227,7 @@
    "marks": [
     {
      "type": "check",
-     "at": 3.3,
+     "at": 3.282,
      "x": 760,
      "y": 930,
      "size": 80
@@ -236,18 +236,18 @@
   },
   {
    "_beat": "MECHANISM",
-   "dur": 6.1,
+   "dur": 5.531,
    "handlePos": "center",
    "titles": [
     {
      "text": "Ichida moy",
-     "at": 1.1,
-     "out": 4.6,
+     "at": 1.013,
+     "out": 4.104,
      "underline": true
     },
     {
      "text": "Zarbani\nso'ndiradi",
-     "at": 4.75
+     "at": 4.275
     }
    ],
    "layers": [
@@ -259,22 +259,22 @@
      "anim": "fade",
      "moves": [
       {
-       "at": 2.4,
+       "at": 2.21,
        "dur": 0.35,
        "y": 985
       },
       {
-       "at": 2.75,
+       "at": 2.532,
        "dur": 0.35,
        "y": 1020
       },
       {
-       "at": 3.1,
+       "at": 2.787,
        "dur": 0.35,
        "y": 995
       },
       {
-       "at": 3.45,
+       "at": 3.118,
        "dur": 0.35,
        "y": 1010
       }
@@ -283,7 +283,7 @@
    ],
    "glows": [
     {
-     "at": 1.4,
+     "at": 1.289,
      "x": 540,
      "y": 1060,
      "r": 300
@@ -292,7 +292,7 @@
    "sfx": [
     {
      "src": "sfx_pro/oil_squeeze.wav",
-     "at": 2.4,
+     "at": 2.21,
      "gain_db": -6,
      "why": "oil through valves (ElevenLabs)"
     }
@@ -300,12 +300,12 @@
   },
   {
    "_beat": "WEAR",
-   "dur": 3.3,
+   "dur": 2.807,
    "handlePos": "left",
    "titles": [
     {
      "text": "Salnik\nyeyiladi",
-     "at": 0.7
+     "at": 0.668
     }
    ],
    "layers": [
@@ -320,7 +320,7 @@
    "insets": [
     {
      "src": "img/leak.png",
-     "at": 2.0,
+     "at": 1.664,
      "x": 800,
      "y": 680,
      "r": 150,
@@ -335,7 +335,7 @@
    "marks": [
     {
      "type": "cross",
-     "at": 2.3,
+     "at": 2.028,
      "x": 300,
      "y": 760,
      "size": 80
@@ -344,7 +344,7 @@
    "sfx": [
     {
      "src": "kit:pop-small-bubble",
-     "at": 2.25,
+     "at": 1.984,
      "gain_db": -6,
      "why": "oil drip"
     }
@@ -352,12 +352,12 @@
   },
   {
    "_beat": "CONTRAST",
-   "dur": 2.7,
+   "dur": 2.421,
    "handlePos": "right",
    "titles": [
     {
      "text": "Yo'lga\nyopishadi",
-     "at": 0.9,
+     "at": 0.81,
      "underline": true
     }
    ],
@@ -373,7 +373,7 @@
    "marks": [
     {
      "type": "check",
-     "at": 1.9,
+     "at": 1.701,
      "x": 860,
      "y": 800,
      "size": 80
@@ -382,7 +382,7 @@
   },
   {
    "_beat": "BOUNCE",
-   "dur": 4.6,
+   "dur": 3.77,
    "ground": {
     "y": 1300
    },
@@ -390,12 +390,12 @@
    "titles": [
     {
      "text": "To'pdek\nsakraydi",
-     "at": 0.4,
-     "out": 2.6
+     "at": 1.27,
+     "out": 2.35
     },
     {
      "text": "Yo'ldan uziladi",
-     "at": 2.65,
+     "at": 2.42,
      "size": 72
     }
    ],
@@ -408,47 +408,47 @@
      "anim": "fade",
      "moves": [
       {
-       "at": 1.0,
+       "at": 1.75,
        "dur": 0.17,
        "y": 990
       },
       {
-       "at": 1.17,
+       "at": 1.92,
        "dur": 0.17,
        "y": 1095.0
       },
       {
-       "at": 1.3399999999999999,
+       "at": 2.09,
        "dur": 0.17,
        "y": 1018.0
       },
       {
-       "at": 1.5099999999999998,
+       "at": 2.26,
        "dur": 0.17,
        "y": 1081.0
       },
       {
-       "at": 1.6799999999999997,
+       "at": 2.43,
        "dur": 0.17,
        "y": 1034.8
       },
       {
-       "at": 1.8499999999999996,
+       "at": 2.6,
        "dur": 0.17,
        "y": 1072.6
       },
       {
-       "at": 2.0199999999999996,
+       "at": 2.77,
        "dur": 0.17,
        "y": 1044.88
       },
       {
-       "at": 2.1899999999999995,
+       "at": 2.94,
        "dur": 0.17,
        "y": 1067.56
       },
       {
-       "at": 2.3599999999999994,
+       "at": 3.11,
        "dur": 0.17,
        "y": 1060
       }
@@ -458,7 +458,7 @@
    "marks": [
     {
      "type": "cross",
-     "at": 3.3,
+     "at": 3.25,
      "x": 540,
      "y": 1380,
      "size": 70
@@ -467,13 +467,13 @@
    "sfx": [
     {
      "src": "sfx_pro/body_bounce.wav",
-     "at": 1.0,
+     "at": 1.75,
      "gain_db": -3,
      "why": "car body bouncing (ElevenLabs)"
     },
     {
      "src": "kit:move-bounce",
-     "at": 1.0,
+     "at": 1.75,
      "gain_db": -11,
      "why": "ball-bounce metaphor layer"
     }
@@ -481,14 +481,14 @@
   },
   {
    "_beat": "PAYOFF",
-   "dur": 1.7,
+   "dur": 1.63,
    "ground": {
     "y": 1300
    },
    "titles": [
     {
      "text": "Taq!",
-     "at": 0.8,
+     "at": 0.97,
      "color": "red",
      "size": 110
     }
@@ -501,21 +501,21 @@
      "y": 1060,
      "anim": "none",
      "shakeAt": [
-      0.8
+      0.97
      ],
      "moves": [
       {
-       "at": 0.8,
+       "at": 0.97,
        "dur": 0.1,
        "y": 1015
       },
       {
-       "at": 0.9,
+       "at": 1.07,
        "dur": 0.1,
        "y": 1082.5
       },
       {
-       "at": 1.0,
+       "at": 1.17,
        "dur": 0.1,
        "y": 1060
       }
@@ -523,12 +523,12 @@
     }
    ],
    "shakeAt": [
-    0.8
+    0.97
    ],
    "sfx": [
     {
      "src": "sfx_pro/metal_knock_big.wav",
-     "at": 0.8,
+     "at": 0.97,
      "gain_db": -1,
      "why": "metal TAQ (ElevenLabs)"
     }
@@ -536,7 +536,7 @@
   },
   {
    "_beat": "TEST",
-   "dur": 9.4,
+   "dur": 8.44,
    "ground": {
     "y": 1318
    },
@@ -545,23 +545,23 @@
     {
      "text": "O'sha test",
      "at": 0.1,
-     "out": 1.3
+     "out": 0.95
     },
     {
      "text": "Burchagini\nbosing",
-     "at": 1.4,
-     "out": 4.0,
+     "at": 1.03,
+     "out": 3.5,
      "underline": true
     },
     {
      "text": "1 marta = joyida",
-     "at": 4.1,
-     "out": 6.0,
+     "at": 3.62,
+     "out": 5.7,
      "size": 70
     },
     {
      "text": "2-3 marta =\ncharchagan",
-     "at": 6.1,
+     "at": 5.77,
      "size": 76
     }
    ],
@@ -574,47 +574,47 @@
      "anim": "fade",
      "moves": [
       {
-       "at": 2.6,
+       "at": 2.4,
        "dur": 0.35,
        "y": 1088
       },
       {
-       "at": 3.0,
+       "at": 2.8,
        "dur": 0.18,
        "y": 1042
       },
       {
-       "at": 3.18,
+       "at": 2.98,
        "dur": 0.25,
        "y": 1060
       },
       {
-       "at": 6.3,
+       "at": 6.0,
        "dur": 0.3,
        "y": 1088
       },
       {
-       "at": 6.65,
+       "at": 6.35,
        "dur": 0.18,
        "y": 1030
       },
       {
-       "at": 6.83,
+       "at": 6.53,
        "dur": 0.2,
        "y": 1078
       },
       {
-       "at": 7.03,
+       "at": 6.73,
        "dur": 0.2,
        "y": 1046
       },
       {
-       "at": 7.23,
+       "at": 6.93,
        "dur": 0.2,
        "y": 1068
       },
       {
-       "at": 7.43,
+       "at": 7.13,
        "dur": 0.2,
        "y": 1060
       }
@@ -624,15 +624,15 @@
    "marks": [
     {
      "type": "check",
-     "at": 5.8,
+     "at": 5.13,
      "x": 540,
      "y": 780,
      "size": 80,
-     "out": 6.0
+     "out": 5.7
     },
     {
      "type": "cross",
-     "at": 8.2,
+     "at": 7.79,
      "x": 540,
      "y": 780,
      "size": 80
@@ -641,14 +641,14 @@
    "sfx": [
     {
      "src": "sfx_pro/body_bounce.wav",
-     "at": 2.6,
+     "at": 2.8,
      "gain_db": -9,
      "max_len": 0.7,
      "why": "one soft rebound (healthy)"
     },
     {
      "src": "sfx_pro/body_bounce.wav",
-     "at": 6.3,
+     "at": 6.35,
      "gain_db": -3,
      "why": "wobbly rebounds (worn)"
     }
@@ -656,15 +656,15 @@
   },
   {
    "_beat": "BONUS",
-   "dur": 4.1,
+   "dur": 3.811,
    "handlePos": "right",
    "titles": [
     {
      "text": "Moyli korpus",
-     "at": 1.0,
+     "at": 0.96,
      "underline": true,
      "sub": "= oqyapti",
-     "subAt": 3.0
+     "subAt": 2.841
     }
    ],
    "layers": [
@@ -679,7 +679,7 @@
    "insets": [
     {
      "src": "img/leak.png",
-     "at": 1.1,
+     "at": 1.06,
      "x": 800,
      "y": 700,
      "r": 150,
@@ -694,7 +694,7 @@
    "marks": [
     {
      "type": "cross",
-     "at": 3.0,
+     "at": 2.841,
      "x": 280,
      "y": 720,
      "size": 70
@@ -703,7 +703,7 @@
   },
   {
    "_beat": "CTA",
-   "dur": 3.4,
+   "dur": 3.386,
    "ground": {
     "y": 1300
    },
@@ -712,10 +712,10 @@
     {
      "text": "qayerdan\ntaqillaydi?",
      "kicker": "sizning mashinangiz",
-     "at": 0.05,
+     "at": 0.044,
      "size": 80,
      "sub": "izohda yozing",
-     "subAt": 2.2
+     "subAt": 1.955
     }
    ],
    "layers": [
