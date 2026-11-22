@@ -23,6 +23,11 @@ source**), `elevenlabs-sound-effects` / `elevenlabs-music` / `elevenlabs-text-to
 (the user's ElevenLabs key is a network secret for api.elevenlabs.io: send `xi-api-key: proxy-injected`),
 `remotion-best-practices`, `remotion-markup`, `remotion-render`, `remotion-create`.
 
+## ⚠️ Real products first (the user's standing rule)
+If the topic names a real product (a car model, part or device), find real photos of that exact product online
+FIRST (cars: the version sold in Uzbekistan) and generate every illustration from them via `image_references`.
+Never draw a generic stand-in. Workflow, Commons search and the table of Uzbek models: `references/real-products.md`.
+
 ## What you need from the user (ask only for what's missing)
 1. **Topic** (or let them pick from the ideas in script-formula.md) and language (default Uzbek Latin).
 2. **@handle** for the watermark/pill.

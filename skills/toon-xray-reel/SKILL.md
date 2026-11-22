@@ -17,6 +17,11 @@ Topic and script (or re-use a script/voiceover from style #1), @handle, and the 
 `v4cqTf6wc2CXwA2tR7TF`, eleven_v4, uz). Budget on Higgsfield: ≈10 credits per 5 s AI shot (Kling 3.0 Turbo 1080p,
 16 for 8 s) + about 1 per still. A 50 s reel ≈ 4 AI shots + 8-10 stills ≈ 55-70 credits.
 
+## ⚠️ Real products first (the user's standing rule)
+If the topic names a real product (a car model, part or device), find real photos of that exact product online
+FIRST (cars: the version sold in Uzbekistan) and generate every illustration/key art from them via `image_references`.
+Never draw a generic stand-in. Workflow, Commons search and the table of Uzbek models: `references/real-products.md`.
+
 ## Workflow
 1. **Script → shot list.** For each VO sentence pick one of: AI live shot · still + camera push · x-ray · pull-out ·
    cutaway · 2.5D action (cut-out + tracks). Aim for 8-12 shots per 50 s, a new picture every 3-6 s, and the cutaway as

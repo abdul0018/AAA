@@ -20,12 +20,17 @@ def place(name, w, cx, cy):
     return dict(im=im, s=s, x0=cx - w / 2, y0=cy - im.height * s / 2, w=w, h=im.height * s, cx=cx, cy=cy, src=f'img/{name}')
 
 def rear_col(P, lo, hi):
-    a = np.array(P['im'])[..., 3] > 128
+    a = solid_alpha(P) > 128
     H = a.shape[0]
     return max(np.nonzero(a[r])[0].max() for r in range(int(H * lo), int(H * hi)) if a[r].any())
 
+def solid_alpha(P):
+    from PIL import ImageFilter
+    # erode horizontally so a thin roof antenna doesn't count as roof
+    return np.array(P['im'].split()[-1].filter(ImageFilter.MinFilter(9)).filter(ImageFilter.MaxFilter(9)))
+
 def top_contour(P, cut=None):
-    a = np.array(P['im'])[..., 3] > 128
+    a = solid_alpha(P) > 128
     if cut is not None: a = a[:, :cut + 1]
     ys = np.array([np.argmax(a[:, i]) if a[:, i].any() else a.shape[0] for i in range(a.shape[1])], float)
     xs = np.arange(a.shape[1])
@@ -73,9 +78,9 @@ CS = place('cobalt_side.png', 840, 440, 1130)
 CS_CUT = rear_col(CS, 0.30, 0.42)
 CR = place('cobalt_rear.png', 700, 540, 1100)
 
-def rear_pts(P):  # glass area, wiper pivot in canvas px (measured on spark_rear.png)
+def rear_pts(P):  # glass area, wiper pivot in canvas px (measured on spark_rear.png: glass x188-797, y130-340 of 986x995)
     s = P['s']; X = lambda v: P['x0'] + v * s; Y = lambda v: P['y0'] + v * s
-    return dict(gx=X(420), gy=Y(190), gw=560 * s, gh=190 * s, px=X(418), py=Y(300), len=300 * s, wheelL=(X(90), Y(900)), wheelR=(X(750), Y(900)))
+    return dict(gx=X(492), gy=Y(236), gw=550 * s, gh=190 * s, px=X(492), py=Y(338), len=285 * s, wheelL=(X(150), Y(975)), wheelR=(X(840), Y(975)))
 
 t_s1 = 0.0; t_s2 = T('sababi'); t_s3 = T('hammasi'); t_s4 = T('sparkning'); t_s5 = T('havo')
 t_s6 = T('mashina'); t_s7 = T('u'); t_s8 = T('endi'); t_s9 = T('oyna'); t_s10 = T('orqa', 3)
@@ -110,7 +115,7 @@ def contour_path(X, Y, frac0=0.12):
     i0 = int(len(X) * frac0); Ys = smooth(Y, 3)
     return path([(X[i], Ys[i] - 6) for i in range(i0, len(X), 6)] + [(X[-1], Ys[-1] - 6)])
 def rear_drop(P, X, Y):  # the rear face: down from the roof end along the right edge
-    a = np.array(P['im'])[..., 3] > 128
+    a = solid_alpha(P) > 128
     rows = range(int(a.shape[0] * 0.02), int(a.shape[0] * 0.62), 6)
     pts = [(P['x0'] + (np.nonzero(a[r])[0].max()) * P['s'] + 6, P['y0'] + r * P['s']) for r in rows if a[r].any()]
     return pts
@@ -132,7 +137,7 @@ scene(t_s4, t_s5, _beat='VERTICAL BACK',
       titles=[dict(text='Tik kesiladi', at=rel(T('tik'), t_s4) - 0.1, underline=True)],
       layers=[dict(src=SS['src'], w=SS['w'], x=SS['cx'], y=SS['cy'], anim='zoomOut', animDur=0.5)],
       flows=[dict(d=sp_profile, at=0.25, draw=0.9, color=YEL, dash=None, width=11)],
-      boxes=[dict(at=rel(T('kesiladi'), t_s4), x=drop[0][0] + 6, y=(drop[0][1] + drop[-1][1]) / 2, w=70, h=drop[-1][1] - drop[0][1] + 40, radius=30)])
+      boxes=[dict(at=rel(T('kesiladi'), t_s4), x=max(p[0] for p in drop) - 12, y=(drop[0][1] + drop[-1][1]) / 2, w=74, h=drop[-1][1] - drop[0][1] + 40, radius=30)])
 
 # 5 Havo oqimi shu chetda uziladi.   6 bosim pasayib, girdob   7 loy -> oyna
 lines = [streamline(SS, gp, 30, 260, attached=False, cut=SS_CUT) for gp in (28, 85, 150)]

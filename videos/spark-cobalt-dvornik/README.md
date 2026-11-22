@@ -5,8 +5,13 @@ The reference reel's script, word for word, rebuilt in the @autopodveska.uzb dar
 - **Length** 35.1 s, 1080x1920, 30 fps, 14 beats.
 - **VO**: ElevenLabs `eleven_v4`, voice Adizzbek `v4cqTf6wc2CXwA2tR7TF`, uz, speed 1.1, `/with-timestamps`.
   Sped up with atempo 1.06 → `public/vo.wav`. `words.json` holds the word times after that factor.
-- **Art**: gpt_image_2_6 cut-outs, style-locked to the house `car_side.png`. The wiper baked into
-  `spark_rear.png` was painted out, so the animated wiper can sweep.
+- **Art (v2, real cars)**: drawn from real photos of the Uzbek-market cars (Wikimedia Commons, imported with
+  `media_import_url`) plus the house `car_side.png` for style. See `real_vs_illustration.png`.
+  - Spark M300 facelift: `0 Chevrolet Spark (M300) 3.jpg`, `0 Chevrolet Spark (M300) 4.jpg`,
+    `Chevrolet spark m300 rear.jpg`
+  - Cobalt (2nd gen, built in Uzbekistan): `Chevrolet Cobalt, Toshkent.jpg`, `Chevrolet Cobalt LTZ, Moʻynoq.jpg`,
+    `Cobalt avtomobili.jpg`
+  The rear view was generated without a wiper so the animated one can sweep (glass x188-797, y130-340).
 - **Overlays**: the explainer-reel v2 aero kit (`flows`, `vortices`, `mud` with `film`/`wipe`, `wipers`, `tags`).
   Streamlines are traced from each car's alpha contour by `build_props.py`.
 - **Sound**: SFX Kit cues plus ElevenLabs foley (`sfx/air|vortex|mud|wiper.wav`), mixed by `pro_mix.py` with the

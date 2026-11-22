@@ -5,6 +5,11 @@ reused across beats: car door, pointing hand, hand with key, whole car (side vie
 walking, pointing, seated at the wheel, seated in the open door gripping the frame, a boot close-up, and a circular
 close-up of the grip. **Consistency of the character and the object is the whole trick.**
 
+## ⚠️ Real products first (the user's standing rule)
+If the topic names a real product (a car model, part or device), find real photos of that exact product online
+FIRST (cars: the version sold in Uzbekistan) and generate every illustration from them via `image_references`.
+Never draw a generic stand-in. Workflow, Commons search and the table of Uzbek models: `references/real-products.md`.
+
 ## Generator (verified): Higgsfield `gpt_image_2_6`
 - Params: `quality:"medium"`, `background:"transparent"`, `aspect_ratio` "3:2" (objects), "2:3" (standing people),
   "1:1" (close-ups). About **1 credit per image** at medium. Use `generate_image_batch` for several prompts at once,
