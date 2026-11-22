@@ -107,6 +107,8 @@ def main():
                     add(kit.cue("notification-failure-knock", m, "cross", -2))
                 elif mk["type"] == "question":
                     add(kit.cue("pop-medium-bubble", m, "question mark", -5))
+                elif mk["type"] == "spark" and mk.get("quiet"):  # a visual burst that is not electric
+                    add(kit.cue("pop-small-out", m, "burst", -6))
                 elif mk["type"] == "spark":
                     zap = os.path.join(pub, "sfx", "zap.wav")
                     if os.path.exists(zap):
@@ -125,6 +127,38 @@ def main():
                     add(kit.cue("pop-medium-in", m, "object pops in", -3))
                 elif an == "drop":
                     add(kit.cue("impact-light-soft", m + ad, "object lands", -3))
+            # ---- aero / fluid overlays (v2): flows, vortices, mud, wipers, tags
+            def pubfile(name, m, why, g, max_len=None, uvo=-3, loop=False):
+                fp = os.path.join(pub, "sfx", name)
+                if os.path.exists(fp):
+                    add({"file": fp, "start": round(m, 4), "rate": 1, "gain_db": g, "uvo_db": uvo, "trim": 0, "max_len": max_len, "loop": loop, "why": why})
+                    return True
+                return False
+            drawn = [f for f in s.get("flows", []) if f.get("draw", 0.7) >= 0.3 and f.get("dash", [1]) is not None]
+            if drawn:
+                m = T + min(f["at"] for f in drawn)
+                if not pubfile("air.wav", m, "airflow lines", -9, max_len=s["dur"] - (m - T) + 0.3):
+                    add(kit.cue(W("slow"), m + 0.3, "airflow lines", -6))
+            for f in s.get("flows", []):
+                if f.get("dash", [1]) is None and f.get("draw", 0.7) >= 0.3:
+                    add(kit.cue("writing-marker-draw", T + f["at"], "contour line draws", -5, max_len=0.6))
+            for v in s.get("vortices", []):
+                if v["at"] > 0.05 and not pubfile("vortex.wav", T + v["at"], "vortex spins up", -7, max_len=1.6):
+                    add(kit.cue("reverse-whoosh-short-soft", T + v["at"], "vortex", -5))
+            for md in s.get("mud", []):
+                if md["at"] < 0:
+                    continue
+                if md.get("from"):
+                    pubfile("mud.wav", T + md["at"] + md.get("fly", 0.55) * 0.9, "mud splats", -5, max_len=1.4)
+                else:
+                    add(kit.cue("pop-small-bubble", T + md["at"], "mud builds up", -9))
+                    if md.get("count", 18) > 40:
+                        pubfile("mud.wav", T + md["at"] + 0.2, "glass fills with mud", -9, max_len=1.4)
+            for wp in s.get("wipers", []):
+                if wp["at"] < s["dur"]:
+                    pubfile("wiper.wav", T + wp["at"], "wiper sweep", -3, max_len=wp["dur"] + 0.3)
+            for tg in s.get("tags", []):
+                add(kit.cue("pop-small-in", T + tg["at"], f"tag {tg['text']}", -5))
             reds = {round(t["at"], 2) for t in s.get("titles", []) if t.get("color") == "red"}
             for sh in s.get("shakeAt", []):
                 if round(sh, 2) not in reds:

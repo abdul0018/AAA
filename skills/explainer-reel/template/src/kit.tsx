@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, FPS, L, W} from './theme';
-import type {Anim, Box, Charges, Counter, Glow, Ground, Inset, Layer, Mark, Rain, Title} from './types';
+import type {Anim, Box, Charges, Counter, Flow, Glow, Ground, Inset, Layer, Mark, Mud, Rain, Tag, Title, Vortex, Wiper} from './types';
 
 export const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 export const sec = (s: number) => Math.round(s * FPS);
@@ -221,7 +221,7 @@ export const LayerImg: React.FC<Layer> = (l) => {
         style={{
           position: 'absolute', left: x + e.dx + sh.x, top: y + e.dy + sh.y, width: w, zIndex: l.z ?? 1,
           transform: `translate(-50%,-50%) scale(${e.s}) ${l.flip ? 'scaleX(-1)' : ''}`,
-          opacity: e.op * outOp * (l.opacity ?? 1), filter: 'drop-shadow(0 18px 24px rgba(0,0,0,0.35))',
+          opacity: e.op * outOp * (l.opacity ?? 1), filter: `drop-shadow(0 18px 24px rgba(0,0,0,0.35)) ${l.filter ?? ''}`,
         }}
       />
     </>
@@ -374,5 +374,168 @@ export const HighlightBox: React.FC<Box> = ({at, out, x, y, w, h, radius = 14, c
     <svg width={W} height={1920} style={{position: 'absolute', inset: 0, opacity: op, zIndex: 35}}>
       <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={radius} fill="none" stroke={color} strokeWidth={7} strokeDasharray={per} strokeDashoffset={per * (1 - draw)} style={{filter: `drop-shadow(0 0 8px ${C.yellowGlow})`}} />
     </svg>
+  );
+};
+
+/* ------------------------------------------------------------------ aero / fluid overlays (v2) */
+
+const AIR = '#7FD3F0';
+
+/** Dashed line that draws along a path, then its dashes march: airflow, streamlines, contour highlight. */
+export const FlowLine: React.FC<Flow> = ({d, at, out, draw = 0.7, color = AIR, width = 9, dash = [26, 18], march = 120, glow = true, z = 22}) => {
+  const f = useCurrentFrame();
+  const t = f - sec(at);
+  if (t < 0) return null;
+  const op = presence(f, at, out, 3, 8);
+  if (op <= 0) return null;
+  const k = interpolate(t, [0, Math.max(1, sec(draw))], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+  const id = `fm${Math.abs(d.length * 31 + Math.round(at * 100))}`;
+  return (
+    <svg width={W} height={1920} style={{position: 'absolute', inset: 0, opacity: op, zIndex: z, overflow: 'visible'}}>
+      <defs>
+        <mask id={id} maskUnits="userSpaceOnUse">
+          <path d={d} fill="none" stroke="#fff" strokeWidth={width + 8} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - k} />
+        </mask>
+      </defs>
+      <path
+        d={d} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" mask={`url(#${id})`}
+        strokeDasharray={dash ? `${dash[0]} ${dash[1]}` : undefined} strokeDashoffset={dash ? -(t / FPS) * march : undefined}
+        style={glow ? {filter: `drop-shadow(0 0 6px ${color}88)`} : undefined}
+      />
+    </svg>
+  );
+};
+
+/** Spinning dashed spiral (vortex / wake / swirl). */
+export const VortexSwirl: React.FC<Vortex> = ({at, out, x, y, r, turns = 2.2, spin = 260, color = AIR, width = 8, squash = 1}) => {
+  const f = useCurrentFrame();
+  const t = f - sec(at);
+  if (t < 0) return null;
+  const op = presence(f, at, out, 6, 8);
+  if (op <= 0) return null;
+  const grow = interpolate(t, [0, 14], [0.3, 1], {...clamp, easing: Easing.out(Easing.back(1.6))});
+  const pts: string[] = [];
+  const N = 160;
+  for (let i = 0; i <= N; i++) {
+    const a = (i / N) * turns * Math.PI * 2;
+    const rr = r * (0.12 + 0.88 * (i / N));
+    pts.push(`${(r + Math.cos(a) * rr).toFixed(1)},${(r + Math.sin(a) * rr).toFixed(1)}`);
+  }
+  return (
+    <svg width={r * 2 + 40} height={r * 2 + 40} viewBox={`-20 -20 ${r * 2 + 40} ${r * 2 + 40}`}
+      style={{position: 'absolute', left: x - r - 20, top: y - r - 20, opacity: op, zIndex: 22, transform: `scale(${grow}, ${grow * squash}) rotate(${(t / FPS) * spin}deg)`, overflow: 'visible'}}>
+      <polyline points={pts.join(' ')} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray="22 16" style={{filter: `drop-shadow(0 0 6px ${color}88)`}} />
+    </svg>
+  );
+};
+
+const wiperAngle = (f: number, w: {at: number; dur: number; from: number; to: number; back?: boolean}) => {
+  const t = (f - sec(w.at)) / Math.max(1, sec(w.dur));
+  if (t <= 0) return w.from;
+  if (t >= 1) return w.back === false ? w.to : w.from;
+  const e = Easing.inOut(Easing.sin);
+  if (w.back === false) return w.from + (w.to - w.from) * e(t);
+  return t < 0.5 ? w.from + (w.to - w.from) * e(t * 2) : w.to + (w.from - w.to) * e((t - 0.5) * 2);
+};
+
+/** Mud blobs that fly on an arc and splat (stay stuck), optionally cleared by a wiper sweep. */
+export const MudField: React.FC<Mud> = ({at, out, from, ctrl, x, y, w, h, count = 18, stagger = 0.04, fly = 0.55, size = 26, color = '#6E4B2E', wipe, film}) => {
+  const f = useCurrentFrame();
+  const vis = presence(f, at, out, 1, 8);
+  if (vis <= 0) return null;
+  // swept range so far (max angle reached by the arm in the first half of the stroke)
+  let swept = -1;
+  if (wipe) {
+    const t = (f - sec(wipe.at)) / Math.max(1, sec(wipe.dur));
+    if (t > 0) swept = Math.min(1, t * 2);
+  }
+  let filmEl: React.ReactNode = null;
+  if (film) {
+    const build = interpolate(f, [sec(at), sec(at + count * stagger + 0.3)], [0, film], clamp);
+    let mask: string | undefined;
+    if (wipe && swept >= 0) {
+      const deg = Math.abs(wipe.to - wipe.from) * swept;
+      const lx = wipe.x - (x - w / 2), ly = wipe.y - (y - h / 2);
+      mask = `conic-gradient(from ${wipe.from + 90}deg at ${lx}px ${ly}px, transparent 0deg ${deg}deg, #000 ${deg + 2}deg 360deg)`;
+    }
+    filmEl = <div style={{position: 'absolute', left: x - w / 2, top: y - h / 2, width: w, height: h, zIndex: 20, opacity: build * vis, borderRadius: 18,
+      background: 'radial-gradient(ellipse at 50% 60%, rgba(122,86,52,0.95) 0%, rgba(105,72,44,0.85) 60%, rgba(90,62,40,0.6) 100%)', filter: 'blur(4px)',
+      WebkitMaskImage: mask, maskImage: mask}} />;
+  }
+  return (
+    <>
+      {filmEl}
+      {new Array(count).fill(0).map((_, i) => {
+        const seed = `mud-${x}-${y}-${i}`;
+        const tx = x + (random(seed + 'x') - 0.5) * w;
+        const ty = y + (random(seed + 'y') - 0.5) * h;
+        const s = size * (0.55 + random(seed + 's') * 0.9);
+        const start = sec(at + i * stagger);
+        const d = f - start;
+        if (d < 0) return null;
+        let px = tx, py = ty, scale = 1, sq = 1;
+        const flyF = Math.max(1, sec(fly));
+        if (from) {
+          const k = Math.min(1, d / flyF);
+          const c = ctrl ?? {x: (from.x + tx) / 2, y: Math.min(from.y, ty) - 160};
+          const jx = (random(seed + 'jx') - 0.5) * 120;
+          px = (1 - k) ** 2 * from.x + 2 * (1 - k) * k * (c.x + jx) + k * k * tx;
+          py = (1 - k) ** 2 * from.y + 2 * (1 - k) * k * c.y + k * k * ty;
+          scale = k < 1 ? 0.45 + 0.4 * k : 1;
+          const after = d - flyF;
+          sq = after >= 0 ? 1 + 0.5 * Math.exp(-after / 3) * Math.cos(after * 0.9) : 1;
+        } else {
+          scale = interpolate(d, [0, 6], [0, 1], {...clamp, easing: Easing.out(Easing.back(2))});
+        }
+        let op = vis;
+        if (wipe && swept >= 0) {
+          let a = (Math.atan2(ty - wipe.y, tx - wipe.x) * 180) / Math.PI;
+          if (a < 0) a += 360;
+          const lo = Math.min(wipe.from, wipe.to), hi = Math.max(wipe.from, wipe.to);
+          const cur = wipe.from + (wipe.to - wipe.from) * swept;
+          const passed = wipe.to > wipe.from ? a <= cur : a >= cur;
+          if (a >= lo && a <= hi && passed) op = 0;
+        }
+        const r1 = 40 + random(seed + 'r1') * 20, r2 = 40 + random(seed + 'r2') * 20;
+        return (
+          <div key={i} style={{
+            position: 'absolute', left: px, top: py, width: s, height: s * 0.86, zIndex: 21, opacity: op,
+            transform: `translate(-50%,-50%) rotate(${random(seed + 'rot') * 360}deg) scale(${scale * sq}, ${scale / sq})`,
+            borderRadius: `${r1}% ${100 - r1}% ${r2}% ${100 - r2}% / ${r2}% ${r1}% ${100 - r1}% ${100 - r2}%`,
+            background: `radial-gradient(circle at 35% 30%, #8A6440 0%, ${color} 55%, #4A3020 100%)`,
+            boxShadow: '0 2px 3px rgba(0,0,0,0.35)',
+          }} />
+        );
+      })}
+    </>
+  );
+};
+
+/** Black wiper arm sweeping around its pivot. */
+export const WiperArm: React.FC<Wiper> = (w) => {
+  const f = useCurrentFrame();
+  const op = presence(f, 0, w.out, 1, 6);
+  const ang = f < sec(w.at) ? (w.rest ?? w.from) : wiperAngle(f, w);
+  return (
+    <div style={{position: 'absolute', left: w.x, top: w.y, width: 0, height: 0, zIndex: 24, opacity: op, transform: `rotate(${ang}deg)`}}>
+      <div style={{position: 'absolute', left: 0, top: -7, width: w.len, height: 14, borderRadius: 7, background: '#1A1A1A', boxShadow: '0 3px 6px rgba(0,0,0,0.5)'}} />
+      <div style={{position: 'absolute', left: w.len * 0.18, top: -4, width: w.len * 0.82, height: 8, borderRadius: 4, background: '#333'}} />
+      <div style={{position: 'absolute', left: -16, top: -16, width: 32, height: 32, borderRadius: 16, background: '#111', border: '4px solid #2c2c2c'}} />
+    </div>
+  );
+};
+
+/** Rounded label tag. */
+export const TagPill: React.FC<Tag> = ({text, at, out, x, y, bg = AIR, color = '#14232B', size = 46}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const d = f - sec(at);
+  if (d < 0) return null;
+  const op = presence(f, at, out, 3, 6);
+  const s = spring({frame: d, fps, config: {damping: 11, stiffness: 200}});
+  return (
+    <div style={{position: 'absolute', left: x, top: y, zIndex: 40, opacity: op, transform: `translate(-50%,-50%) scale(${s})`, background: bg, color, fontFamily: FONT, fontWeight: 800, fontSize: size, padding: `${size * 0.18}px ${size * 0.45}px`, borderRadius: size * 0.4, whiteSpace: 'nowrap', textTransform: 'uppercase', letterSpacing: -0.5, boxShadow: `0 0 18px ${bg}66`}}>
+      {text}
+    </div>
   );
 };

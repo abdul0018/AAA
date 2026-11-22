@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, useCurrentFrame} from 'remotion';
 import {Audio} from '@remotion/media';
-import {Board, ChargeField, CounterText, GlowSpot, GroundLine, Handle, HighlightBox, IgPill, InsetCircle, LayerImg, MarkIcon, RainField, TitleText, clamp, sec, src, useShake} from './kit';
+import {Board, ChargeField, CounterText, GlowSpot, GroundLine, Handle, HighlightBox, IgPill, InsetCircle, LayerImg, FlowLine, VortexSwirl, MudField, WiperArm, TagPill, MarkIcon, RainField, TitleText, clamp, sec, src, useShake} from './kit';
 import type {ReelProps, Scene, Sfx} from './types';
 
 /** Sound design rules from the reference, applied automatically (disable per scene with autoSfx:false). */
@@ -53,6 +53,11 @@ const SceneView: React.FC<{scene: Scene; handle: string; showPill: boolean; tf: 
         {(scene.layers ?? []).map((l, i) => <LayerImg key={`l${i}`} {...l} />)}
         {(scene.rain ?? []).map((r, i) => <RainField key={`r${i}`} {...r} />)}
         {(scene.charges ?? []).map((c, i) => <ChargeField key={`c${i}`} {...c} />)}
+        {(scene.flows ?? []).map((c, i) => <FlowLine key={`fl${i}`} {...c} />)}
+        {(scene.vortices ?? []).map((c, i) => <VortexSwirl key={`vx${i}`} {...c} />)}
+        {(scene.mud ?? []).map((c, i) => <MudField key={`md${i}`} {...c} />)}
+        {(scene.wipers ?? []).map((c, i) => <WiperArm key={`wp${i}`} {...c} />)}
+        {(scene.tags ?? []).map((c, i) => <TagPill key={`tg${i}`} {...c} />)}
         {(scene.insets ?? []).map((c, i) => <InsetCircle key={`i${i}`} {...c} />)}
         {(scene.boxes ?? []).map((b, i) => <HighlightBox key={`b${i}`} {...b} />)}
         {(scene.marks ?? []).map((m, i) => <MarkIcon key={`m${i}`} {...m} />)}

@@ -113,6 +113,21 @@ Verified 2026-11-21 on the original "tok uradi" reel, with an average ΔE of **0
    (`template/examples/remake-tok-uradi-stylematched.json` is the result).
 4. Measure with `style-match/scripts/compare.py`. Only colour-grade if ΔE > 6.
 
+## Restyling someone else's reel into this style (same script, the user's look + voice)
+Verified 2026-11-22 on a 3D-rendered "Nega Sparkda orqa dvornik bor, Cobaltda yo'q" reel → 35 s dark-board version:
+1. `analyze_reference.sh` → read the contact sheets + captions; fix the Whisper transcript against the burned-in
+   captions (they are the true script). Keep the script word for word; only the picture and the voice change.
+2. VO = Adizzbek, `eleven_v4` `/with-timestamps` (speed 1.1), then `atempo` ≈ 1.06 to land near the reference length;
+   divide the alignment times by the same factor → `words.json`.
+3. One headline per beat (the reference's highlighted caption word becomes the underlined headline). Translate its
+   3D shots into the kit: car side views/rear views as gpt_image_2_6 cut-outs (style-locked to the house assets with
+   `image_references`), and its dashed airflow lines / swirls / mud / wiper into the **v2 aero overlays**
+   (`flows`, `vortices`, `mud`, `wipers`, `tags`, layer `filter` for night; see `references/props-api.md`).
+4. Write the storyboard as a small Python builder that reads `words.json` (`T('word', n)` = the n-th occurrence's
+   start) and image geometry, and writes `public/props.json` (`template/examples/build_spark_cobalt.py`). Re-running
+   it after any VO change re-times everything.
+5. Render `--muted` → `sfx_cues.py` → `pro_mix.py` with `music_C.wav`. Check frames with a contact sheet before mixing.
+
 ## Gotchas (learned the hard way)
 - **Fonts**: the sandbox's headless Chrome can't reach fonts.gstatic.com (proxy CA), so Manrope is bundled in
   `public/fonts` and loaded with `FontFace` + `delayRender` (`src/theme.ts`). Don't switch back to

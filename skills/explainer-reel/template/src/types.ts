@@ -37,6 +37,7 @@ export interface Layer {
   moves?: Move[]; // keyframed moves (pan / grow / step forward)
   glow?: {at: number; out?: number; r?: number; color?: string; dx?: number; dy?: number};
   shakeAt?: number[]; // little jolt (electric shock)
+  filter?: string; // CSS filter, e.g. 'brightness(0.55)' for a night shot
 }
 
 export interface Title {
@@ -154,6 +155,11 @@ export interface Scene {
   marks?: Mark[];
   boxes?: Box[]; // yellow outline that draws around a key part ("REZINA" sole)
   rain?: Rain[];
+  flows?: Flow[];
+  vortices?: Vortex[];
+  mud?: Mud[];
+  wipers?: Wiper[];
+  tags?: Tag[];
   ground?: Ground | null;
   sfx?: Sfx[];
   autoSfx?: boolean; // default: inherits ReelProps.autoSfx
@@ -175,3 +181,78 @@ export type ReelProps = {
   muteAll?: boolean; // render picture only (audio is built by scripts/pro_mix.py)
   scenes: Scene[];
 };
+
+/* ---------------------------------------------------------------- aero / fluid overlays (v2) */
+
+/** A dashed (or solid) line that draws itself along an SVG path, then its dashes march (airflow, contour). */
+export interface Flow {
+  d: string; // SVG path in canvas px
+  at: number;
+  out?: number;
+  draw?: number; // seconds to draw in, default 0.7
+  color?: string; // default blue (air); use C.yellow for a contour highlight
+  width?: number; // default 9
+  dash?: [number, number] | null; // default [26, 18]; null = solid line
+  march?: number; // px per second the dashes travel, default 120 (0 = still)
+  glow?: boolean;
+  z?: number;
+}
+
+/** A dashed spiral that spins: vortex / turbulence / swirl. */
+export interface Vortex {
+  at: number;
+  out?: number;
+  x: number;
+  y: number;
+  r: number;
+  turns?: number; // default 2.2
+  spin?: number; // deg per second, default 260 (negative = counter-clockwise)
+  color?: string;
+  width?: number;
+  squash?: number; // vertical scale, default 1
+}
+
+/** Mud / dirt blobs: launch from a source, fly on an arc and splat onto an area (or just pop onto it). */
+export interface Mud {
+  at: number;
+  out?: number;
+  from?: {x: number; y: number}; // omit = blobs pop in place
+  ctrl?: {x: number; y: number}; // arc control point
+  x: number; // target area centre
+  y: number;
+  w: number;
+  h: number;
+  count?: number; // default 18
+  stagger?: number; // default 0.04
+  fly?: number; // flight time seconds, default 0.55
+  size?: number; // default 26
+  color?: string; // default #6E4B2E
+  wipe?: {at: number; dur: number; x: number; y: number; from: number; to: number}; // cleared by a wiper sweep
+  film?: number; // opacity of a brown dirt film over the area (0..1), builds up with the blobs
+}
+
+/** A wiper arm that sweeps around a pivot (degrees: 0 = right, 90 = down, 180 = left, 270 = up). */
+export interface Wiper {
+  at: number;
+  dur: number;
+  x: number;
+  y: number;
+  len: number;
+  from: number;
+  to: number;
+  back?: boolean; // sweep back to `from` after reaching `to` (default true)
+  rest?: number; // angle shown before `at` (default `from`)
+  out?: number;
+}
+
+/** Small rounded label tag pointing at something ("PAST BOSIM"). */
+export interface Tag {
+  text: string;
+  at: number;
+  out?: number;
+  x: number;
+  y: number;
+  bg?: string; // default blue
+  color?: string; // text colour, default charcoal
+  size?: number; // default 46
+}

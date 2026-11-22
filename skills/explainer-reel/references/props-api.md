@@ -65,6 +65,33 @@ re-animate. Re-declare it at the same x/y/w and the cross-fade is invisible.
 - **Countdown to safety**: a counter `from: 10000, to: 0` while charges `flowTo` the metal part.
 - **Loop ending**: the last scene re-uses the hook question as `kicker` + `text`.
 
+## Aero / fluid overlays (v2: airflow, vortex, mud, wiper, tags)
+Added for the Spark vs Cobalt rear-wiper reel (`template/examples/spark-cobalt-dvornik.json`, builder
+`template/examples/build_spark_cobalt.py`). Use them for any "air / water / dirt flows here" explainer
+(aerodynamics, ventilation, splash, drainage, smoke, cooling).
+```jsonc
+"flows":    [ {"d": "M30,700 L400,650 L900,660", "at": 0.1, "draw": 1.0,        // SVG path, draws in then dashes march
+               "color": "#7FD3F0", "width": 9, "dash": [26, 18], "march": 120},   // dash:null = solid contour line
+              {"d": "...", "at": 0.3, "color": "#FFCC40", "dash": null, "width": 11} ], // yellow profile highlight
+"vortices": [ {"at": 1.8, "x": 880, "y": 900, "r": 105, "spin": 300, "turns": 2.2, "squash": 1} ],  // dashed spinning spiral
+"mud":      [ {"at": 0.5, "from": {"x": 760, "y": 1300}, "ctrl": {"x": 1000, "y": 900},          // blobs fly on an arc...
+               "x": 840, "y": 860, "w": 26, "h": 160, "count": 22, "stagger": 0.07, "fly": 0.9, "size": 24}, // ...and splat
+              {"at": 0, "x": 540, "y": 930, "w": 470, "h": 160, "count": 110, "size": 34, "film": 0.8,   // pop in place + dirt film
+               "wipe": {"at": 1.2, "dur": 1.3, "x": 540, "y": 1020, "from": 180, "to": 360}} ],   // cleared by a wiper sweep
+"wipers":   [ {"at": 1.2, "dur": 1.3, "x": 540, "y": 1020, "len": 250, "from": 180, "to": 358} ], // 0=right 90=down 180=left 270=up
+"tags":     [ {"text": "Past bosim", "at": 0.7, "x": 860, "y": 760, "bg": "#7FD3F0"} ],
+"layers":   [ {"src": "img/car_rear.png", "w": 700, "filter": "brightness(0.62) saturate(0.85)"} ]  // night shot
+```
+- **Streamlines that hug a car**: don't hand-draw them. Trace the image's alpha top contour, offset it upward by
+  20-150 px, smooth it, and cut it at the rear edge (`rear_col`: the right-most opaque column in the roof band).
+  A sharp vertical back = lines leave straight (separation) + `vortices` behind; a sloped back = lines follow
+  the slope down to the trunk (attached flow). See `build_spark_cobalt.py`.
+- **Wiper on a generated rear view**: paint the baked-in wiper out of the PNG (interpolate the rows above and
+  below it), then let `wipers` + `mud.wipe` (same pivot/angles) sweep and clear the dirt.
+- Sounds: `sfx_cues.py` maps flows → `public/sfx/air.wav`, vortices → `vortex.wav`, flying mud → `mud.wav`,
+  wipers → `wiper.wav`, tags → kit pop. Make those files with ElevenLabs `/v1/sound-generation`
+  (prompts in `references/sound-design.md`). A `spark` mark with `"quiet": true` gets a soft pop instead of a zap.
+
 ## Commands
 ```bash
 npx remotion studio --props=public/props.json                       # live preview (local machine)

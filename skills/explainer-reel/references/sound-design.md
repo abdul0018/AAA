@@ -83,3 +83,13 @@ long music-backed files, which is not a mix problem.
 - Name every custom sound by its job (`pothole_drop`, `metal_knock_big`) and keep the `why` field. The cue print-out
   is the editor's spotting sheet.
 - Keep `sfx/zap.wav` for electricity, because the kit has none.
+
+## ElevenLabs foley for the aero overlays (v2)
+`POST /v1/sound-generation` (`xi-api-key: proxy-injected`, `output_format=mp3_44100_128`, `prompt_influence` 0.6),
+then `ffmpeg -i x.mp3 -ar 48000 -ac 2 public/sfx/<name>.wav`:
+| file | duration | prompt |
+|---|---|---|
+| air.wav | 4 | Smooth airflow wind rushing past a moving car, steady whoosh, clean, no engine |
+| vortex.wav | 2 | Swirling turbulent wind vortex, rotating whoosh, short |
+| mud.wav | 1.5 | A few wet mud splats hitting a car glass window, short squelchy splatter, close mic, no music |
+| wiper.wav | 1.6 | Single sweep of a car rear window wiper across wet glass, rubber squeak and motor whirr, close up |
