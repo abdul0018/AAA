@@ -64,24 +64,26 @@ The Uzbek adaptation of this script is in `template/plan.example.json`. It was t
 - Use short sentences and put a full stop where the reference pauses. "Tong. Hovli." gives the dramatic micro-pauses. An em dash "—" before the punchline gives a lift and a pause.
 - Localise the "local angle" to Uzbekistan **only with a fact you can verify**. Otherwise keep the source's fact as is.
 
-## Voice: ElevenLabs settings that sound real in Uzbek
+## Voice: use the user's OWN ElevenLabs voices
 
-Model: **`eleven_multilingual_v2`**. In a round-trip test (TTS → Whisper), its Uzbek pronunciation was clearly cleaner than `eleven_v3`, which drifted toward a Kazakh-like accent with these voices.
+The connected ElevenLabs key belongs to the user's account, which already holds their chosen Uzbek voices. **Always pick from those.** Run `scripts/audition_voices.py --out voices/`: it lists every voice in the account labelled or verified `uz`, makes the same line with each one and ranks them. Newly added voices show up automatically. Send the top 3-4 mp3s and let the user choose by ear.
 
-Native Uzbek voices in the shared library (all male):
+Model: **`eleven_multilingual_v2`**. In the round-trip test (TTS → Whisper) it beat `eleven_v3` on clarity for **every one of the 8** account voices: 0.92-0.94 against 0.76-0.84. v3 drifts toward a Kazakh/Russian accent in Uzbek. Use v3 only if the user asks for audio tags like `[excited]`.
 
-| voice_id | Name | Character |
-|---|---|---|
-| `agoC45V78njTIxYzwmSb` | Davronbek – Journalist | confident, middle-aged, **closest to the reference** (default) |
-| `rwtcHtZgYU6HN2zLNBlf` | SARHAD-SIZ Narrator | young, confident storyteller |
-| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video | casual, young, made for reels |
-| `UjuEL3hLLUaDED9iW4Yb` | Sardor – Cheerful, Playful, Bright | upbeat social-media energy |
-| `xDwfBjUEPdIoQekNOXAX` | Jahongir – Calm, Proud, Deep | deep, slower, documentary |
-| `fytsqG6MLzC2aCSw7MLa` | Asilbek | chill advertisement |
+The user's Uzbek voices, measured on the default line (2026-11). The reference narrator is about 165 Hz with about 6 semitones of spread, and reel pace is 9-11 s for this line:
 
-To find more, use `GET /v2/voices?search=uzbek` or the voice library. Always audition 2-3 of them with `--sample` and let the user pick by ear.
+| voice_id | Name (category) | clarity v2 | secs | f0 / spread | Verdict |
+|---|---|---|---|---|---|
+| `UjuEL3hLLUaDED9iW4Yb` | Sardor – Cheerful, Playful, Bright (designed) | 0.930 | 9.0 | 157 Hz / 5.9 | **default**: closest to the reference energy and pitch |
+| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video (pro clone) | 0.936 | 10.1 | – / 4.9 | very clear, made for reels |
+| `tQBN3grEhnGrrqn0n2Rw` | Samariddin Siroj (pro clone) | 0.928 | 11.5 | 125 Hz / 2.3 | clear but flat, calm explainer |
+| `rwtcHtZgYU6HN2zLNBlf` | SARHAD-SIZ Narrator (pro clone) | 0.918 | 8.9 | 156 Hz / 4.8 | confident storyteller |
+| `fytsqG6MLzC2aCSw7MLa` | Asilbek (pro clone) | 0.924 | 8.9 | 144 Hz / 3.6 | chill, ad-style |
+| `agoC45V78njTIxYzwmSb` | Davronbek – Journalist (pro clone) | 0.881 | 9.5 | 178 Hz / 7.1 | expressive but the least clear |
+| `xDwfBjUEPdIoQekNOXAX` | Jahongir – Calm, Proud, Deep (designed) | 0.924 | 18.4 | 96 Hz / 11.4 | too slow and deep for reels (documentaries) |
+| `0UvJYbC3erQa6COupDAo` | uz (designed) | 0.943 | 21.0 | 82 Hz / 8.5 | very slow and deep, only with speed 1.2 |
 
-Settings: `stability 0.42` (lower is more expressive, but below 0.35 it starts to wobble), `similarity_boost 0.85`, `style 0.35`, `use_speaker_boost true`, `speed 1.05`. Generate **the whole script in one request** (≤ 4500 chars) so the intonation stays consistent across sentences. The builder does this, and falls back to per-chapter requests with `previous_text`/`next_text` for long scripts. The free tier allows `mp3_44100_128` only.
+Settings: `stability 0.42` (lower is more expressive, but below 0.35 it wobbles), `similarity_boost 0.85`, `style 0.35`, `use_speaker_boost true`, `speed 1.05` (raise it to 1.1 for slow voices, never higher). Generate **the whole script in one request** (≤ 4500 chars) so the intonation stays consistent. `build_props.py` does this and falls back to per-chapter requests with `previous_text`/`next_text`. The key allows `mp3_44100_128`; it lacks the `user_read`, `models_read` and `speech_to_text` permissions, which the pipeline does not need.
 
 ## Mix
 

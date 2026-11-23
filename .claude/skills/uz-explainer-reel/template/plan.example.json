@@ -1,7 +1,7 @@
 {
   "brand": {"logo": "avto", "handle": "@avto.uz", "topic": "gibrid", "chapterWord": "bob"},
   "voice": {
-    "voice_id": "agoC45V78njTIxYzwmSb",
+    "voice_id": "UjuEL3hLLUaDED9iW4Yb",
     "model_id": "eleven_multilingual_v2",
     "stability": 0.42,
     "similarity_boost": 0.85,
