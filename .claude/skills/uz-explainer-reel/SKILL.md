@@ -41,7 +41,7 @@ Read before building:
    ```
    The builder normalizes the voice to −14 LUFS and prints the duration, wpm and scene timings. The target is 75-90 s. v3 ignores the `speed` setting, so if the video runs long, cut words. Do not time-stretch the voice.
 7. **Check the frames.** Render a still inside each chapter with `npx remotion still src/index.ts Reel out/f.png --frame=N --scale=0.5` and look at each one. Check for caption overflow, overlays colliding with the caption or chips, and legibility over bright backgrounds (raise `bg.dim`). Then make a contact sheet: `ffmpeg -pattern_type glob -i 'out/*.png' -vf "scale=270:-1,tile=8x2" -frames:v 1 sheet.jpg`.
-8. **Render and mix.** Run `npx remotion render src/index.ts Reel out/reel.mp4 --codec=h264 --crf=18`. If there is music, set `"music": "music.mp3"` in the plan (bed at 0.10-0.14), then loudnorm to −14 LUFS (command in `voiceover-breakdown.md`). Send the mp4 with a post caption in Uzbek: hook question, 1-line value, "Izohlarda yozing 👇".
+8. **Render and mix.** Run `npx remotion render src/index.ts Reel out/reel.mp4 --codec=h264 --crf=18`. If there is music, set `"music": "music.mp3"` in the plan (bed at 0.10-0.14). **Always** loudnorm the final mp4 to −14 LUFS, because the Remotion mix lands at about −16: `ffmpeg -i out/reel.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 44100 -c:v copy -c:a aac -b:a 192k out/reel-final.mp4`. Send the mp4 with a post caption in Uzbek: hook question, 1-line value, "Izohlarda yozing 👇".
 
 ## Environment notes
 
