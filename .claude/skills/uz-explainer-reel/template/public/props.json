@@ -1,0 +1,58 @@
+{
+ "brand": {
+  "logo": "avto",
+  "handle": "@avto.uz",
+  "topic": "gibrid",
+  "chapterWord": "bob"
+ },
+ "totalChapters": 10,
+ "duration": 4,
+ "words": [
+  {
+   "text": "Placeholder:",
+   "start": 0.2,
+   "end": 0.8
+  },
+  {
+   "text": "build_props.py",
+   "start": 0.9,
+   "end": 1.6,
+   "key": true
+  },
+  {
+   "text": "ni",
+   "start": 1.7,
+   "end": 1.9
+  },
+  {
+   "text": "ishga",
+   "start": 2.0,
+   "end": 2.3
+  },
+  {
+   "text": "tushiring.",
+   "start": 2.4,
+   "end": 3.0
+  }
+ ],
+ "scenes": [
+  {
+   "start": 0,
+   "end": 4,
+   "chapter": 1,
+   "chapterLabel": "savol",
+   "overlays": [
+    {
+     "kind": "donut",
+     "at": 0.5,
+     "percent": 41,
+     "label": "demo",
+     "y": 560
+    }
+   ]
+  }
+ ],
+ "audio": {
+  "vo": ""
+ }
+}
