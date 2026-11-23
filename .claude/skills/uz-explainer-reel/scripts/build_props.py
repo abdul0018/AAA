@@ -21,22 +21,25 @@ def norm(w):
 
 
 def tts(text, voice, prev=None, nxt=None, cache_dir=None):
-    body = {
-        "text": text,
-        "model_id": voice.get("model_id", "eleven_multilingual_v2"),
-        "voice_settings": {
-            "stability": voice.get("stability", 0.42),
-            "similarity_boost": voice.get("similarity_boost", 0.85),
-            "style": voice.get("style", 0.35),
+    model = voice.get("model_id", "eleven_v3")
+    if model == "eleven_v3":
+        # v3 is the only ElevenLabs model that pronounces Uzbek clearly (see voiceover-breakdown.md).
+        # Natural defaults: stability 0.5 ("Natural"; v3 accepts 0.0 / 0.5 / 1.0), no style/speed tricks.
+        vs = {"stability": voice.get("stability", 0.5), "similarity_boost": voice.get("similarity_boost", 0.8)}
+    else:
+        vs = {
+            "stability": voice.get("stability", 0.55),
+            "similarity_boost": voice.get("similarity_boost", 0.8),
+            "style": voice.get("style", 0.0),
             "use_speaker_boost": True,
             "speed": voice.get("speed", 1.0),
-        },
-    }
-    if voice.get("language_code"):
+        }
+    body = {"text": text, "model_id": model, "voice_settings": vs}
+    if voice.get("language_code"):  # note: no ElevenLabs model accepts "uz" here (2026-11); leave unset for Uzbek
         body["language_code"] = voice["language_code"]
-    if prev:
+    if prev and model != "eleven_v3":  # v3 rejects previous_text/next_text
         body["previous_text"] = prev
-    if nxt:
+    if nxt and model != "eleven_v3":
         body["next_text"] = nxt
     key = hashlib.sha1(json.dumps([voice.get("voice_id"), body], sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
     cpath = os.path.join(cache_dir, key + ".json")
@@ -117,7 +120,8 @@ def main():
         blocks.append(" ".join(parts))
 
     full = " ".join(blocks)
-    chunks = [full] if len(full) <= 4500 else blocks  # long scripts: chapter-sized requests with context
+    limit = 2800 if voice.get("model_id", "eleven_v3") == "eleven_v3" else 4500  # v3 max request is ~3000 chars
+    chunks = [full] if len(full) <= limit else blocks  # long scripts: chapter-sized requests with context
     words, mp3s, t0 = [], [], 0.0
     for i, text in enumerate(chunks):
         prev = chunks[i - 1][-300:] if len(chunks) > 1 and i else None
@@ -139,6 +143,10 @@ def main():
         lst = os.path.join(cache, "list.txt")
         open(lst, "w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in mp3s))
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c:a", "libmp3lame", "-b:a", "192k", vo], check=True)
+    # Loudness-normalise the voice to -14 LUFS (v3 comes out ~-20 LUFS, which sounds too quiet on phones).
+    tmp = vo + ".norm.mp3"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", vo, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "192k", tmp], check=True)
+    os.replace(tmp, vo)
     total = duration(vo)
 
     # Assign words to scenes by character position

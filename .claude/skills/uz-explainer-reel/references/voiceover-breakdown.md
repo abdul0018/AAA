@@ -1,92 +1,48 @@
-# Voiceover breakdown and the Uzbek voice recipe
+# Uzbek voiceover guide
 
-## What the original voice does (measured)
+**The reference video is used for its VISUALS only.** Do not copy, translate or imitate its narration, its narrator's voice, pitch or pace. Every video gets its own script written in Uzbek for the user's topic, read by a natural-sounding Uzbek voice from the user's own ElevenLabs account.
 
-- A **male** narrator, young or middle-aged, with an energetic "smart friend explaining" tone (not an announcer).
-- The pitch median is about 165 Hz with a wide 104-246 Hz range, so the delivery is very expressive. It rises on questions and drops and slows on punchlines ("молчит.", "Бесплатно.", "это миф.").
-- **About 141 words/min** in Russian (209 words in 88.6 s), with no dead air at the start: the first word is at 0.00 s.
-- Sentences are short. There are **0.3-0.55 s pauses** after every full stop and question mark, and about 0.25 s after commas and dashes.
-- **Second person, present tense**: "ты садишься, жмёшь старт…" (you sit down, you press start…). It ends on a direct question plus "Подпишись и перешли тому, кто…" (subscribe and send this to someone who…).
-- Mix: the voice sits about **15 dB above a soft, low-frequency music bed**. Integrated loudness is about −14 LUFS and the gaps sit at −28 to −33 dBFS (the music bed, never silence). The music cuts out at the very end (the last 1.8 s is digital silence).
+## Model: `eleven_v3` (important, measured)
 
-## Script formula (copy this structure)
+- No ElevenLabs model officially accepts `language_code: "uz"`. v3, multilingual v2, flash v2.5 and turbo v2.5 all reject it (2026-11). Leave `language_code` unset and just send Uzbek text.
+- **`eleven_v3` pronounces Uzbek far more clearly than `eleven_multilingual_v2`.** This was checked with Meta's MMS Uzbek speech recognizer (`facebook/mms-1b-all`, adapter `uzb-script_latin`) on the same line, across 6 voices:
+  - v3, Latin script: about 0.95 character match and up to 0.84 of words intact.
+  - v2, Latin script: about 0.92 character match but only 0.25-0.39 of words intact. **v2 slurs Uzbek words together and sounds odd and unclear to native listeners.** The user confirmed this. Do not use v2 for Uzbek.
+  - Writing the text in Uzbek Cyrillic made no difference on v3 (0.953 vs 0.953) and was worse on v2. Keep Latin.
+- Whisper-small is too weak in Uzbek to judge TTS and once gave the opposite (wrong) ranking. Always judge with MMS, and in the end by the user's ear.
+- v3 settings: `stability 0.5` ("Natural"; v3 accepts only 0.0 / 0.5 / 1.0) and `similarity_boost 0.8`. No style or speed tricks. v3 rejects `previous_text`/`next_text`, and one request should stay under about 2800 chars. `build_props.py` handles both and splits long scripts per chapter.
 
-1. **Hook question** (≤ 3 s): "What is X, and why does it [surprising benefit]?"
-2. **Cold-open scene** in second person, present tense, with 3-word sentences: "Morning. Courtyard. You get in, press start — and the engine… is silent."
-3. **Reframe**: "It didn't break. It's just [the real thing]."
-4. **Core metaphor**: "X is two hearts: A and B. And C is in charge."
-5. **How it works**, 3 modes: when A, when B, when both, one sentence each.
-6. **"But the main secret is…"**, the most counter-intuitive mechanism, with a payoff word ("Free.").
-7. **Real-life consequence** ("That's why in traffic…").
-8. **One hard number** with a source ("Toyota says 41 %… one of the best in the world").
-9. **"The most interesting part:"**, a history fact with 2 years.
-10. **Local angle**: a country plus a stat ("last year every third new Camry…").
-11. **Life-hack / myth-bust**: "'X dies in 3 years' — that's a myth." plus the real fact.
-12. **Question to the viewer** plus **share CTA** aimed at a persona ("send it to someone who counts every litre").
+## Voices: the user's own account
 
-Target 75-90 s, 10 chapters, and about 190-210 words in Uzbek (Uzbek words are longer, so a 200-word Uzbek script is about 80 s at speed 1.05).
+The connected ElevenLabs key is the user's account. Run `scripts/audition_voices.py --out voices/ --text "<first 2 sentences of YOUR script>"`. It lists every Uzbek voice in the account (new ones are picked up automatically), renders the line on v3 and ranks the voices by MMS clarity. **Send the top 3-4 mp3s and let the user pick by ear**, then put the chosen `voice_id` in `plan.json`.
 
-## Original transcript (Russian, with timings)
+Measured on v3 (2026-11). The number is the MMS word match averaged over 2 takes; v3 varies about ±0.04 per take. The user has not chosen a favourite yet:
 
-```
-[ 0.00] Что такое гибрид и почему он так мало ест бензина?
-[ 3.66] Утро, двор, ты садишься в Камри, жмёшь старт, а мотор молчит.
-[ 8.66] Машина не сломалась, она просто поехала на электричестве.
-[12.52] Гибрид это два сердца: обычный бензиновый мотор и электромотор с батареей, а командует ими компьютер.
-[20.10] Трогаешься с места — тянет электромотор, бензиновый спит.
-[23.90] На трассе включается бензин и по пути подзаряжает батарею.
-[27.20] А когда нужно резко разогнаться, работают оба сразу.
-[31.12] Но главный секрет – торможение.
-[33.54] В обычной машине энергия торможения просто уходит в тепло колодок.
-[37.38] А гибрид сначала тормозит электромотором, и тот превращается в генератор.
-[42.24] Энергия возвращается в батарею. Бесплатно.
-[45.38] Поэтому в пробке, где обычная машина ест больше всего, гибрид часто едет на одном электричестве.
-[51.22] И мотор у него особый.
-[52.92] Тойота заявляет, что он превращает в движение 41% энергии бензина – это один из лучших результатов в мире.
-[60.10] Самое интересное – первый гибрид собрал Фердинанд Порше ещё в 1900 году, а первый массовый – Приус в 97-м.
-[68.60] В Казахстане гибриды тоже распробовали.
-[71.00] В прошлом году каждая третья новая Камри была гибридом.
-[74.70] И лайфхак.
-[75.68] «Батарея умрёт через 3 года» – это миф.
-[78.64] В Европе Тойота даёт на неё гарантию до 10 лет, если каждый год проходить проверку.
-[83.58] А ты бы взял гибрид?
-[85.54] Подпишись и перешли тому, кто считает каждый литр.
-```
+| voice_id | Name | v3 words intact | secs (default line) | Notes |
+|---|---|---|---|---|
+| `tQBN3grEhnGrrqn0n2Rw` | Samariddin Siroj (pro clone) | 0.82 | 12.2 | clear and the best pace, **default** |
+| `fytsqG6MLzC2aCSw7MLa` | Asilbek (pro clone) | 0.81 | 13-15 | clear, slower |
+| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video (pro clone) | 0.80 | 15.0 | clear, slower |
+| `UjuEL3hLLUaDED9iW4Yb` | Sardor – Cheerful, Playful, Bright (designed) | 0.78 | 10.5 | brightest energy, fastest |
+| `rwtcHtZgYU6HN2zLNBlf` | SARHAD-SIZ Narrator (pro clone) | 0.60 | 12 | less clear |
+| `agoC45V78njTIxYzwmSb` | Davronbek – Journalist (pro clone) | 0.45 | 11.5 | unclear, avoid |
+| `0UvJYbC3erQa6COupDAo` | uz (designed) | 0.38 | 15.4 | unclear, avoid |
+| `xDwfBjUEPdIoQekNOXAX` | Jahongir – Calm, Proud, Deep (designed) | 0.12 | 15.8 | unusable on v3 |
 
-The Uzbek adaptation of this script is in `template/plan.example.json`. It was tested: 78 s, 192 words, 147 wpm.
+When the user names a favourite, update the default here and in `template/plan.example.json`.
 
-## Writing Uzbek for TTS (important)
+## Writing the Uzbek script (original, per topic)
 
-- Use **Uzbek Latin** with the proper `o‘ g‘` (U+2018 ‘) and `’` for tutuq belgisi (ma’lumot).
-- **Spell numbers out in words** in the `vo` text: "qirq bir foiz", "ming to‘qqiz yuzinchi yilda", "to‘qson yettinchi yilda", "o‘n yilgacha". Digits get misread. Show the digits on screen with `bigNumber`, `donut` or `statCard` instead. The caption shows what is *said*, which is also what the reference does ("сорок процент").
-- Use the informal "sen" register (o‘tirasan, bosasan, olarmiding?, obuna bo‘l), matching the Russian "ты".
-- Keep it **natural spoken Uzbek, not a word-for-word translation**. Reorder into SOV and drop filler. Loan words stay as Uzbek speakers say them: gibrid, elektromotor, probka, layfxak, trassa, kolodka.
-- Use short sentences and put a full stop where the reference pauses. "Tong. Hovli." gives the dramatic micro-pauses. An em dash "—" before the punchline gives a lift and a pause.
-- Localise the "local angle" to Uzbekistan **only with a fact you can verify**. Otherwise keep the source's fact as is.
-
-## Voice: use the user's OWN ElevenLabs voices
-
-The connected ElevenLabs key belongs to the user's account, which already holds their chosen Uzbek voices. **Always pick from those.** Run `scripts/audition_voices.py --out voices/`: it lists every voice in the account labelled or verified `uz`, makes the same line with each one and ranks them. Newly added voices show up automatically. Send the top 3-4 mp3s and let the user choose by ear.
-
-Model: **`eleven_multilingual_v2`**. In the round-trip test (TTS → Whisper) it beat `eleven_v3` on clarity for **every one of the 8** account voices: 0.92-0.94 against 0.76-0.84. v3 drifts toward a Kazakh/Russian accent in Uzbek. Use v3 only if the user asks for audio tags like `[excited]`.
-
-The user's Uzbek voices, measured on the default line (2026-11). The reference narrator is about 165 Hz with about 6 semitones of spread, and reel pace is 9-11 s for this line:
-
-| voice_id | Name (category) | clarity v2 | secs | f0 / spread | Verdict |
-|---|---|---|---|---|---|
-| `UjuEL3hLLUaDED9iW4Yb` | Sardor – Cheerful, Playful, Bright (designed) | 0.930 | 9.0 | 157 Hz / 5.9 | **default**: closest to the reference energy and pitch |
-| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video (pro clone) | 0.936 | 10.1 | – / 4.9 | very clear, made for reels |
-| `tQBN3grEhnGrrqn0n2Rw` | Samariddin Siroj (pro clone) | 0.928 | 11.5 | 125 Hz / 2.3 | clear but flat, calm explainer |
-| `rwtcHtZgYU6HN2zLNBlf` | SARHAD-SIZ Narrator (pro clone) | 0.918 | 8.9 | 156 Hz / 4.8 | confident storyteller |
-| `fytsqG6MLzC2aCSw7MLa` | Asilbek (pro clone) | 0.924 | 8.9 | 144 Hz / 3.6 | chill, ad-style |
-| `agoC45V78njTIxYzwmSb` | Davronbek – Journalist (pro clone) | 0.881 | 9.5 | 178 Hz / 7.1 | expressive but the least clear |
-| `xDwfBjUEPdIoQekNOXAX` | Jahongir – Calm, Proud, Deep (designed) | 0.924 | 18.4 | 96 Hz / 11.4 | too slow and deep for reels (documentaries) |
-| `0UvJYbC3erQa6COupDAo` | uz (designed) | 0.943 | 21.0 | 82 Hz / 8.5 | very slow and deep, only with speed 1.2 |
-
-Settings: `stability 0.42` (lower is more expressive, but below 0.35 it wobbles), `similarity_boost 0.85`, `style 0.35`, `use_speaker_boost true`, `speed 1.05` (raise it to 1.1 for slow voices, never higher). Generate **the whole script in one request** (≤ 4500 chars) so the intonation stays consistent. `build_props.py` does this and falls back to per-chapter requests with `previous_text`/`next_text`. The key allows `mp3_44100_128`; it lacks the `user_read`, `models_read` and `speech_to_text` permissions, which the pipeline does not need.
+- Write it **directly in natural spoken Uzbek** for the topic. It is never a translation of the reference video's narration.
+- Use Uzbek Latin with `oʻ gʻ` (U+02BB ʻ is the official letter; ‘ also works) and `’` for tutuq belgisi.
+- **Spell numbers out in words** ("qirq bir foiz", "ming toʻqqiz yuzinchi yil"). Show the digits on screen with `bigNumber`, `donut` or `statCard` instead.
+- Use short, clear sentences. A full stop gives a natural pause. Avoid long chains of commas, which make v3 rush.
+- Prefer common words over rare loanwords. Unusual Latin letter clusters (e.g. "layfxak") can be misread. If a word sounds wrong in the audition, rephrase it ("foydali maslahat").
+- A structure that suits this visual format, chapter by chapter: hook question → a short everyday scene → how it works (2-3 simple steps) → the surprising key fact → one number with a source → a myth or practical tip → a question to the viewer plus a subscribe/share line. Fill it with the user's topic and facts, and verify every fact.
+- Aim for 10 chapters, about 160-210 words, 70-90 s. Check the duration and wpm that `build_props.py` prints. If the video runs long, cut words; don't speed the voice up.
 
 ## Mix
 
-- VO at full level. Put a music bed under it at `musicVolume` 0.10-0.14: a dark, minimal, slightly tense electronic/ambient track with soft low end and no vocals.
-- Optional SFX (if the user has them): a soft whoosh on cuts, a "thock" on stamps, a tick on counters. Keep them at −18 dB or lower.
-- The final mix target is about −14 LUFS: `ffmpeg -i out/reel.mp4 -af loudnorm=I=-14:TP=-1:LRA=9 -c:v copy out/reel-final.mp4`.
+- VO at full level, with an optional music bed (`musicVolume` 0.10-0.14, a calm or tense instrumental with no vocals).
+- Optional SFX: a soft whoosh on cuts, a "thock" on stamps, a tick on counters, all at −18 dB or lower.
+- Finish at −14 LUFS: `ffmpeg -i out/reel.mp4 -af loudnorm=I=-14:TP=-1:LRA=9 -c:v copy out/reel-final.mp4`.

@@ -1,113 +1,568 @@
 {
-  "brand": {"logo": "avto", "handle": "@avto.uz", "topic": "gibrid", "chapterWord": "bob"},
-  "voice": {
-    "voice_id": "UjuEL3hLLUaDED9iW4Yb",
-    "model_id": "eleven_multilingual_v2",
-    "stability": 0.42,
-    "similarity_boost": 0.85,
-    "style": 0.35,
-    "speed": 1.05
+ "brand": {
+  "logo": "avto",
+  "handle": "@avto.uz",
+  "topic": "gibrid",
+  "chapterWord": "bob"
+ },
+ "voice": {
+  "voice_id": "tQBN3grEhnGrrqn0n2Rw",
+  "model_id": "eleven_v3",
+  "stability": 0.5,
+  "similarity_boost": 0.8
+ },
+ "music": null,
+ "musicVolume": 0.12,
+ "keys": [
+  "gibrid",
+  "jim",
+  "elektr",
+  "yurak",
+  "kompyuter",
+  "uxlaydi",
+  "batarey",
+  "ikkalasi",
+  "tormoz",
+  "generator",
+  "bepul",
+  "foiz",
+  "porshe",
+  "prius",
+  "kamri",
+  "afsona",
+  "kafolat",
+  "tekshiruv",
+  "litr",
+  "maslahat",
+  "issiqlik"
+ ],
+ "chapters": [
+  {
+   "label": "savol",
+   "scenes": [
+    {
+     "vo": "Gibrid nima va nega u bunchalik kam benzin yeydi?",
+     "hook": true,
+     "bg": {
+      "type": "image",
+      "src": "media/01-car-snow.jpg",
+      "zoomFrom": 1.0,
+      "zoomTo": 1.12,
+      "dim": 0.05
+     }
+    },
+    {
+     "vo": "Tong. Hovli. Mashinaga o‘tirasan, startni bosasan — motor esa jim.",
+     "bg": {
+      "type": "image",
+      "src": "media/02-dashboard.jpg",
+      "zoomTo": 1.05
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@jim",
+       "text": "motor jim: 0 aylanish",
+       "y": 560
+      }
+     ]
+    },
+    {
+     "vo": "Mashina buzilmagan. U shunchaki elektrda yurib ketdi.",
+     "bg": {
+      "type": "image",
+      "src": "media/02-dashboard.jpg",
+      "zoomFrom": 1.05,
+      "zoomTo": 1.1
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "until": "@shunchaki",
+       "text": "buzilmagan — shunchaki jim",
+       "y": 560
+      },
+      {
+       "kind": "chip",
+       "at": "@elektr",
+       "text": "elektrda yurmoqda",
+       "tone": "red",
+       "y": 1460
+      }
+     ]
+    }
+   ]
   },
-  "music": null,
-  "musicVolume": 0.12,
-  "keys": ["gibrid", "jim", "elektr", "yurak", "kompyuter", "uxlaydi", "batarey", "ikkalasi", "tormoz", "issiqlik", "generator", "bepul", "foiz", "porshe", "prius", "kamri", "layfxak", "afsona", "kafolat", "tekshiruv", "litr"],
-  "chapters": [
-    {"label": "savol", "scenes": [
-      {"vo": "Gibrid nima va nega u bunchalik kam benzin yeydi?", "hook": true,
-       "bg": {"type": "image", "src": "media/01-car-snow.jpg", "zoomFrom": 1.0, "zoomTo": 1.12, "dim": 0.05}},
-      {"vo": "Tong. Hovli. Mashinaga o‘tirasan, startni bosasan — motor esa jim.",
-       "bg": {"type": "image", "src": "media/02-dashboard.jpg", "zoomTo": 1.05},
-       "overlays": [{"kind": "chip", "at": "@jim", "text": "motor jim: 0 aylanish", "y": 560}]},
-      {"vo": "Mashina buzilmagan. U shunchaki elektrda yurib ketdi.",
-       "bg": {"type": "image", "src": "media/02-dashboard.jpg", "zoomFrom": 1.05, "zoomTo": 1.1},
-       "overlays": [{"kind": "chip", "at": 0.1, "until": "@shunchaki", "text": "buzilmagan — shunchaki jim", "y": 560},
-                    {"kind": "chip", "at": "@elektr", "text": "elektrda yurmoqda", "tone": "red", "y": 1460}]}
-    ]},
-    {"label": "ikki yurak", "scenes": [
-      {"vo": "Gibrid — bu ikki yurak: oddiy benzin motor va batareyali elektromotor.",
-       "bg": {"type": "image", "src": "media/03-xray.jpg", "zoomTo": 1.1, "panX": -40},
-       "overlays": [{"kind": "chip", "at": "@yurak", "text": "2 yurak", "tone": "red", "y": 1460},
-                    {"kind": "label", "at": "@benzin", "text": "benzin motor", "x": 560, "y": 900},
-                    {"kind": "label", "at": "@elektromotor", "text": "elektromotor", "x": 380, "y": 1240},
-                    {"kind": "label", "at": "@batareyali", "text": "batareya", "x": 120, "y": 1020}]},
-      {"vo": "Ularni esa kompyuter boshqaradi.",
-       "bg": {"type": "image", "src": "media/03-xray.jpg", "zoomFrom": 1.1, "zoomTo": 1.16, "panX": -60},
-       "overlays": [{"kind": "chip", "at": "@kompyuter", "text": "kim ishlashini kompyuter hal qiladi", "y": 1460}]}
-    ]},
-    {"label": "rejimlar", "scenes": [
-      {"vo": "Joyidan qo‘zg‘alganda elektromotor tortadi, benzinlisi uxlaydi.",
-       "bg": {"type": "image", "src": "media/04-xray-flow.jpg", "zoomTo": 1.08},
-       "overlays": [{"kind": "chip", "at": "@elektromotor", "text": "start: elektromotor · benzin uxlaydi", "tone": "red", "y": 1460}]},
-      {"vo": "Trassada benzin yoqiladi va yo‘l-yo‘lakay batareyani quvvatlaydi.",
-       "bg": {"type": "image", "src": "media/04-xray-flow.jpg", "zoomFrom": 1.08, "zoomTo": 1.16},
-       "overlays": [{"kind": "chip", "at": "@yoqiladi", "text": "trassa: benzin + quvvatlash", "y": 1460}]},
-      {"vo": "Keskin tezlashish kerak bo‘lsa — ikkalasi birga ishlaydi.",
-       "bg": {"type": "image", "src": "media/04-xray-flow.jpg", "zoomFrom": 1.16, "zoomTo": 1.3},
-       "overlays": [{"kind": "stamp", "at": "@ikkalasi", "text": "ikkalasi birga", "y": 1430}]}
-    ]},
-    {"label": "tormozlash", "scenes": [
-      {"vo": "Lekin asosiy sir — tormozlash.",
-       "bg": {"type": "image", "src": "media/05-wheel.jpg", "zoomTo": 1.08},
-       "overlays": [{"kind": "chip", "at": "@tormozlash", "text": "sir: tormozlash", "y": 1460}]},
-      {"vo": "Oddiy mashinada tormozlash energiyasi shunchaki kolodkalarda issiqlikka aylanib ketadi.",
-       "bg": {"type": "image", "src": "media/05-wheel.jpg", "zoomFrom": 1.08, "zoomTo": 1.15},
-       "overlays": [{"kind": "chip", "at": "@issiqlik", "text": "oddiy: energiya → issiqlik", "tone": "red", "y": 1460}]},
-      {"vo": "Gibrid esa avval elektromotor bilan tormozlaydi, va u generatorga aylanadi.",
-       "bg": {"type": "image", "src": "media/06-battery.jpg", "zoomTo": 1.1},
-       "overlays": [{"kind": "chip", "at": 0.1, "until": "@generator", "text": "gibrid elektromotor bilan tormozlaydi", "y": 1460},
-                    {"kind": "chip", "at": "@generator", "text": "elektromotor = generator", "y": 1460}]},
-      {"vo": "Energiya batareyaga qaytadi. Bepul.",
-       "bg": {"type": "image", "src": "media/06-battery.jpg", "zoomFrom": 1.1, "zoomTo": 1.2},
-       "overlays": [{"kind": "battery", "at": "@batareyaga", "level": 62, "to": 78, "showPct": true, "y": 1450},
-                    {"kind": "stamp", "at": "@bepul", "text": "bepul", "y": 1280}]}
-    ]},
-    {"label": "probka", "scenes": [
-      {"vo": "Shuning uchun probkada, oddiy mashina eng ko‘p yeydigan joyda, gibrid ko‘pincha faqat elektrda yuradi.",
-       "bg": {"type": "image", "src": "media/07-traffic.jpg", "zoomTo": 1.04},
-       "overlays": [{"kind": "chip", "at": "@probkada", "until": "@gibrid", "text": "probkada oddiy mashina eng ko‘p yeydi", "y": 1460},
-                    {"kind": "chip", "at": "@gibrid", "text": "gibrid — faqat elektrda", "tone": "red", "y": 1460}]}
-    ]},
-    {"label": "41 %", "scenes": [
-      {"vo": "Uning motori ham o‘ziga xos.",
-       "overlays": [{"kind": "chip", "at": 0.1, "text": "gibrid motori o‘ziga xos", "y": 560}]},
-      {"vo": "Toyota aytishicha, u benzin energiyasining qirq bir foizini harakatga aylantiradi — bu dunyodagi eng yaxshi natijalardan biri.",
-       "overlays": [{"kind": "chip", "at": 0.1, "text": "Toyota ma’lumoti", "tone": "muted", "y": 400},
-                    {"kind": "donut", "at": "@benzin", "percent": 41, "label": "benzin → harakat", "y": 560},
-                    {"kind": "chip", "at": "@dunyodagi", "text": "☆ dunyodagi eng yaxshilaridan", "tone": "red", "y": 1000}]}
-    ]},
-    {"label": "tarix", "scenes": [
-      {"vo": "Eng qizig‘i: birinchi gibridni Ferdinand Porshe hali ming to‘qqiz yuzinchi yilda yig‘gan,",
-       "overlays": [{"kind": "bigNumber", "at": "@birinchi", "value": 1900, "from": 1880, "year": true, "y": 430},
-                    {"kind": "image", "at": "@birinchi", "src": "media/icon-carriage.png", "width": 360, "y": 700},
-                    {"kind": "chip", "at": "@porshe", "text": "birinchi gibrid — Ferdinand Porshe", "y": 1050}]},
-      {"vo": "birinchi ommaviysi esa — Prius, to‘qson yettinchi yilda.", "transition": "fade",
-       "overlays": [{"kind": "bigNumber", "at": 0.1, "value": 1997, "from": 1957, "year": true, "y": 430},
-                    {"kind": "image", "at": 0.1, "src": "media/icon-car.png", "width": 420, "y": 760},
-                    {"kind": "chip", "at": "@prius", "text": "Prius — birinchi ommaviy", "tone": "red", "y": 1050}]}
-    ]},
-    {"label": "qozog‘iston", "scenes": [
-      {"vo": "Qozog‘istonda ham gibridlarning qadriga yetishdi: o‘tgan yili har uchinchi yangi Kamri gibrid bo‘lgan.", "transition": "streak",
-       "overlays": [{"kind": "chip", "at": 0.1, "text": "Qozog‘iston · 2025", "y": 480},
-                    {"kind": "image", "at": "@uchinchi", "src": "media/icon-three-cars.png", "width": 860, "y": 640},
-                    {"kind": "chip", "at": "@kamri", "text": "har uchinchi yangi Kamri — gibrid", "y": 1000}]}
-    ]},
-    {"label": "layfxak", "scenes": [
-      {"vo": "Va layfxak: «batareya uch yilda o‘ladi» — bu afsona.",
-       "overlays": [{"kind": "chip", "at": "@layfxak", "text": "layfxak", "tone": "red", "y": 400},
-                    {"kind": "battery", "at": "@batareya", "level": 70, "to": 6, "caption": "«uch yilda o‘ladi»", "y": 600},
-                    {"kind": "stamp", "at": "@afsona", "text": "afsona", "y": 640}]},
-      {"vo": "Yevropada Toyota unga o‘n yilgacha kafolat beradi, agar har yili tekshiruvdan o‘tkazsangiz.",
-       "overlays": [{"kind": "chip", "at": 0.1, "text": "layfxak", "tone": "red", "y": 400},
-                    {"kind": "statCard", "at": "@kafolat", "title": "batareyaga kafolat", "pre": "", "value": "10", "post": "yilgacha", "footer": "Toyota, Yevropa", "y": 560},
-                    {"kind": "chip", "at": "@tekshiruv", "text": "🔧 har yili tekshiruv sharti bilan", "y": 1050}]}
-    ]},
-    {"label": "xulosa", "scenes": [
-      {"vo": "Sen-chi, gibrid olarmiding?",
-       "bg": {"type": "image", "src": "media/08-car-front.jpg", "dim": 0.55},
-       "overlays": [{"kind": "poll", "at": "@gibrid", "question": "Gibrid olarmiding?", "options": ["Ha", "Yo‘q"], "hint": "izohlarda yoz", "y": 700}]},
-      {"vo": "Obuna bo‘l va har bir litrni sanaydigan odamga yubor.",
-       "bg": {"type": "image", "src": "media/08-car-front.jpg", "dim": 0.45, "zoomTo": 1.06},
-       "overlays": [{"kind": "cta", "at": 0.1, "logo": "avto", "handle": "@avto.uz", "button": "Obuna bo‘lish", "done": "Obuna bo‘ldingiz ✓", "y": 700}]}
-    ]}
-  ]
+  {
+   "label": "ikki yurak",
+   "scenes": [
+    {
+     "vo": "Gibrid — bu ikki yurak: oddiy benzin motor va batareyali elektromotor.",
+     "bg": {
+      "type": "image",
+      "src": "media/03-xray.jpg",
+      "zoomTo": 1.1,
+      "panX": -40
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@yurak",
+       "text": "2 yurak",
+       "tone": "red",
+       "y": 1460
+      },
+      {
+       "kind": "label",
+       "at": "@benzin",
+       "text": "benzin motor",
+       "x": 560,
+       "y": 900
+      },
+      {
+       "kind": "label",
+       "at": "@elektromotor",
+       "text": "elektromotor",
+       "x": 380,
+       "y": 1240
+      },
+      {
+       "kind": "label",
+       "at": "@batareyali",
+       "text": "batareya",
+       "x": 120,
+       "y": 1020
+      }
+     ]
+    },
+    {
+     "vo": "Ularni esa kompyuter boshqaradi.",
+     "bg": {
+      "type": "image",
+      "src": "media/03-xray.jpg",
+      "zoomFrom": 1.1,
+      "zoomTo": 1.16,
+      "panX": -60
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@kompyuter",
+       "text": "kim ishlashini kompyuter hal qiladi",
+       "y": 1460
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "rejimlar",
+   "scenes": [
+    {
+     "vo": "Joyidan qo‘zg‘alganda elektromotor tortadi, benzinlisi uxlaydi.",
+     "bg": {
+      "type": "image",
+      "src": "media/04-xray-flow.jpg",
+      "zoomTo": 1.08
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@elektromotor",
+       "text": "start: elektromotor · benzin uxlaydi",
+       "tone": "red",
+       "y": 1460
+      }
+     ]
+    },
+    {
+     "vo": "Trassada benzin yoqiladi va batareyani quvvatlaydi.",
+     "bg": {
+      "type": "image",
+      "src": "media/04-xray-flow.jpg",
+      "zoomFrom": 1.08,
+      "zoomTo": 1.16
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@yoqiladi",
+       "text": "trassa: benzin + quvvatlash",
+       "y": 1460
+      }
+     ]
+    },
+    {
+     "vo": "Tezlashganda esa ikkalasi birga ishlaydi.",
+     "bg": {
+      "type": "image",
+      "src": "media/04-xray-flow.jpg",
+      "zoomFrom": 1.16,
+      "zoomTo": 1.3
+     },
+     "overlays": [
+      {
+       "kind": "stamp",
+       "at": "@ikkalasi",
+       "text": "ikkalasi birga",
+       "y": 1430
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "tormozlash",
+   "scenes": [
+    {
+     "vo": "Lekin asosiy sir — tormozlash.",
+     "bg": {
+      "type": "image",
+      "src": "media/05-wheel.jpg",
+      "zoomTo": 1.08
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@tormozlash",
+       "text": "sir: tormozlash",
+       "y": 1460
+      }
+     ]
+    },
+    {
+     "vo": "Oddiy mashinada bu energiya shunchaki issiqlikka aylanib ketadi.",
+     "bg": {
+      "type": "image",
+      "src": "media/05-wheel.jpg",
+      "zoomFrom": 1.08,
+      "zoomTo": 1.15
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@issiqlik",
+       "text": "oddiy: energiya → issiqlik",
+       "tone": "red",
+       "y": 1460
+      }
+     ]
+    },
+    {
+     "vo": "Gibridda esa elektromotor generatorga aylanadi.",
+     "bg": {
+      "type": "image",
+      "src": "media/06-battery.jpg",
+      "zoomTo": 1.1
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "until": "@generator",
+       "text": "gibrid elektromotor bilan tormozlaydi",
+       "y": 1460
+      },
+      {
+       "kind": "chip",
+       "at": "@generator",
+       "text": "elektromotor = generator",
+       "y": 1460
+      }
+     ]
+    },
+    {
+     "vo": "Energiya batareyaga qaytadi. Bepul.",
+     "bg": {
+      "type": "image",
+      "src": "media/06-battery.jpg",
+      "zoomFrom": 1.1,
+      "zoomTo": 1.2
+     },
+     "overlays": [
+      {
+       "kind": "battery",
+       "at": "@batareyaga",
+       "level": 62,
+       "to": 78,
+       "showPct": true,
+       "y": 1450
+      },
+      {
+       "kind": "stamp",
+       "at": "@bepul",
+       "text": "bepul",
+       "y": 1280
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "probka",
+   "scenes": [
+    {
+     "vo": "Shuning uchun probkada gibrid ko‘pincha faqat elektrda yuradi.",
+     "bg": {
+      "type": "image",
+      "src": "media/07-traffic.jpg",
+      "zoomTo": 1.04
+     },
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@probkada",
+       "until": "@gibrid",
+       "text": "probkada oddiy mashina eng ko‘p yeydi",
+       "y": 1460
+      },
+      {
+       "kind": "chip",
+       "at": "@gibrid",
+       "text": "gibrid — faqat elektrda",
+       "tone": "red",
+       "y": 1460
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "41 %",
+   "scenes": [
+    {
+     "vo": "Uning motori ham o‘ziga xos.",
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "text": "gibrid motori o‘ziga xos",
+       "y": 560
+      }
+     ]
+    },
+    {
+     "vo": "Toyota aytishicha, u benzin energiyasining qirq bir foizini harakatga aylantiradi. Bu dunyodagi eng yaxshi natijalardan biri.",
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "text": "Toyota ma’lumoti",
+       "tone": "muted",
+       "y": 400
+      },
+      {
+       "kind": "donut",
+       "at": "@benzin",
+       "percent": 41,
+       "label": "benzin → harakat",
+       "y": 560
+      },
+      {
+       "kind": "chip",
+       "at": "@dunyodagi",
+       "text": "☆ dunyodagi eng yaxshilaridan",
+       "tone": "red",
+       "y": 1000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "tarix",
+   "scenes": [
+    {
+     "vo": "Eng qizig‘i: birinchi gibridni Ferdinand Porshe ming to‘qqiz yuzinchi yilda yig‘gan.",
+     "overlays": [
+      {
+       "kind": "bigNumber",
+       "at": "@birinchi",
+       "value": 1900,
+       "from": 1880,
+       "year": true,
+       "y": 430
+      },
+      {
+       "kind": "image",
+       "at": "@birinchi",
+       "src": "media/icon-carriage.png",
+       "width": 360,
+       "y": 700
+      },
+      {
+       "kind": "chip",
+       "at": "@porshe",
+       "text": "birinchi gibrid — Ferdinand Porshe",
+       "y": 1050
+      }
+     ]
+    },
+    {
+     "vo": "Birinchi ommaviysi esa Prius, to‘qson yettinchi yilda.",
+     "transition": "fade",
+     "overlays": [
+      {
+       "kind": "bigNumber",
+       "at": 0.1,
+       "value": 1997,
+       "from": 1957,
+       "year": true,
+       "y": 430
+      },
+      {
+       "kind": "image",
+       "at": 0.1,
+       "src": "media/icon-car.png",
+       "width": 420,
+       "y": 760
+      },
+      {
+       "kind": "chip",
+       "at": "@prius",
+       "text": "Prius — birinchi ommaviy",
+       "tone": "red",
+       "y": 1050
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "qozog‘iston",
+   "scenes": [
+    {
+     "vo": "Qozog‘istonda o‘tgan yili har uchinchi yangi Kamri gibrid bo‘lgan.",
+     "transition": "streak",
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "text": "Qozog‘iston · 2025",
+       "y": 480
+      },
+      {
+       "kind": "image",
+       "at": "@uchinchi",
+       "src": "media/icon-three-cars.png",
+       "width": 860,
+       "y": 640
+      },
+      {
+       "kind": "chip",
+       "at": "@kamri",
+       "text": "har uchinchi yangi Kamri — gibrid",
+       "y": 1000
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "maslahat",
+   "scenes": [
+    {
+     "vo": "Va bir maslahat. «Batareya uch yilda o‘ladi» degan gap — afsona.",
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": "@maslahat",
+       "text": "maslahat",
+       "tone": "red",
+       "y": 400
+      },
+      {
+       "kind": "battery",
+       "at": "@batareya",
+       "level": 70,
+       "to": 6,
+       "caption": "«uch yilda o‘ladi»",
+       "y": 600
+      },
+      {
+       "kind": "stamp",
+       "at": "@afsona",
+       "text": "afsona",
+       "y": 640
+      }
+     ]
+    },
+    {
+     "vo": "Yevropada Toyota unga o‘n yilgacha kafolat beradi, agar har yili tekshiruvdan o‘tkazsangiz.",
+     "overlays": [
+      {
+       "kind": "chip",
+       "at": 0.1,
+       "text": "maslahat",
+       "tone": "red",
+       "y": 400
+      },
+      {
+       "kind": "statCard",
+       "at": "@kafolat",
+       "title": "batareyaga kafolat",
+       "pre": "",
+       "value": "10",
+       "post": "yilgacha",
+       "footer": "Toyota, Yevropa",
+       "y": 560
+      },
+      {
+       "kind": "chip",
+       "at": "@tekshiruv",
+       "text": "🔧 har yili tekshiruv sharti bilan",
+       "y": 1050
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "xulosa",
+   "scenes": [
+    {
+     "vo": "Sen-chi, gibrid olarmiding?",
+     "bg": {
+      "type": "image",
+      "src": "media/08-car-front.jpg",
+      "dim": 0.55
+     },
+     "overlays": [
+      {
+       "kind": "poll",
+       "at": "@gibrid",
+       "question": "Gibrid olarmiding?",
+       "options": [
+        "Ha",
+        "Yo‘q"
+       ],
+       "hint": "izohlarda yoz",
+       "y": 700
+      }
+     ]
+    },
+    {
+     "vo": "Obuna bo‘l va har bir litrni sanaydigan odamga yubor.",
+     "bg": {
+      "type": "image",
+      "src": "media/08-car-front.jpg",
+      "dim": 0.45,
+      "zoomTo": 1.06
+     },
+     "overlays": [
+      {
+       "kind": "cta",
+       "at": 0.1,
+       "logo": "avto",
+       "handle": "@avto.uz",
+       "button": "Obuna bo‘lish",
+       "done": "Obuna bo‘ldingiz ✓",
+       "y": 700
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }
