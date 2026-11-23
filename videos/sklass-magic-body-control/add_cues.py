@@ -17,11 +17,21 @@ fx('scan.wav', T('chuqurni') + 0.05, 'camera scan (hook)', -6)
 fx('pothole.wav', T('tushadi') - 0.05, 'ordinary car hits the pothole', -3)
 fx('scan.wav', T('u') - 0.05, 'camera scan 15 m', -6)
 fx('hydraulic.wav', T('buyruq'), 'command to wheels', -8)
+fx('hydraulic.wav', T('tushadi', 2) - 0.1, 'wheel drops, body level', -6)
 fx('hydraulic.wav', T('tushiradi') - 0.1, 'strut lowers', -4)
 fx('hydraulic.wav', T("ko'taradi") - 0.1, 'strut raises', -4)
 fx('glide.wav', T('natijada') - 0.2, 'S-Class glides over the pothole', -8)
 fx('whoosh_lean.wav', T('egiladi') - 0.5, 'leans into the curve', -7)
 fx('scan.wav', T('sizningcha') + 0.1, 'scan (loop end)', -9)
+# hard cuts between scenes get a short whoosh that lands on the cut
+import importlib.util
+spec = importlib.util.spec_from_file_location('sfx_cues', os.path.join('..', 'skill', 'explainer-reel', 'scripts', 'sfx_cues.py'))
+m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+kit = m.Kit('~/.claude/skills/sfx-kit')
+P = json.load(open('public/props.json')); t = 0.0
+for i, sc in enumerate(P['scenes']):
+    if i > 0: cues.append(kit.cue('whoosh-fast-soft', t, f'cut to scene {i+1}', -7))
+    t += round(sc['dur'] * 30) / 30
 cues.sort(key=lambda c: c['start'])
 A['cues'] = cues
 json.dump(A, open('cues.json', 'w'), indent=1)

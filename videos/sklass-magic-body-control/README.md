@@ -17,3 +17,15 @@ An explainer-reel (dark-board illustration style) about an interesting foreign-c
 - **Kit**: layer `rotate` / `origin` / `moves[].rot` were added for the lean and the pothole drop. Scan beams use `flows`.
 - **Sound**: auto cues from `sfx_cues.py`, plus ElevenLabs foley (scan sweep, pothole thud, hydraulic whir, glide,
   cornering), merged by `add_cues.py` and mixed by `pro_mix.py` at -14 LUFS.
+
+## v2 (fixes after review)
+- **Handle** changed to **@autopodveska.uz**.
+- **Voice "skips" fixed.** The pauses had been inserted mid-gap, leaving tiny fragments between two silences.
+  They are now spliced inside the real silences with 8 ms fades.
+- **Transitions.** Hard cuts with a short whoosh replace the cross-fades, so titles and cars no longer
+  double-expose.
+- **Road position.** The pothole stays at the same x in every scene, so the road no longer jumps.
+- **Headlines.** Every scene opens with a headline, with no empty 1-2 s gaps.
+- **Visuals removed.** The stray glow in the 130 km/h scene and the rainbow-like arc over the leaning car are gone.
+- **Added.** A close-up of the wheel dropping while the body stays level, "Pastga / Yuqoriga" tags on the strut,
+  a "mototsiklchi kabi" tag, and cars that keep moving.

@@ -12,6 +12,15 @@ Shares the audio and voice stack with **explainer-reel** (style #1): the same sc
 Uzbek voices with exact timestamps (`explainer-reel/references/voiceover.md`), `sfx-kit`, ElevenLabs SFX,
 `match_sfx.py` and `pro_mix.py`.
 
+## User defaults (don't ask again)
+- Instagram handle: **@autopodveska.uz** (watermark, IG pill, outro). The old `@autopodveska.uzb` is wrong.
+- Voice: ElevenLabs **Adizzbek** `v4cqTf6wc2CXwA2tR7TF`, `eleven_v4`, uz, "regular" settings stability 0.45 /
+  similarity 0.8 / style 0.3 / speed 1.1, `/with-timestamps`.
+- Insert pauses only inside real silences (silencedetect), with 8 ms fades at each splice. Cutting mid-gap leaves
+  audible "skips".
+- Prefer hard cuts with a short whoosh between scenes whose headlines differ. Cross-fading two headlines
+  double-exposes them.
+
 ## Inputs (ask only for what's missing)
 Topic and script (or re-use a script/voiceover from style #1), @handle, and the voice (default Adizzbek
 `v4cqTf6wc2CXwA2tR7TF`, eleven_v4, uz). Budget on Higgsfield: ≈10 credits per 5 s AI shot (Kling 3.0 Turbo 1080p,

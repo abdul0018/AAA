@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "duration": 46.9,
+ "duration": 46.53333333333333,
  "cues": [
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/glide.wav",
@@ -58,15 +58,15 @@
    "why": "question mark"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 2.9147,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 3.101,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 2 transition"
+   "why": "cut to scene 2"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-out.wav",
@@ -82,7 +82,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 4.48,
+   "start": 3.24,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -93,7 +93,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 4.6233,
+   "start": 3.3833,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -102,15 +102,15 @@
    "why": "underline draws"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 6.6813,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 6.8677,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 3 transition"
+   "why": "cut to scene 3"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
@@ -148,7 +148,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 10.5767,
+   "start": 10.6267,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -159,7 +159,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 10.72,
+   "start": 10.77,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -179,26 +179,26 @@
    "why": "cross"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 12.748,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 12.9343,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 4 transition"
+   "why": "cut to scene 4"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-medium-soft.wav",
-   "id": "whoosh-medium-soft",
-   "start": 12.9293,
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 13.0233,
    "rate": 1.0,
-   "gain_db": -3,
+   "gain_db": -2,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "slideLeft sclass_side.png"
+   "why": "title 'S-klassda esa'"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-in.wav",
@@ -214,7 +214,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 14.8033,
+   "start": 14.8533,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -225,7 +225,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 14.9467,
+   "start": 14.9967,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -267,20 +267,31 @@
    "why": "number lands"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 20.2147,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 20.401,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 5 transition"
+   "why": "cut to scene 5"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 21.9,
+   "start": 20.49,
+   "rate": 1.0,
+   "gain_db": -2,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "title 'Chuqur ko'rindi'"
+  },
+  {
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 22.0,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -291,7 +302,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 22.0433,
+   "start": 22.1433,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -333,15 +344,15 @@
    "why": "highlight box draws"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 23.6813,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 23.8677,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 6 transition"
+   "why": "cut to scene 6"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-medium-in.wav",
@@ -399,6 +410,17 @@
    "why": "strut lowers"
   },
   {
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 25.8637,
+   "rate": 1.0,
+   "gain_db": -5,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "tag Pastga"
+  },
+  {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/hydraulic.wav",
    "start": 26.63,
    "rate": 1,
@@ -410,15 +432,15 @@
    "why": "strut raises"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 27.2147,
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 26.7037,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 7 transition"
+   "why": "tag Yuqoriga"
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/glide.wav",
@@ -432,9 +454,53 @@
    "why": "S-Class glides over the pothole"
   },
   {
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 27.401,
+   "rate": 1.0,
+   "gain_db": -7,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "cut to scene 7"
+  },
+  {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 29.31,
+   "start": 27.49,
+   "rate": 1.0,
+   "gain_db": -2,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "title 'G'ildirak tushadi'"
+  },
+  {
+   "file": "/root/.claude/skills/sfx-kit/sounds/bounce-spin-zoom/move-zoom-in.wav",
+   "id": "move-zoom-in",
+   "start": 28.374,
+   "rate": 1.0,
+   "gain_db": -3,
+   "uvo_db": -3,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "magnifier opens"
+  },
+  {
+   "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/hydraulic.wav",
+   "start": 28.763,
+   "rate": 1,
+   "gain_db": -6,
+   "uvo_db": -3,
+   "trim": 0,
+   "max_len": null,
+   "loop": false,
+   "why": "wheel drops, body level"
+  },
+  {
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 29.36,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -445,7 +511,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 29.4533,
+   "start": 29.5033,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -456,7 +522,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-success-soft.wav",
    "id": "notification-success-soft",
-   "start": 30.14,
+   "start": 29.92,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -509,20 +575,42 @@
    "why": "check"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 32.948,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 32.6677,
+   "rate": 1.0,
+   "gain_db": -7,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "cut to scene 8"
+  },
+  {
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 32.7567,
+   "rate": 1.0,
+   "gain_db": -2,
+   "uvo_db": -2,
+   "trim": 0.0,
+   "max_len": null,
+   "why": "title 'Burilishda'"
+  },
+  {
+   "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
+   "id": "pop-small-in",
+   "start": 33.9567,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 8 transition"
+   "why": "tag mototsiklchi kabi"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 35.3933,
+   "start": 35.0267,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -533,7 +621,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 35.5367,
+   "start": 35.17,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -543,7 +631,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/whoosh_lean.wav",
-   "start": 35.64,
+   "start": 35.19,
    "rate": 1,
    "gain_db": -7,
    "uvo_db": -3,
@@ -553,20 +641,9 @@
    "why": "leans into the curve"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-marker-draw.wav",
-   "id": "writing-marker-draw",
-   "start": 35.8133,
-   "rate": 1.0,
-   "gain_db": -5,
-   "uvo_db": -1,
-   "trim": 0.0,
-   "max_len": 0.6,
-   "why": "contour line draws"
-  },
-  {
    "file": "/root/.claude/skills/sfx-kit/sounds/notifications/notification-success-soft.wav",
    "id": "notification-success-soft",
-   "start": 37.5533,
+   "start": 37.0867,
    "rate": 1.0,
    "gain_db": -3,
    "uvo_db": -3,
@@ -575,20 +652,20 @@
    "why": "check"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 37.948,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 37.6677,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 9 transition"
+   "why": "cut to scene 9"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 38.2233,
+   "start": 37.7567,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -599,18 +676,18 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 39.5903,
+   "start": 39.1737,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "title 'Kunduzi'"
+   "why": "title 'Faqat kunduzi'"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 39.7337,
+   "start": 39.317,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -621,7 +698,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/data/data-countup-medium.wav",
    "id": "data-countup-medium",
-   "start": 40.3403,
+   "start": 39.8737,
    "rate": 1.2,
    "gain_db": -2,
    "uvo_db": -2,
@@ -632,7 +709,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/data/data-number-land.wav",
    "id": "data-number-land",
-   "start": 41.3293,
+   "start": 40.8627,
    "rate": 1.0,
    "gain_db": -1,
    "uvo_db": -2,
@@ -641,20 +718,20 @@
    "why": "number lands"
   },
   {
-   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-slow-soft.wav",
-   "id": "whoosh-slow-soft",
-   "start": 42.7813,
+   "file": "/root/.claude/skills/sfx-kit/sounds/whooshes/whoosh-fast-soft.wav",
+   "id": "whoosh-fast-soft",
+   "start": 42.501,
    "rate": 1.0,
-   "gain_db": -5,
+   "gain_db": -7,
    "uvo_db": -2,
    "trim": 0.0,
    "max_len": null,
-   "why": "scene 10 transition"
+   "why": "cut to scene 10"
   },
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-small-in.wav",
    "id": "pop-small-in",
-   "start": 43.1067,
+   "start": 42.64,
    "rate": 1.0,
    "gain_db": -2,
    "uvo_db": -2,
@@ -664,7 +741,7 @@
   },
   {
    "file": "/tmp/claude-0/-home-user-AAA/5b7eb2fc-4723-5fb5-a4da-00cee673d087/scratchpad/sclass/public/sfx/scan.wav",
-   "start": 43.19,
+   "start": 42.74,
    "rate": 1,
    "gain_db": -9,
    "uvo_db": -3,
@@ -676,7 +753,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/writing-and-drawing/writing-highlighter.wav",
    "id": "writing-highlighter",
-   "start": 43.25,
+   "start": 42.7833,
    "rate": 1.08,
    "gain_db": -4,
    "uvo_db": -1,
@@ -687,7 +764,7 @@
   {
    "file": "/root/.claude/skills/sfx-kit/sounds/pops/pop-medium-bubble.wav",
    "id": "pop-medium-bubble",
-   "start": 45.1357,
+   "start": 44.669,
    "rate": 1.0,
    "gain_db": -5,
    "uvo_db": -2,

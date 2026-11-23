@@ -23,6 +23,15 @@ source**), `elevenlabs-sound-effects` / `elevenlabs-music` / `elevenlabs-text-to
 (the user's ElevenLabs key is a network secret for api.elevenlabs.io: send `xi-api-key: proxy-injected`),
 `remotion-best-practices`, `remotion-markup`, `remotion-render`, `remotion-create`.
 
+## User defaults (don't ask again)
+- Instagram handle: **@autopodveska.uz** (watermark, IG pill, outro). The old `@autopodveska.uzb` is wrong.
+- Voice: ElevenLabs **Adizzbek** `v4cqTf6wc2CXwA2tR7TF`, `eleven_v4`, uz, "regular" settings stability 0.45 /
+  similarity 0.8 / style 0.3 / speed 1.1, `/with-timestamps`.
+- Insert pauses only inside real silences (silencedetect), with 8 ms fades at each splice. Cutting mid-gap leaves
+  audible "skips".
+- Prefer hard cuts with a short whoosh between scenes whose headlines differ. Cross-fading two headlines
+  double-exposes them.
+
 ## ⚠️ Real products first (the user's standing rule)
 If the topic names a real product (a car model, part or device), find real photos of that exact product online
 FIRST (cars: the version sold in Uzbekistan) and generate every illustration from them via `image_references`.
