@@ -196,11 +196,13 @@ export const LayerImg: React.FC<Layer> = (l) => {
   let x = l.x ?? 540;
   let y = l.y ?? L.stageY;
   let w = l.w;
+  let rot = l.rotate ?? 0;
   for (const m of l.moves ?? []) {
     const k = interpolate(f, [sec(m.at), sec(m.at + m.dur)], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
     if (m.x !== undefined) x = x + (m.x - x) * k;
     if (m.y !== undefined) y = y + (m.y - y) * k;
     if (m.w !== undefined) w = w + (m.w - w) * k;
+    if (m.rot !== undefined) rot = rot + (m.rot - rot) * k;
   }
   const sh = shakeOffset(f, l.shakeAt, 8);
   const g = l.glow;
@@ -220,7 +222,7 @@ export const LayerImg: React.FC<Layer> = (l) => {
         src={src(l.src)}
         style={{
           position: 'absolute', left: x + e.dx + sh.x, top: y + e.dy + sh.y, width: w, zIndex: l.z ?? 1,
-          transform: `translate(-50%,-50%) scale(${e.s}) ${l.flip ? 'scaleX(-1)' : ''}`,
+          transform: `translate(-50%,-50%) rotate(${rot}deg) scale(${e.s}) ${l.flip ? 'scaleX(-1)' : ''}`, transformOrigin: l.origin ?? 'center',
           opacity: e.op * outOp * (l.opacity ?? 1), filter: `drop-shadow(0 18px 24px rgba(0,0,0,0.35)) ${l.filter ?? ''}`,
         }}
       />

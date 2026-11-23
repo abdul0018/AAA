@@ -20,6 +20,7 @@ export interface Move {
   x?: number;
   y?: number;
   w?: number;
+  rot?: number; // degrees
 }
 
 export interface Layer {
@@ -37,6 +38,8 @@ export interface Layer {
   moves?: Move[]; // keyframed moves (pan / grow / step forward)
   glow?: {at: number; out?: number; r?: number; color?: string; dx?: number; dy?: number};
   shakeAt?: number[]; // little jolt (electric shock)
+  rotate?: number; // degrees (positive = clockwise); keyframe with moves[].rot
+  origin?: string; // CSS transform-origin for the rotation, default 'center'
   filter?: string; // CSS filter, e.g. 'brightness(0.55)' for a night shot
 }
 

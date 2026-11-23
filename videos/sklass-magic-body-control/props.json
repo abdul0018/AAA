@@ -1,0 +1,652 @@
+{
+ "handle": "@autopodveska.uzb",
+ "voiceover": "vo.wav",
+ "muteAll": true,
+ "scenes": [
+  {
+   "dur": 3.2,
+   "_beat": "HOOK",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Chuqurni\noldindan ko'radi",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/pothole.png",
+     "w": 1900,
+     "x": 880,
+     "y": 1356.0655737704917,
+     "at": 0.0,
+     "anim": "none",
+     "z": 0
+    },
+    {
+     "src": "img/sclass_side.png",
+     "w": 640,
+     "x": 250,
+     "y": 1197.5768645357687,
+     "anim": "none",
+     "moves": [
+      {
+       "at": 0,
+       "dur": 3.0,
+       "x": 300
+      }
+     ]
+    }
+   ],
+   "flows": [
+    {
+     "d": "M354,1108 L760,1296",
+     "at": 1.3,
+     "draw": 0.5,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    },
+    {
+     "d": "M354,1108 L885,1296",
+     "at": 1.3800000000000001,
+     "draw": 0.5,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    },
+    {
+     "d": "M354,1108 L1010,1296",
+     "at": 1.46,
+     "draw": 0.5,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    }
+   ],
+   "glows": [
+    {
+     "at": 1.5,
+     "x": 880,
+     "y": 1325,
+     "r": 200
+    }
+   ],
+   "marks": [
+    {
+     "type": "question",
+     "at": 2.4,
+     "x": 880,
+     "y": 1050,
+     "size": 90
+    }
+   ]
+  },
+  {
+   "dur": 3.78,
+   "_beat": "NAME",
+   "handlePos": "left",
+   "ground": {
+    "y": 1300,
+    "x0": 80,
+    "x1": 1000
+   },
+   "titles": [
+    {
+     "text": "Magic Body\nControl",
+     "kicker": "Mersedes S-klass",
+     "at": 1.29,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/sclass_side.png",
+     "w": 900,
+     "x": 540,
+     "y": 1154.3424657534247,
+     "anim": "zoomOut",
+     "animDur": 0.6
+    }
+   ],
+   "glows": [
+    {
+     "at": 0.3,
+     "x": 540,
+     "y": 1160,
+     "r": 480
+    }
+   ]
+  },
+  {
+   "dur": 6.07,
+   "_beat": "ORDINARY CAR",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Oddiy mashina",
+     "at": 0.0,
+     "out": 3.5700000000000003
+    },
+    {
+     "text": "Silkinish salonga",
+     "at": 3.62,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/pothole.png",
+     "w": 1900,
+     "x": 560,
+     "y": 1356.0655737704917,
+     "at": 0.0,
+     "anim": "none",
+     "z": 0
+    },
+    {
+     "src": "img/cobalt_side.png",
+     "w": 700,
+     "x": 230,
+     "y": 1163.3034825870648,
+     "flip": true,
+     "anim": "none",
+     "shakeAt": [
+      1.52,
+      3.72
+     ],
+     "moves": [
+      {
+       "at": 0,
+       "dur": 1.52,
+       "x": 560
+      },
+      {
+       "at": 1.52,
+       "dur": 0.12,
+       "y": 1221.3034825870648,
+       "rot": 4
+      },
+      {
+       "at": 2.02,
+       "dur": 0.35,
+       "y": 1163.3034825870648,
+       "rot": 0,
+       "x": 660
+      }
+     ]
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 5.0,
+     "x": 540,
+     "y": 760,
+     "size": 90
+    }
+   ],
+   "shakeAt": [
+    1.52
+   ]
+  },
+  {
+   "dur": 7.48,
+   "_beat": "STEREO CAMERA",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Ikki ko'zli\nkamera",
+     "at": 1.7799999999999998,
+     "out": 3.1799999999999997,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/pothole.png",
+     "w": 1900,
+     "x": 900,
+     "y": 1356.0655737704917,
+     "at": 0.0,
+     "anim": "none",
+     "z": 0
+    },
+    {
+     "src": "img/sclass_side.png",
+     "w": 600,
+     "x": 280,
+     "y": 1204.2283105022832,
+     "anim": "slideLeft",
+     "animDur": 0.5
+    }
+   ],
+   "insets": [
+    {
+     "src": "img/camera.png",
+     "at": 1.88,
+     "out": 3.1799999999999997,
+     "x": 640,
+     "y": 720,
+     "r": 180,
+     "target": {
+      "x": 331.0,
+      "y": 1120.4109589041095
+     }
+    }
+   ],
+   "flows": [
+    {
+     "d": "M331,1120 L720,1296",
+     "at": 3.28,
+     "draw": 0.6,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    },
+    {
+     "d": "M331,1120 L880,1296",
+     "at": 3.36,
+     "draw": 0.6,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    },
+    {
+     "d": "M331,1120 L1040,1296",
+     "at": 3.44,
+     "draw": 0.6,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      18,
+      12
+     ],
+     "march": 160
+    }
+   ],
+   "counters": [
+    {
+     "at": 3.84,
+     "dur": 0.6,
+     "from": 0,
+     "to": 15,
+     "suffix": " METR",
+     "sub": "3 mm aniqlik",
+     "subAt": 5.28
+    }
+   ],
+   "glows": [
+    {
+     "at": 3.6799999999999997,
+     "x": 900,
+     "y": 1325,
+     "r": 200
+    }
+   ]
+  },
+  {
+   "dur": 3.453,
+   "_beat": "EVERY WHEEL",
+   "handlePos": "left",
+   "ground": {
+    "y": 1300,
+    "x0": 60,
+    "x1": 1020
+   },
+   "titles": [
+    {
+     "text": "Har bir g'ildirakka\nbuyruq",
+     "at": 1.4100000000000001,
+     "underline": true,
+     "size": 70
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/sclass_side.png",
+     "w": 880,
+     "x": 540,
+     "y": 1157.668188736682,
+     "anim": "fade"
+    }
+   ],
+   "flows": [
+    {
+     "d": "M615,1037 Q443,917 272,1169",
+     "at": 1.6600000000000001,
+     "draw": 0.45,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      14,
+      10
+     ]
+    },
+    {
+     "d": "M615,1037 Q714,917 813,1169",
+     "at": 1.81,
+     "draw": 0.45,
+     "color": "#FFCC40",
+     "width": 6,
+     "dash": [
+      14,
+      10
+     ]
+    }
+   ],
+   "boxes": [
+    {
+     "at": 2.52,
+     "x": 271.6,
+     "y": 1238.5406392694065,
+     "w": 190,
+     "h": 190,
+     "radius": 95
+    },
+    {
+     "at": 2.62,
+     "x": 812.8000000000001,
+     "y": 1238.5406392694065,
+     "w": 190,
+     "h": 190,
+     "radius": 95
+    }
+   ],
+   "glows": [
+    {
+     "at": 2.52,
+     "x": 271.6,
+     "y": 1238.5406392694065,
+     "r": 170
+    },
+    {
+     "at": 2.52,
+     "x": 812.8000000000001,
+     "y": 1238.5406392694065,
+     "r": 170
+    }
+   ]
+  },
+  {
+   "dur": 3.547,
+   "_beat": "HYDRAULIC STRUT",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Gidravlik stoyka",
+     "at": 0.0,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/strut.png",
+     "w": 360,
+     "x": 540,
+     "y": 1040,
+     "anim": "pop",
+     "animDur": 0.5,
+     "glow": {
+      "at": 0.4,
+      "r": 260,
+      "dy": -300
+     },
+     "moves": [
+      {
+       "at": 1.807,
+       "dur": 0.25,
+       "y": 1110
+      },
+      {
+       "at": 2.647,
+       "dur": 0.3,
+       "y": 990
+      }
+     ]
+    }
+   ],
+   "tags": [
+    {
+     "text": "Gidravlika",
+     "at": 0.5,
+     "x": 790,
+     "y": 740,
+     "bg": "#FFCC40"
+    }
+   ]
+  },
+  {
+   "dur": 5.73,
+   "_beat": "PAYOFF",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Kuzov qimirlamaydi",
+     "at": 1.8199999999999998,
+     "out": 3.3,
+     "underline": true
+    },
+    {
+     "text": "Suv to'kilmaydi",
+     "at": 3.35,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/pothole.png",
+     "w": 1900,
+     "x": 560,
+     "y": 1356.0655737704917,
+     "at": 0.0,
+     "anim": "none",
+     "z": 0
+    },
+    {
+     "src": "img/sclass_side.png",
+     "w": 760,
+     "x": 200,
+     "y": 1177.6225266362253,
+     "anim": "none",
+     "moves": [
+      {
+       "at": 0,
+       "dur": 3.1999999999999997,
+       "x": 700
+      }
+     ]
+    },
+    {
+     "src": "img/glass.png",
+     "w": 150,
+     "x": 540,
+     "y": 720,
+     "at": 3.4,
+     "anim": "pop",
+     "z": 3
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 2.64,
+     "x": 540,
+     "y": 760,
+     "size": 90,
+     "out": 3.3
+    },
+    {
+     "type": "check",
+     "at": 4.5600000000000005,
+     "x": 700,
+     "y": 620,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "dur": 5.013,
+   "_beat": "CURVE LEAN",
+   "handlePos": "left",
+   "ground": {
+    "y": 1330,
+    "x0": 180,
+    "x1": 900
+   },
+   "titles": [
+    {
+     "text": "Ichkariga egiladi",
+     "at": 2.17,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/sclass_rear.png",
+     "w": 680,
+     "x": 540,
+     "y": 1050,
+     "anim": "fade",
+     "origin": "50% 100%",
+     "moves": [
+      {
+       "at": 2.48,
+       "dur": 0.8,
+       "rot": -2.6
+      }
+     ]
+    }
+   ],
+   "flows": [
+    {
+     "d": "M820,700 Q700,560 540,560 Q380,560 290,660",
+     "at": 2.58,
+     "draw": 0.6,
+     "color": "#FFCC40",
+     "width": 8,
+     "dash": null
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 4.32,
+     "x": 540,
+     "y": 600,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "dur": 4.817,
+   "_beat": "LIMITS",
+   "handlePos": "right",
+   "ground": {
+    "y": 1300,
+    "x0": 120,
+    "x1": 960
+   },
+   "titles": [
+    {
+     "text": "Bitta sharti bor",
+     "at": 0.0,
+     "out": 1.3170000000000002
+    },
+    {
+     "text": "Kunduzi",
+     "at": 1.367,
+     "out": 1.9570000000000003,
+     "underline": true
+    }
+   ],
+   "counters": [
+    {
+     "at": 2.107,
+     "dur": 1.0,
+     "from": 0,
+     "to": 130,
+     "suffix": " KM/SOAT"
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/sclass_side.png",
+     "w": 700,
+     "x": 540,
+     "y": 1187.5996955859969,
+     "anim": "none"
+    }
+   ],
+   "glows": [
+    {
+     "at": 1.467,
+     "x": 860,
+     "y": 640,
+     "r": 200
+    }
+   ]
+  },
+  {
+   "dur": 3.84,
+   "_beat": "CTA",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Bizning yo'llarga\nchidaydimi?",
+     "kicker": "Sizningcha",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/pothole.png",
+     "w": 1900,
+     "x": 820,
+     "y": 1356.0655737704917,
+     "at": 0.0,
+     "anim": "none",
+     "z": 0
+    },
+    {
+     "src": "img/sclass_side.png",
+     "w": 760,
+     "x": 330,
+     "y": 1177.6225266362253,
+     "anim": "fade"
+    }
+   ],
+   "marks": [
+    {
+     "type": "question",
+     "at": 2.08,
+     "x": 820,
+     "y": 1050,
+     "size": 100
+    }
+   ]
+  }
+ ]
+}
