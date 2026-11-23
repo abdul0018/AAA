@@ -3,6 +3,7 @@
 ```bash
 npm i
 bash ../scripts/fetch_fonts.sh public                         # local fonts (required)
+bash ../scripts/make_sfx.sh public                            # sound effects for "sfx": true
 cp plan.example.json plan.json                                 # edit: brand, voice, keys, chapters/scenes/overlays
 python3 ../scripts/build_props.py plan.json --public public    # -> public/vo.mp3 + public/props.json
 npx remotion studio src/index.ts                               # preview

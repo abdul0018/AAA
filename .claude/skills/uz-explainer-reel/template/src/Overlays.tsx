@@ -1,5 +1,7 @@
 import React from 'react';
 import {Easing, Img, interpolate, spring, staticFile, useVideoConfig} from 'remotion';
+
+export const PaceContext = React.createContext<'energetic' | 'calm'>('energetic');
 import {C, DISPLAY, MONO, SANS, W} from './theme';
 import {Overlay} from './types';
 
@@ -10,7 +12,9 @@ type P<T> = {o: T; t: number; out: number};
 
 const useIn = (t: number, damping = 14) => {
   const {fps} = useVideoConfig();
-  return spring({frame: Math.max(0, t * fps), fps, config: {damping, mass: 0.6, stiffness: 170}});
+  const fast = React.useContext(PaceContext) === 'energetic';
+  // energetic: stiffer, slightly bouncier springs (in ~0.2 s instead of ~0.35 s)
+  return spring({frame: Math.max(0, t * fps), fps, config: fast ? {damping: damping - 3, mass: 0.45, stiffness: 300} : {damping, mass: 0.6, stiffness: 170}});
 };
 
 const Centered: React.FC<{y: number; children: React.ReactNode; style?: React.CSSProperties}> = ({y, children, style}) => (

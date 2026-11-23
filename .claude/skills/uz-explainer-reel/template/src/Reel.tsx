@@ -1,6 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {renderOverlay} from './Overlays';
+import {AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {PaceContext, renderOverlay} from './Overlays';
 import {C, CAPTION_Y, DISPLAY, H, MONO, PAD, SANS, W} from './theme';
 import {ReelProps, Scene, Word} from './types';
 
@@ -24,13 +24,20 @@ const BaseBg: React.FC = () => {
 };
 
 // ───────────────────────── scene media ─────────────────────────
-const SceneBg: React.FC<{scene: Scene}> = ({scene}) => {
+// kick = a short zoom "hit" on every spoken key word (energetic pace): +3.5 % that decays over 0.35 s
+const kickAt = (t: number, kicks: number[]) =>
+  kicks.reduce((acc, k) => {
+    const dt = t - k;
+    return dt >= 0 && dt < 0.35 ? acc + 0.035 * Math.pow(1 - dt / 0.35, 2) : acc;
+  }, 0);
+
+const SceneBg: React.FC<{scene: Scene; kicks: number[]; energetic: boolean}> = ({scene, kicks, energetic}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const bg = scene.bg;
   if (!bg) return null;
   const dur = (scene.end - scene.start) * fps;
-  const z = interpolate(frame, [0, dur], [bg.zoomFrom ?? 1, bg.zoomTo ?? 1.08], clamp);
+  const z = interpolate(frame, [0, dur], [bg.zoomFrom ?? 1, bg.zoomTo ?? (energetic ? 1.14 : 1.08)], clamp) + (energetic ? kickAt(scene.start + frame / fps, kicks) : 0);
   const x = interpolate(frame, [0, dur], [0, bg.panX ?? 0], clamp);
   const style: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'cover', transform: `translateX(${x}px) scale(${z})`};
   return (
@@ -120,7 +127,7 @@ const KeyBox: React.FC<{k: number}> = ({k}) => {
   );
 };
 
-const Caption: React.FC<{words: Word[]; t: number; sceneEnd: number}> = ({words, t, sceneEnd}) => {
+const Caption: React.FC<{words: Word[]; t: number; sceneEnd: number; energetic: boolean}> = ({words, t, sceneEnd, energetic}) => {
   const ph = phrasesOf(words);
   const idx = ph.findIndex((p, i) => t >= p[0].start - 0.3 && t < (ph[i + 1]?.[0].start - 0.3 || sceneEnd));
   if (idx < 0) return null;
@@ -129,7 +136,9 @@ const Caption: React.FC<{words: Word[]; t: number; sceneEnd: number}> = ({words,
       {ph[idx].map((w, i) => {
         const op = t < w.start - 0.3 ? 0 : t < w.start - 0.02 ? 0.28 : 1;
         // ghost (upcoming) words sit still at scale 1; a spoken word pops 0.9 -> 1 and rises 10px (never wider than its slot)
-        const pop = t < w.start - 0.02 ? 1 : interpolate(t, [w.start - 0.02, w.start + 0.14], [0.9, 1], clamp);
+        const pop = t < w.start - 0.02 ? 1 : energetic
+          ? interpolate(t, [w.start - 0.02, w.start + 0.07, w.start + 0.15], [0.72, 1.08, 1], clamp)
+          : interpolate(t, [w.start - 0.02, w.start + 0.14], [0.9, 1], clamp);
         const rise = t < w.start - 0.02 ? 0 : interpolate(t, [w.start - 0.02, w.start + 0.14], [10, 0], clamp);
         const k = interpolate(t, [w.start - 0.02, w.start + 0.12], [0, 1], clamp);
         return (
@@ -161,24 +170,60 @@ const Hook: React.FC<{words: Word[]; t: number}> = ({words, t}) => (
 );
 
 // ───────────────────────── scene ─────────────────────────
-const SceneView: React.FC<{scene: Scene; words: Word[]}> = ({scene, words}) => {
+const SceneView: React.FC<{scene: Scene; words: Word[]; energetic: boolean; whip: boolean}> = ({scene, words, energetic, whip}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = scene.start + frame / fps; // absolute seconds
   const sw = words.filter((w) => w.start >= scene.start - 0.01 && w.start < scene.end);
   const fade = scene.transition === 'fade' ? interpolate(frame, [0, 6], [0, 1], clamp) : 1;
+  const out = Easing.out(Easing.cubic);
+  // energetic cut: punch-in 1.1 -> 1 in 7 frames; a whip slides the new chapter in from the right with motion blur
+  const punch = energetic ? interpolate(frame, [0, 7], [whip ? 1.18 : 1.1, 1], {...clamp, easing: out}) : 1;
+  const wx = whip ? interpolate(frame, [0, 7], [170, 0], {...clamp, easing: out}) : 0;
+  const wblur = whip ? interpolate(frame, [0, 7], [14, 0], clamp) : 0;
+  // screen shake for 0.25 s after every stamp lands
+  const shake = energetic
+    ? scene.overlays.filter((o) => o.kind === 'stamp').reduce((acc, o) => {
+        const dt = t - o.at;
+        return dt >= 0 && dt < 0.25 ? acc + Math.sin(dt * 110) * 16 * (1 - dt / 0.25) : acc;
+      }, 0)
+    : 0;
+  const kicks = sw.filter((w) => w.key).map((w) => w.start);
   return (
-    <AbsoluteFill style={{opacity: fade}}>
-      <SceneBg scene={scene} />
+    <AbsoluteFill style={{opacity: fade, transform: `translate(${wx + shake}px, ${shake * 0.6}px) scale(${punch})`, filter: wblur ? `blur(${wblur}px)` : undefined}}>
+      <SceneBg scene={scene} kicks={kicks} energetic={energetic} />
       {scene.overlays.map((o, i) => {
         const until = o.until ?? scene.end;
         if (t < o.at || t >= until) return null;
-        const out = until < scene.end ? interpolate(t, [until - 0.2, until], [0, 1], clamp) : 0;
-        return renderOverlay(o, t - o.at, out, i);
+        const outK = until < scene.end ? interpolate(t, [until - 0.2, until], [0, 1], clamp) : 0;
+        return renderOverlay(o, t - o.at, outK, i);
       })}
-      {scene.hook ? <Hook words={sw} t={t} /> : <Caption words={sw} t={t} sceneEnd={scene.end} />}
+      {scene.hook ? <Hook words={sw} t={t} /> : <Caption words={sw} t={t} sceneEnd={scene.end} energetic={energetic} />}
       {scene.transition === 'streak' ? <Streak /> : null}
+      {energetic && frame < 4 ? <AbsoluteFill style={{background: '#fff', opacity: interpolate(frame, [0, 1, 4], [0.2, 0.2, 0], clamp)}} /> : null}
     </AbsoluteFill>
+  );
+};
+
+const SFX: React.FC<{props: ReelProps}> = ({props}) => {
+  const {fps} = useVideoConfig();
+  const ev: {t: number; src: string; vol: number}[] = [];
+  props.scenes.forEach((s, i) => {
+    if (i > 0) ev.push({t: Math.max(0, s.start - 0.12), src: 'sfx/whoosh.mp3', vol: s.chapter !== props.scenes[i - 1].chapter ? 0.32 : 0.16});
+    s.overlays.forEach((o) => {
+      if (o.kind === 'stamp') ev.push({t: o.at, src: 'sfx/hit.mp3', vol: 0.4});
+      if (o.kind === 'bigNumber' || o.kind === 'donut' || o.kind === 'statCard') ev.push({t: o.at, src: 'sfx/tick.mp3', vol: 0.25});
+      if (o.kind === 'cta') ev.push({t: o.at + 1.0, src: 'sfx/tick.mp3', vol: 0.3});
+    });
+  });
+  return (
+    <>
+      {ev.map((e, i) => (
+        <Sequence key={i} from={Math.round(e.t * fps)} durationInFrames={Math.round(1.2 * fps)}>
+          <Audio src={staticFile(e.src)} volume={e.vol} />
+        </Sequence>
+      ))}
+    </>
   );
 };
 
@@ -186,17 +231,24 @@ export const Reel: React.FC<ReelProps> = (props) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
+  const energetic = (props.pace ?? 'energetic') === 'energetic';
   return (
+    <PaceContext.Provider value={energetic ? 'energetic' : 'calm'}>
     <AbsoluteFill style={{background: C.bg}}>
       <BaseBg />
-      {props.scenes.map((s, i) => (
-        <Sequence key={i} from={Math.round(s.start * fps)} durationInFrames={Math.max(1, Math.round((s.end - s.start) * fps))}>
-          <SceneView scene={s} words={props.words} />
-        </Sequence>
-      ))}
+      {props.scenes.map((s, i) => {
+        const whip = s.transition === 'whip' || (energetic && !s.transition && i > 0 && s.chapter !== props.scenes[i - 1].chapter);
+        return (
+          <Sequence key={i} from={Math.round(s.start * fps)} durationInFrames={Math.max(1, Math.round((s.end - s.start) * fps))}>
+            <SceneView scene={s} words={props.words} energetic={energetic} whip={whip} />
+          </Sequence>
+        );
+      })}
       <Header {...props} t={t} />
       {props.audio.vo ? <Audio src={staticFile(props.audio.vo)} /> : null}
       {props.audio.music ? <Audio src={staticFile(props.audio.music)} volume={props.audio.musicVolume ?? 0.12} loop /> : null}
+      {props.sfx ? <SFX props={props} /> : null}
     </AbsoluteFill>
+    </PaceContext.Provider>
   );
 };

@@ -32,7 +32,7 @@ export type Scene = {
   chapterLabel: string; // "savol", "rejimlar" ...
   hook?: boolean; // big extended-font title instead of the small caption
   bg?: Bg;
-  transition?: 'cut' | 'fade' | 'streak';
+  transition?: 'cut' | 'fade' | 'streak' | 'whip'; // energetic pace: new chapters whip in automatically
   overlays: Overlay[];
 };
 
@@ -43,4 +43,6 @@ export type ReelProps = {
   words: Word[];
   scenes: Scene[];
   audio: {vo: string; music?: string; musicVolume?: number};
+  pace?: 'energetic' | 'calm'; // default energetic: punch-in cuts, flash, whips, word-kicks, snappier motion
+  sfx?: boolean; // whoosh on cuts, hit on stamps, tick on counters (public/sfx, from scripts/make_sfx.sh)
 };

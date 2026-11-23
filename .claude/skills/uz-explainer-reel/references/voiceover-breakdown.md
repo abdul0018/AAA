@@ -16,20 +16,38 @@
 
 The connected ElevenLabs key is the user's account. Run `scripts/audition_voices.py --out voices/ --text "<first 2 sentences of YOUR script>"`. It lists every Uzbek voice in the account (new ones are picked up automatically), renders the line on v3 and ranks the voices by MMS clarity. **Send the top 3-4 mp3s and let the user pick by ear**, then put the chosen `voice_id` in `plan.json`.
 
-Measured on v3 (2026-11). The number is the MMS word match averaged over 2 takes; v3 varies about ±0.04 per take. The user has not chosen a favourite yet:
+Measured on v3 (2026-11). The number is the MMS word match averaged over 2 takes; v3 varies about ±0.04 per take. **The user chose Adizzbek (v3) — it is the default.**
 
 | voice_id | Name | v3 words intact | secs (default line) | Notes |
 |---|---|---|---|---|
-| `tQBN3grEhnGrrqn0n2Rw` | Samariddin Siroj (pro clone) | 0.82 | 12.2 | clear and the best pace, **default** |
+| `tQBN3grEhnGrrqn0n2Rw` | Samariddin Siroj (pro clone) | 0.82 | 12.2 | clear, good pace |
 | `fytsqG6MLzC2aCSw7MLa` | Asilbek (pro clone) | 0.81 | 13-15 | clear, slower |
-| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video (pro clone) | 0.80 | 15.0 | clear, slower |
+| `v4cqTf6wc2CXwA2tR7TF` | Adizzbek – hikoya va instagram video (pro clone) | 0.80 | 15.0 → 12.5 with tags | **DEFAULT (user's choice)**; use the energetic recipe below |
 | `UjuEL3hLLUaDED9iW4Yb` | Sardor – Cheerful, Playful, Bright (designed) | 0.78 | 10.5 | brightest energy, fastest |
 | `rwtcHtZgYU6HN2zLNBlf` | SARHAD-SIZ Narrator (pro clone) | 0.60 | 12 | less clear |
 | `agoC45V78njTIxYzwmSb` | Davronbek – Journalist (pro clone) | 0.45 | 11.5 | unclear, avoid |
 | `0UvJYbC3erQa6COupDAo` | uz (designed) | 0.38 | 15.4 | unclear, avoid |
 | `xDwfBjUEPdIoQekNOXAX` | Jahongir – Calm, Proud, Deep (designed) | 0.12 | 15.8 | unusable on v3 |
 
-When the user names a favourite, update the default here and in `template/plan.example.json`.
+
+
+## Energetic, fast-paced delivery (default; user request)
+
+v3 **ignores `speed`**, and time-stretching (rubberband 1.1×) cut clarity from 0.86 to 0.78, so do not stretch. What works instead (all in `plan.json` → `voice`, already set in `plan.example.json`):
+
+```json
+"voice": {"voice_id": "v4cqTf6wc2CXwA2tR7TF", "model_id": "eleven_v3", "stability": 0.5, "similarity_boost": 0.8,
+          "tags": "[excited][speaking fast]", "per_scene": true, "gap": 0.1,
+          "takes": 3, "max_takes": 6, "judge": true, "min_clarity": 0.8, "max_pause": 0.22}
+```
+
+- `tags`: v3 audio tags put in front of every request. `[excited][speaking fast]` made the test line 18 % shorter (15.2 → 12.5 s), with livelier pitch and less dead air (33 % → 20 %), while clarity held (0.86). `[energetic][fast-paced]` with stability 0.0 was faster still but less clear (0.76). Tags are cues, never shown in captions (the builder strips anything in `[...]`).
+- `per_scene`: one request per scene. Tags fade over a long request, and per-scene clips let the builder cut each clip to its speech and join them with a fixed `gap` (0.1 s).
+- `takes` / `max_takes`: v3 pacing varies a lot per take (8.8-17 chars/s for the same voice). The builder renders 3 takes per scene (different `seed`s, all cached) and keeps **the fastest take whose MMS clarity ≥ `min_clarity`** (character match, ignoring spaces and hyphens). Unclear scenes get up to 6 takes. Result on the example: 94 s → 77 s, every scene ≥ 0.83 clarity. It costs about 3× characters (≈ 4k for an 80 s script).
+- `judge` needs CPU torch + transformers (MMS). Without them, set `"judge": false`: the fastest take wins, with no clarity guard.
+- `max_pause`: shortens any remaining pause longer than this, cutting from the middle of the silence (no speech touched).
+
+Write for speed too: short sentences, one idea each, no filler, punchy verbs, rhetorical questions.
 
 ## Writing the Uzbek script (original, per topic)
 

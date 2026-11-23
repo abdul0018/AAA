@@ -6,11 +6,20 @@
   "chapterWord": "bob"
  },
  "voice": {
-  "voice_id": "tQBN3grEhnGrrqn0n2Rw",
+  "voice_id": "v4cqTf6wc2CXwA2tR7TF",
   "model_id": "eleven_v3",
   "stability": 0.5,
-  "similarity_boost": 0.8
+  "similarity_boost": 0.8,
+  "tags": "[excited][speaking fast]",
+  "max_pause": 0.22,
+  "per_scene": true,
+  "gap": 0.1,
+  "takes": 3,
+  "judge": true,
+  "min_clarity": 0.8
  },
+ "pace": "energetic",
+ "sfx": true,
  "music": null,
  "musicVolume": 0.12,
  "keys": [
