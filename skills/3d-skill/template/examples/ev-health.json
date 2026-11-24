@@ -1,0 +1,1178 @@
+{
+ "handle": "@autopodveska.uz",
+ "avatar": "AP",
+ "subtitle": "elektromobil va salomatlik",
+ "end": 66.05,
+ "words": [
+  {
+   "w": "Elektromobil",
+   "s": 0.0,
+   "e": 0.72
+  },
+  {
+   "w": "erkaklar",
+   "s": 0.8,
+   "e": 1.28
+  },
+  {
+   "w": "salomatligiga",
+   "s": 1.36,
+   "e": 2.08
+  },
+  {
+   "w": "zararlimi?",
+   "s": 2.16,
+   "e": 3.12
+  },
+  {
+   "w": "Do'stim",
+   "s": 3.41,
+   "e": 3.77
+  },
+  {
+   "w": "Li",
+   "s": 3.93,
+   "e": 4.17
+  },
+  {
+   "w": "L9",
+   "s": 4.25,
+   "e": 4.81
+  },
+  {
+   "w": "oldi.",
+   "s": 4.89,
+   "e": 5.37
+  },
+  {
+   "w": "Guruhda",
+   "s": 5.397,
+   "e": 5.69
+  },
+  {
+   "w": "darrov",
+   "s": 5.77,
+   "e": 6.09
+  },
+  {
+   "w": "yozishdi:",
+   "s": 6.13,
+   "e": 6.81
+  },
+  {
+   "w": "\"Sotib",
+   "s": 6.85,
+   "e": 7.13
+  },
+  {
+   "w": "yubor,",
+   "s": 7.17,
+   "e": 7.61
+  },
+  {
+   "w": "tagingdagi",
+   "s": 7.65,
+   "e": 8.09
+  },
+  {
+   "w": "batareya",
+   "s": 8.13,
+   "e": 8.65
+  },
+  {
+   "w": "seni",
+   "s": 8.77,
+   "e": 8.97
+  },
+  {
+   "w": "nurlantiradi.\"",
+   "s": 9.01,
+   "e": 9.93
+  },
+  {
+   "w": "Batareya",
+   "s": 10.01,
+   "e": 10.41
+  },
+  {
+   "w": "haqiqatan",
+   "s": 10.49,
+   "e": 11.13
+  },
+  {
+   "w": "pol",
+   "s": 11.25,
+   "e": 11.37
+  },
+  {
+   "w": "ostida.",
+   "s": 11.49,
+   "e": 12.01
+  },
+  {
+   "w": "Tezlashganda",
+   "s": 12.05,
+   "e": 12.65
+  },
+  {
+   "w": "kabellardan",
+   "s": 12.69,
+   "e": 13.37
+  },
+  {
+   "w": "yuzlab",
+   "s": 13.45,
+   "e": 13.85
+  },
+  {
+   "w": "amper",
+   "s": 13.93,
+   "e": 14.17
+  },
+  {
+   "w": "tok",
+   "s": 14.33,
+   "e": 14.49
+  },
+  {
+   "w": "o'tadi.",
+   "s": 14.57,
+   "e": 15.13
+  },
+  {
+   "w": "Atrofida",
+   "s": 15.21,
+   "e": 15.61
+  },
+  {
+   "w": "esa",
+   "s": 15.73,
+   "e": 15.85
+  },
+  {
+   "w": "magnit",
+   "s": 16.01,
+   "e": 16.33
+  },
+  {
+   "w": "maydon",
+   "s": 16.41,
+   "e": 16.81
+  },
+  {
+   "w": "paydo",
+   "s": 16.89,
+   "e": 17.05
+  },
+  {
+   "w": "bo'ladi.",
+   "s": 17.13,
+   "e": 17.69
+  },
+  {
+   "w": "Norvegiyada",
+   "s": 17.77,
+   "e": 18.33
+  },
+  {
+   "w": "SINTEF",
+   "s": 18.37,
+   "e": 18.73
+  },
+  {
+   "w": "olimlari",
+   "s": 18.81,
+   "e": 19.29
+  },
+  {
+   "w": "elektromobillarni",
+   "s": 19.37,
+   "e": 20.21
+  },
+  {
+   "w": "o'lchashdi.",
+   "s": 20.25,
+   "e": 20.97
+  },
+  {
+   "w": "Eng",
+   "s": 21.09,
+   "e": 21.21
+  },
+  {
+   "w": "kuchli",
+   "s": 21.25,
+   "e": 21.53
+  },
+  {
+   "w": "joy,",
+   "s": 21.61,
+   "e": 21.93
+  },
+  {
+   "w": "oyoq",
+   "s": 22.05,
+   "e": 22.25
+  },
+  {
+   "w": "ostida:",
+   "s": 22.37,
+   "e": 22.89
+  },
+  {
+   "w": "xalqaro",
+   "s": 22.943,
+   "e": 23.29
+  },
+  {
+   "w": "me'yorning",
+   "s": 23.37,
+   "e": 23.85
+  },
+  {
+   "w": "yigirma",
+   "s": 23.89,
+   "e": 24.25
+  },
+  {
+   "w": "foizi.",
+   "s": 24.33,
+   "e": 25.05
+  },
+  {
+   "w": "Bosh",
+   "s": 25.103,
+   "e": 25.21
+  },
+  {
+   "w": "balandligida",
+   "s": 25.29,
+   "e": 25.85
+  },
+  {
+   "w": "esa",
+   "s": 25.97,
+   "e": 26.09
+  },
+  {
+   "w": "atigi",
+   "s": 26.17,
+   "e": 26.65
+  },
+  {
+   "w": "ikki",
+   "s": 26.77,
+   "e": 26.89
+  },
+  {
+   "w": "foiz.",
+   "s": 26.97,
+   "e": 27.61
+  },
+  {
+   "w": "Benzinli",
+   "s": 27.69,
+   "e": 28.01
+  },
+  {
+   "w": "mashinada",
+   "s": 28.09,
+   "e": 28.57
+  },
+  {
+   "w": "ham",
+   "s": 28.69,
+   "e": 28.81
+  },
+  {
+   "w": "oyoq",
+   "s": 28.89,
+   "e": 29.05
+  },
+  {
+   "w": "ostida",
+   "s": 29.17,
+   "e": 29.53
+  },
+  {
+   "w": "o'n",
+   "s": 29.57,
+   "e": 29.69
+  },
+  {
+   "w": "foiz",
+   "s": 29.77,
+   "e": 30.09
+  },
+  {
+   "w": "bor.",
+   "s": 30.21,
+   "e": 30.57
+  },
+  {
+   "w": "Uyda",
+   "s": 30.61,
+   "e": 30.81
+  },
+  {
+   "w": "soch",
+   "s": 30.89,
+   "e": 31.13
+  },
+  {
+   "w": "quritgich",
+   "s": 31.157,
+   "e": 31.53
+  },
+  {
+   "w": "esa",
+   "s": 31.65,
+   "e": 31.77
+  },
+  {
+   "w": "bundan",
+   "s": 31.85,
+   "e": 32.17
+  },
+  {
+   "w": "ham",
+   "s": 32.25,
+   "e": 32.41
+  },
+  {
+   "w": "ko'p",
+   "s": 32.45,
+   "e": 32.57
+  },
+  {
+   "w": "beradi.",
+   "s": 32.65,
+   "e": 33.21
+  },
+  {
+   "w": "Bu",
+   "s": 33.29,
+   "e": 33.37
+  },
+  {
+   "w": "radiatsiya",
+   "s": 33.45,
+   "e": 33.93
+  },
+  {
+   "w": "emas.",
+   "s": 34.17,
+   "e": 34.57
+  },
+  {
+   "w": "Bunday",
+   "s": 34.677,
+   "e": 34.89
+  },
+  {
+   "w": "past",
+   "s": 35.01,
+   "e": 35.13
+  },
+  {
+   "w": "maydon",
+   "s": 35.21,
+   "e": 35.53
+  },
+  {
+   "w": "bepushtlikka",
+   "s": 35.61,
+   "e": 36.17
+  },
+  {
+   "w": "olib",
+   "s": 36.29,
+   "e": 36.41
+  },
+  {
+   "w": "kelishi",
+   "s": 36.49,
+   "e": 36.73
+  },
+  {
+   "w": "isbotlanmagan.",
+   "s": 36.81,
+   "e": 37.85
+  },
+  {
+   "w": "Asl",
+   "s": 37.93,
+   "e": 38.17
+  },
+  {
+   "w": "dushman",
+   "s": 38.25,
+   "e": 38.65
+  },
+  {
+   "w": "boshqa:",
+   "s": 38.73,
+   "e": 39.37
+  },
+  {
+   "w": "issiqlik.",
+   "s": 39.49,
+   "e": 40.25
+  },
+  {
+   "w": "Moyaklar",
+   "s": 40.29,
+   "e": 40.73
+  },
+  {
+   "w": "bejiz",
+   "s": 40.81,
+   "e": 41.13
+  },
+  {
+   "w": "tashqarida",
+   "s": 41.21,
+   "e": 41.69
+  },
+  {
+   "w": "emas.",
+   "s": 41.89,
+   "e": 42.17
+  },
+  {
+   "w": "Ular",
+   "s": 42.21,
+   "e": 42.41
+  },
+  {
+   "w": "tanadan",
+   "s": 42.49,
+   "e": 42.89
+  },
+  {
+   "w": "ikki-uch",
+   "s": 43.05,
+   "e": 43.53
+  },
+  {
+   "w": "daraja",
+   "s": 43.61,
+   "e": 43.93
+  },
+  {
+   "w": "salqin",
+   "s": 44.05,
+   "e": 44.25
+  },
+  {
+   "w": "turishi",
+   "s": 44.33,
+   "e": 44.57
+  },
+  {
+   "w": "kerak.",
+   "s": 44.65,
+   "e": 45.05
+  },
+  {
+   "w": "Tadqiqotda",
+   "s": 45.103,
+   "e": 45.77
+  },
+  {
+   "w": "o'rindiq",
+   "s": 45.81,
+   "e": 46.17
+  },
+  {
+   "w": "isitgichida",
+   "s": 46.25,
+   "e": 46.81
+  },
+  {
+   "w": "bir",
+   "s": 46.89,
+   "e": 46.97
+  },
+  {
+   "w": "soat",
+   "s": 47.05,
+   "e": 47.29
+  },
+  {
+   "w": "o'tirgan",
+   "s": 47.33,
+   "e": 47.69
+  },
+  {
+   "w": "erkaklarda",
+   "s": 47.81,
+   "e": 48.33
+  },
+  {
+   "w": "harorat",
+   "s": 48.41,
+   "e": 48.81
+  },
+  {
+   "w": "o'ttiz",
+   "s": 48.89,
+   "e": 49.21
+  },
+  {
+   "w": "yetti",
+   "s": 49.29,
+   "e": 49.53
+  },
+  {
+   "w": "darajadan",
+   "s": 49.61,
+   "e": 50.09
+  },
+  {
+   "w": "oshgan.",
+   "s": 50.17,
+   "e": 50.73
+  },
+  {
+   "w": "Bu",
+   "s": 50.81,
+   "e": 50.89
+  },
+  {
+   "w": "sperma",
+   "s": 50.97,
+   "e": 51.37
+  },
+  {
+   "w": "sifatiga",
+   "s": 51.41,
+   "e": 51.85
+  },
+  {
+   "w": "ta'sir",
+   "s": 51.89,
+   "e": 52.17
+  },
+  {
+   "w": "qilishi",
+   "s": 52.197,
+   "e": 52.41
+  },
+  {
+   "w": "mumkin.",
+   "s": 52.49,
+   "e": 53.05
+  },
+  {
+   "w": "Shuning",
+   "s": 53.09,
+   "e": 53.29
+  },
+  {
+   "w": "uchun",
+   "s": 53.37,
+   "e": 53.61
+  },
+  {
+   "w": "o'rindiq",
+   "s": 53.65,
+   "e": 54.01
+  },
+  {
+   "w": "qizigach,",
+   "s": 54.05,
+   "e": 54.57
+  },
+  {
+   "w": "isitgichni",
+   "s": 54.65,
+   "e": 55.13
+  },
+  {
+   "w": "o'chiring.",
+   "s": 55.21,
+   "e": 55.77
+  },
+  {
+   "w": "Uzoq",
+   "s": 55.81,
+   "e": 56.09
+  },
+  {
+   "w": "yo'lda",
+   "s": 56.13,
+   "e": 56.41
+  },
+  {
+   "w": "esa",
+   "s": 56.53,
+   "e": 56.65
+  },
+  {
+   "w": "tanaffus",
+   "s": 56.77,
+   "e": 57.13
+  },
+  {
+   "w": "qiling.",
+   "s": 57.21,
+   "e": 57.69
+  },
+  {
+   "w": "Xullas,",
+   "s": 57.743,
+   "e": 58.17
+  },
+  {
+   "w": "batareyadan",
+   "s": 58.21,
+   "e": 58.81
+  },
+  {
+   "w": "emas,",
+   "s": 59.01,
+   "e": 59.29
+  },
+  {
+   "w": "o'rindiq",
+   "s": 59.37,
+   "e": 59.77
+  },
+  {
+   "w": "isitgichidan",
+   "s": 59.85,
+   "e": 60.41
+  },
+  {
+   "w": "ehtiyot",
+   "s": 60.45,
+   "e": 60.81
+  },
+  {
+   "w": "bo'ling.",
+   "s": 60.85,
+   "e": 61.37
+  },
+  {
+   "w": "Siz",
+   "s": 61.85,
+   "e": 62.09
+  },
+  {
+   "w": "isitgichni",
+   "s": 62.17,
+   "e": 62.57
+  },
+  {
+   "w": "yoqasizmi?",
+   "s": 62.65,
+   "e": 63.45
+  }
+ ],
+ "highlight": [
+  "nurlantiradi",
+  "radiatsiya",
+  "issiqlik"
+ ],
+ "chapters": [
+  {
+   "name": "savol",
+   "at": 0.0
+  },
+  {
+   "name": "chat",
+   "at": 3.41
+  },
+  {
+   "name": "pol ostida",
+   "at": 10.01
+  },
+  {
+   "name": "o'lchov",
+   "at": 17.77
+  },
+  {
+   "name": "taqqoslash",
+   "at": 27.69
+  },
+  {
+   "name": "radiatsiya?",
+   "at": 33.29
+  },
+  {
+   "name": "teplovizor",
+   "at": 37.93
+  },
+  {
+   "name": "isitgich",
+   "at": 45.103
+  },
+  {
+   "name": "maslahat",
+   "at": 53.09
+  },
+  {
+   "name": "xulosa",
+   "at": 57.743
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0.0,
+   "to": 3.41,
+   "caption": false,
+   "items": [
+    {
+     "kind": "headline",
+     "at": 0.05,
+     "y": 290,
+     "size": 118,
+     "lines": [
+      {
+       "text": "ELEKTROMOBIL",
+       "color": "#F6C343"
+      },
+      {
+       "text": "ERKAKLAR"
+      },
+      {
+       "text": "SALOMATLIGIGA"
+      },
+      {
+       "text": "ZARARLIMI?"
+      }
+     ]
+    },
+    {
+     "kind": "xray",
+     "src": "img/xray_main_a.png",
+     "iw": 1344,
+     "ih": 752,
+     "x": 540,
+     "y": 1270,
+     "w": 1080,
+     "at": 0.3,
+     "cam": [
+      {
+       "at": 0,
+       "dur": 3.5,
+       "s": 1.06
+      }
+     ],
+     "overlays": [
+      {
+       "type": "pulse",
+       "x": 505,
+       "y": 470,
+       "rx": 250,
+       "ry": 75,
+       "at": 0.6
+      },
+      {
+       "type": "laser",
+       "x1": 40,
+       "y1": 246,
+       "x2": 250,
+       "y2": 222,
+       "at": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "from": 3.41,
+   "to": 10.01,
+   "caption": true,
+   "items": [
+    {
+     "kind": "chat",
+     "at": 3.41,
+     "y": 1130,
+     "title": "Bolalar · avto",
+     "members": "6 ta a'zo",
+     "msgs": [
+      {
+       "at": 4.54,
+       "me": true,
+       "photo": true,
+       "caption": "Li L9 oldim!"
+      },
+      {
+       "at": 6.75,
+       "from": "Jasur",
+       "text": "Aka, sotib yuboring."
+      },
+      {
+       "at": 7.550000000000001,
+       "from": "Jasur",
+       "text": "Tagingizdagi batareya sizni nurlantiradi"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "from": 10.01,
+   "to": 17.77,
+   "caption": true,
+   "items": [
+    {
+     "kind": "xray",
+     "src": "img/xray_side_a.png",
+     "iw": 1344,
+     "ih": 752,
+     "x": 540,
+     "y": 880,
+     "w": 1080,
+     "at": 10.01,
+     "cam": [
+      {
+       "at": 10.01,
+       "dur": 7.76,
+       "s": 1.1,
+       "dx": -30
+      }
+     ],
+     "overlays": [
+      {
+       "type": "pulse",
+       "x": 667,
+       "y": 518,
+       "rx": 340,
+       "ry": 45,
+       "at": 11.25
+      },
+      {
+       "type": "flow",
+       "pts": [
+        [
+         380,
+         520
+        ],
+        [
+         700,
+         520
+        ],
+        [
+         975,
+         512
+        ],
+        [
+         1000,
+         495
+        ],
+        [
+         1015,
+         462
+        ],
+        [
+         1045,
+         444
+        ]
+       ],
+       "at": 12.05
+      },
+      {
+       "type": "rings",
+       "x": 667,
+       "y": 518,
+       "rx": 380,
+       "ry": 95,
+       "at": 16.01
+      }
+     ]
+    },
+    {
+     "kind": "stat",
+     "at": 13.35,
+     "y": 1420,
+     "value": "YUZLAB A",
+     "label": "TEZLASHGANDA TOK",
+     "gauge": 0.9
+    },
+    {
+     "kind": "label",
+     "at": 16.01,
+     "y": 1600,
+     "text": "MAGNIT MAYDON",
+     "color": "#F5A524"
+    }
+   ]
+  },
+  {
+   "from": 17.77,
+   "to": 27.69,
+   "caption": true,
+   "items": [
+    {
+     "kind": "label",
+     "at": 17.97,
+     "y": 470,
+     "text": "SINTEF · NORVEGIYA",
+     "color": "#6FA8FF",
+     "size": 30
+    },
+    {
+     "kind": "xray",
+     "src": "img/xray_side_a.png",
+     "iw": 1344,
+     "ih": 752,
+     "x": 540,
+     "y": 780,
+     "w": 1040,
+     "at": 17.77,
+     "overlays": [
+      {
+       "type": "pulse",
+       "x": 667,
+       "y": 518,
+       "rx": 330,
+       "ry": 40,
+       "at": 17.77
+      },
+      {
+       "type": "rings",
+       "x": 667,
+       "y": 518,
+       "rx": 360,
+       "ry": 85,
+       "at": 18.07
+      },
+      {
+       "type": "marker",
+       "x": 930,
+       "y": 455,
+       "at": 21.95,
+       "value": "20%",
+       "label": "OYOQ OSTIDA",
+       "side": "right"
+      },
+      {
+       "type": "marker",
+       "x": 752,
+       "y": 222,
+       "at": 25.003,
+       "value": "2%",
+       "label": "BOSH",
+       "side": "left"
+      }
+     ]
+    },
+    {
+     "kind": "grid100",
+     "at": 20.89,
+     "y": 1370,
+     "header": "100 KATAK = XALQARO ME'YOR",
+     "steps": [
+      {
+       "at": 23.89,
+       "n": 20,
+       "big": "20%",
+       "sub": "oyoq ostida",
+       "tag": "ELEKTROMOBIL"
+      },
+      {
+       "at": 26.77,
+       "n": 2,
+       "big": "2%",
+       "sub": "bosh balandligida",
+       "tag": "ELEKTROMOBIL"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "from": 27.69,
+   "to": 33.29,
+   "caption": true,
+   "items": [
+    {
+     "kind": "compare",
+     "at": 27.69,
+     "y": 1050,
+     "header": "ME'YORGA NISBATAN · MAGNIT MAYDON",
+     "rows": [
+      {
+       "at": 27.790000000000003,
+       "label": "Elektromobil",
+       "value": 20,
+       "text": "20%"
+      },
+      {
+       "at": 28.89,
+       "label": "Benzinli",
+       "value": 10,
+       "text": "10%",
+       "color": "#9AA3B5"
+      },
+      {
+       "at": 30.84,
+       "label": "Soch quritgich",
+       "value": 175,
+       "text": "me'yordan ko'p",
+       "color": "#F0473E"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "from": 33.29,
+   "to": 37.93,
+   "caption": true,
+   "items": [
+    {
+     "kind": "notrad",
+     "at": 33.29,
+     "strikeAt": 34.07,
+     "subAt": 36.21,
+     "y": 1040,
+     "title": "RADIATSIYA EMAS",
+     "sub": "bepushtlikka ta'siri isbotlanmagan"
+    }
+   ]
+  },
+  {
+   "from": 37.93,
+   "to": 45.103,
+   "caption": true,
+   "items": [
+    {
+     "kind": "thermal",
+     "at": 37.93,
+     "y": 1060,
+     "tempFrom": 34.0,
+     "tag": "NORMA: TANADAN 2–3° SALQIN",
+     "tagAt": 42.21
+    }
+   ]
+  },
+  {
+   "from": 45.103,
+   "to": 53.09,
+   "caption": true,
+   "items": [
+    {
+     "kind": "thermal",
+     "at": 45.103,
+     "y": 1060,
+     "heatAt": 46.05,
+     "tempFrom": 34.0,
+     "tempTo": 37.3,
+     "tempAt": 48.41,
+     "tempDur": 2.060000000000005,
+     "tag": "1 SOAT · O'RINDIQ ISITGICHI",
+     "tagAt": 46.79
+    },
+    {
+     "kind": "pill",
+     "at": 50.87,
+     "y": 470,
+     "text": "sperma sifatiga ta'sir qilishi mumkin",
+     "color": "#F0473E"
+    }
+   ]
+  },
+  {
+   "from": 53.09,
+   "to": 57.743,
+   "caption": true,
+   "items": [
+    {
+     "kind": "switch",
+     "at": 53.09,
+     "offAt": 55.160000000000004,
+     "y": 820,
+     "title": "O'RINDIQ ISITGICHI",
+     "sub": "QIZIGACH O'CHIRING"
+    },
+    {
+     "kind": "timer",
+     "at": 55.71,
+     "y": 1150,
+     "title": "TANAFFUS",
+     "sub": "UZOQ YO'LDA"
+    }
+   ]
+  },
+  {
+   "from": 57.743,
+   "to": 66.05,
+   "caption": false,
+   "items": [
+    {
+     "kind": "headline",
+     "at": 58.11,
+     "out": 61.800000000000004,
+     "y": 330,
+     "size": 110,
+     "lines": [
+      {
+       "text": "BATAREYA EMAS,"
+      },
+      {
+       "text": "ISITGICH",
+       "color": "#F6C343"
+      }
+     ]
+    },
+    {
+     "kind": "headline",
+     "at": 61.800000000000004,
+     "y": 330,
+     "size": 110,
+     "lines": [
+      {
+       "text": "ISITGICHNI",
+       "color": "#F6C343"
+      },
+      {
+       "text": "YOQASIZMI?"
+      }
+     ]
+    },
+    {
+     "kind": "xray",
+     "src": "img/xray_main_a.png",
+     "iw": 1344,
+     "ih": 752,
+     "x": 540,
+     "y": 1150,
+     "w": 1080,
+     "at": 57.743,
+     "cam": [
+      {
+       "at": 57.743,
+       "dur": 8.306999999999995,
+       "s": 1.08
+      }
+     ],
+     "overlays": [
+      {
+       "type": "pulse",
+       "x": 505,
+       "y": 470,
+       "rx": 230,
+       "ry": 60,
+       "at": 57.743,
+       "color": "rgba(255,170,40,0.25)"
+      },
+      {
+       "type": "pulse",
+       "x": 770,
+       "y": 350,
+       "rx": 110,
+       "ry": 60,
+       "at": 59.269999999999996,
+       "color": "rgba(255,80,50,0.75)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "muteAll": true
+}

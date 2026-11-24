@@ -6,6 +6,7 @@
 
 | [`toon-xray-reel`](toon-xray-reel/SKILL.md) | **Style #2**: text-free cel-shaded 3D explainer — AI camera shots (Kling), x-ray ghost reveal, part pull-out, animated SVG cut-away, warm grade, watermark; shares voice/SFX/mix with explainer-reel. |
 | [`style-match`](style-match/SKILL.md) | Make a reel look like a reference: style-locked generation from de-watermarked reference frames, fitted 3D-LUT colour match, measured side-by-side QA (ΔE / chroma / line density). |
+| [`3d-skill`](3d-skill/SKILL.md) | **Style #4 "3D skill"**: chaptered 3D-infographic reels (ZHS look): grid board, chapter header + progress, Unbounded headlines, karaoke with selection-box highlight, x-ray 3D car with overlays, info cards, phone chat, 100-cell grid, IR thermal panel, outro; props-driven `Reel3D` + cue builder. |
 | [`sfx-kit`](sfx-kit/SKILL.md) | 320 professional CC0 sound effects (Wyzowl SFX Kit) with sync points and mix levels; `fetch.sh` downloads the WAVs. Used automatically by explainer-reel's `sfx_cues.py` + `pro_mix.py`. |
 
 Also installed by `install.sh`: laniameda style skills (visual-style-replicator, image-to-prompt, car-angle-extractor, seedance-higgsfield), color-grade-luts (agamm/video-agent, MIT), the official Remotion skills and ElevenLabs skills (sound-effects, music, text-to-speech, voice-isolator).
