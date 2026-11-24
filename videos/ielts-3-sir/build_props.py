@@ -8,7 +8,7 @@ def T(word, n=1):
             k += 1
             if k == n: return w['s']
     raise KeyError(word)
-END = round(W[-1]['e'] + 1.3, 2)
+END = 44.09  # the reference's own audio length (its original voiceover is kept)
 RED = '#FF4D4D'; YEL = '#FFCC40'; CREAM = '#F2F1EC'
 cuts = [0.0, T('hozir'), T('birinchi'), T('bilingki'), T('ikkinchi'), T('agar'), T('doim'), T('uchinchi'), T('shunchaki'), T("ko'pchilik"), T('lekin'), T('u'), T('va', 2), END]
 scenes = []
@@ -109,6 +109,6 @@ scene(12, lambda r: dict(handlePos='center',
     tags=[dict(text='Grammar', at=r(T('xatoingizni')) - 0.05, x=880, y=930, bg=YEL, size=40), dict(text='Vocab', at=r(T('xatoingizni')) + 0.2, x=880, y=1000, bg=YEL, size=40),
           dict(text='Coherence', at=r(T('xatoingizni')) + 0.45, x=880, y=1090, bg=YEL, size=40)]))
 
-txt = json.dumps(dict(handle='@autopodveska.uz', voiceover='vo.wav', muteAll=True, scenes=scenes), ensure_ascii=False, indent=1).replace('"from_"', '"from"')
+txt = json.dumps(dict(handle='@autopodveska.uz', voiceover='ref_audio.wav', muteAll=True, scenes=scenes), ensure_ascii=False, indent=1).replace('"from_"', '"from"')
 open('public/props.json', 'w').write(txt)
 print('scenes', len(scenes), 'total', round(sum(s['dur'] for s in scenes), 2))

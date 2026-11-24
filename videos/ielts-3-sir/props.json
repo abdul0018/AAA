@@ -1,21 +1,21 @@
 {
  "handle": "@autopodveska.uz",
- "voiceover": "vo.wav",
+ "voiceover": "ref_audio.wav",
  "muteAll": true,
  "scenes": [
   {
-   "dur": 2.748,
+   "dur": 2.92,
    "transition": "cut",
    "handlePos": "center",
    "titles": [
     {
      "text": "IELTS 8.0",
      "at": 0.05,
-     "out": 1.117
+     "out": 0.9
     },
     {
      "text": "Aslida unchalik\nqiyin emas",
-     "at": 1.167,
+     "at": 0.95,
      "underline": true
     }
    ],
@@ -48,20 +48,20 @@
    ]
   },
   {
-   "dur": 3.768,
+   "dur": 3.7,
    "transition": "cut",
    "handlePos": "left",
    "titles": [
     {
      "text": "Ballingizni\nosongina +1–2",
      "at": 0.05,
-     "out": 2.578,
+     "out": 2.48,
      "underline": true,
      "size": 80
     },
     {
      "text": "Uchta sir",
-     "at": 2.628,
+     "at": 2.5300000000000002,
      "underline": true
     }
    ],
@@ -78,7 +78,7 @@
      "w": 260,
      "x": 250,
      "y": 1360,
-     "at": 2.798,
+     "at": 2.7,
      "anim": "pop"
     },
     {
@@ -86,7 +86,7 @@
      "w": 260,
      "x": 540,
      "y": 1360,
-     "at": 2.918,
+     "at": 2.8200000000000003,
      "anim": "pop"
     },
     {
@@ -94,14 +94,14 @@
      "w": 260,
      "x": 830,
      "y": 1360,
-     "at": 3.038,
+     "at": 2.94,
      "anim": "pop"
     }
    ],
    "tags": [
     {
      "text": "+1–2 ball",
-     "at": 1.565,
+     "at": 1.508,
      "x": 760,
      "y": 650,
      "bg": "#FFCC40"
@@ -109,7 +109,7 @@
    ]
   },
   {
-   "dur": 7.397,
+   "dur": 5.75,
    "transition": "cut",
    "handlePos": "right",
    "titles": [
@@ -117,13 +117,13 @@
      "text": "Reading",
      "kicker": "1-sir",
      "at": 0.05,
-     "out": 3.819,
+     "out": 2.78,
      "underline": true
     },
     {
      "text": "Qat'iy so'zlar",
      "kicker": "True / False / Not Given",
-     "at": 3.869,
+     "at": 2.83,
      "underline": true
     }
    ],
@@ -139,28 +139,28 @@
    "tags": [
     {
      "text": "TRUE",
-     "at": 1.414,
+     "at": 1.88,
      "x": 250,
      "y": 1360,
      "bg": "#F2F1EC"
     },
     {
      "text": "FALSE",
-     "at": 2.006,
+     "at": 2.116,
      "x": 540,
      "y": 1410,
      "bg": "#F2F1EC"
     },
     {
      "text": "NOT GIVEN",
-     "at": 2.632,
+     "at": 2.366,
      "x": 820,
      "y": 1360,
      "bg": "#F2F1EC"
     },
     {
      "text": "ALWAYS",
-     "at": 3.919,
+     "at": 2.88,
      "x": 540,
      "y": 860,
      "bg": "#FFCC40",
@@ -168,7 +168,7 @@
     },
     {
      "text": "ONLY",
-     "at": 4.614,
+     "at": 3.829,
      "x": 540,
      "y": 990,
      "bg": "#FFCC40",
@@ -176,7 +176,7 @@
     },
     {
      "text": "NEVER",
-     "at": 5.31,
+     "at": 4.78,
      "x": 540,
      "y": 1120,
      "bg": "#FFCC40",
@@ -185,7 +185,7 @@
    ],
    "boxes": [
     {
-     "at": 4.069,
+     "at": 3.03,
      "x": 540,
      "y": 860,
      "w": 330,
@@ -194,7 +194,7 @@
      "color": "#FF4D4D"
     },
     {
-     "at": 4.764,
+     "at": 3.979,
      "x": 540,
      "y": 990,
      "w": 250,
@@ -203,7 +203,7 @@
      "color": "#FF4D4D"
     },
     {
-     "at": 5.46,
+     "at": 4.930000000000001,
      "x": 540,
      "y": 1120,
      "w": 290,
@@ -214,31 +214,31 @@
    ]
   },
   {
-   "dur": 3.13,
+   "dur": 2.78,
    "transition": "cut",
    "handlePos": "center",
    "counters": [
     {
-     "at": 0.252,
+     "at": 0.33,
      "dur": 0.8,
      "from": 0,
      "to": 95,
      "suffix": "%",
      "sub": "javob TRUE bo'lmaydi",
-     "subAt": 1.739
+     "subAt": 1.611
     }
    ],
    "titles": [
     {
      "text": "Bilingki",
      "at": 0.0,
-     "out": 0.202
+     "out": 0.28
     }
    ],
    "tags": [
     {
      "text": "TRUE",
-     "at": 1.639,
+     "at": 1.511,
      "x": 540,
      "y": 1050,
      "bg": "#F2F1EC",
@@ -248,7 +248,7 @@
    "marks": [
     {
      "type": "cross",
-     "at": 2.365,
+     "at": 2.137,
      "x": 540,
      "y": 1050,
      "size": 170
@@ -256,7 +256,7 @@
    ]
   },
   {
-   "dur": 4.174,
+   "dur": 3.71,
    "transition": "cut",
    "handlePos": "left",
    "titles": [
@@ -264,12 +264,12 @@
      "text": "Listening",
      "kicker": "2-sir",
      "at": 0.05,
-     "out": 3.135,
+     "out": 2.78,
      "underline": true
     },
     {
      "text": "Ehtiyot bo'ling!",
-     "at": 3.185,
+     "at": 2.83,
      "underline": true
     }
    ],
@@ -286,13 +286,13 @@
      "w": 620,
      "x": 540,
      "y": 1240,
-     "at": 1.192,
+     "at": 1.05,
      "anim": "slideUp"
     }
    ],
    "boxes": [
     {
-     "at": 1.5919999999999999,
+     "at": 1.45,
      "x": 651,
      "y": 1180,
      "w": 300,
@@ -301,7 +301,7 @@
      "color": "#FF4D4D"
     },
     {
-     "at": 2.242,
+     "at": 2.007,
      "x": 651,
      "y": 1277,
      "w": 300,
@@ -312,19 +312,19 @@
    ]
   },
   {
-   "dur": 5.079,
+   "dur": 3.69,
    "transition": "cut",
    "handlePos": "right",
    "titles": [
     {
      "text": "Gapirayotgan odam",
      "at": 0.05,
-     "out": 3.842,
+     "out": 2.96,
      "size": 76
     },
     {
      "text": "Fikrini o'zgartirsa",
-     "at": 3.8920000000000003,
+     "at": 3.0100000000000002,
      "underline": true,
      "size": 76
     }
@@ -341,7 +341,7 @@
    "tags": [
     {
      "text": "Oh, sorry…",
-     "at": 1.183,
+     "at": 1.34,
      "x": 720,
      "y": 720,
      "bg": "#F2F1EC",
@@ -349,7 +349,7 @@
     },
     {
      "text": "Wait, actually…",
-     "at": 2.644,
+     "at": 2.34,
      "x": 700,
      "y": 860,
      "bg": "#FFCC40",
@@ -358,7 +358,7 @@
    ]
   },
   {
-   "dur": 1.774,
+   "dur": 1.91,
    "transition": "cut",
    "handlePos": "center",
    "titles": [
@@ -391,14 +391,14 @@
    "marks": [
     {
      "type": "cross",
-     "at": 0.417,
+     "at": 0.449,
      "x": 330,
      "y": 1060,
      "size": 160
     },
     {
      "type": "check",
-     "at": 1.043,
+     "at": 1.123,
      "x": 750,
      "y": 1300,
      "size": 110
@@ -406,7 +406,7 @@
    ],
    "boxes": [
     {
-     "at": 1.043,
+     "at": 1.123,
      "x": 750,
      "y": 1060,
      "w": 340,
@@ -417,7 +417,7 @@
    ]
   },
   {
-   "dur": 4.104,
+   "dur": 4.05,
    "transition": "cut",
    "handlePos": "left",
    "titles": [
@@ -425,12 +425,12 @@
      "text": "Speaking",
      "kicker": "3-sir · eng zo'r",
      "at": 0.05,
-     "out": 3.03,
+     "out": 2.64,
      "underline": true
     },
     {
      "text": "Ustoz qidirmayman",
-     "at": 3.08,
+     "at": 2.6900000000000004,
      "underline": true,
      "size": 80
     }
@@ -448,14 +448,14 @@
      "w": 130,
      "x": 760,
      "y": 1100,
-     "at": 2.83,
+     "at": 2.4400000000000004,
      "anim": "fade"
     }
    ],
    "tags": [
     {
      "text": "Ustoz",
-     "at": 2.9299999999999997,
+     "at": 2.54,
      "x": 760,
      "y": 640,
      "bg": "#F2F1EC"
@@ -464,7 +464,7 @@
    "marks": [
     {
      "type": "cross",
-     "at": 3.508,
+     "at": 3.214,
      "x": 760,
      "y": 1080,
      "size": 200
@@ -472,14 +472,14 @@
    ]
   },
   {
-   "dur": 2.771,
+   "dur": 3.2,
    "transition": "cut",
    "handlePos": "right",
    "titles": [
     {
      "text": "goprep.gg",
      "kicker": "Shunchaki",
-     "at": 0.352,
+     "at": 0.391,
      "underline": true
     }
    ],
@@ -497,7 +497,7 @@
      "w": 250,
      "x": 270,
      "y": 1420,
-     "at": 1.739,
+     "at": 1.89,
      "anim": "pop",
      "rotate": -5
     },
@@ -506,7 +506,7 @@
      "w": 250,
      "x": 540,
      "y": 1420,
-     "at": 1.8690000000000002,
+     "at": 2.02,
      "anim": "pop",
      "rotate": 0
     },
@@ -515,14 +515,14 @@
      "w": 250,
      "x": 810,
      "y": 1420,
-     "at": 1.999,
+     "at": 2.15,
      "anim": "pop",
      "rotate": 5
     }
    ]
   },
   {
-   "dur": 3.142,
+   "dur": 2.75,
    "transition": "cut",
    "handlePos": "center",
    "titles": [
@@ -539,7 +539,7 @@
      "w": 260,
      "x": 540,
      "y": 880,
-     "at": 1.512,
+     "at": 1.311,
      "anim": "pop"
     },
     {
@@ -578,7 +578,7 @@
    "marks": [
     {
      "type": "question",
-     "at": 2.412,
+     "at": 2.111,
      "x": 760,
      "y": 850,
      "size": 120
@@ -586,7 +586,7 @@
    ]
   },
   {
-   "dur": 3.791,
+   "dur": 3.48,
    "transition": "cut",
    "handlePos": "left",
    "titles": [
@@ -610,14 +610,14 @@
      "w": 200,
      "x": 850,
      "y": 1390,
-     "at": 0.874,
+     "at": 1.0879999999999999,
      "anim": "pop"
     }
    ],
    "flows": [
     {
      "d": "M850,1290 L760,1190",
-     "at": 1.426,
+     "at": 1.74,
      "draw": 0.4,
      "color": "#FF4D4D",
      "width": 6,
@@ -627,7 +627,7 @@
    "marks": [
     {
      "type": "check",
-     "at": 3.026,
+     "at": 2.917,
      "x": 520,
      "y": 1320,
      "size": 90
@@ -635,19 +635,19 @@
    ]
   },
   {
-   "dur": 2.574,
+   "dur": 2.6,
    "transition": "cut",
    "handlePos": "center",
    "titles": [
     {
      "text": "Maqtab qo'ymaydi",
-     "at": 0.24799999999999997,
-     "out": 1.535,
+     "at": 0.253,
+     "out": 1.5599999999999998,
      "size": 80
     },
     {
      "text": "Aniq ball",
-     "at": 1.585,
+     "at": 1.6099999999999999,
      "underline": true
     }
    ],
@@ -658,14 +658,14 @@
      "x": 540,
      "y": 980,
      "anim": "pop",
-     "out": 1.252
+     "out": 1.271
     },
     {
      "src": "img/score75.svg",
      "w": 480,
      "x": 540,
      "y": 980,
-     "at": 1.535,
+     "at": 1.5599999999999998,
      "anim": "pop",
      "rotate": 3
     }
@@ -673,19 +673,19 @@
    "marks": [
     {
      "type": "cross",
-     "at": 0.7110000000000001,
+     "at": 0.7210000000000001,
      "x": 540,
      "y": 980,
      "size": 180,
-     "out": 1.252
+     "out": 1.271
     }
    ],
    "shakeAt": [
-    0.7110000000000001
+    0.7210000000000001
    ]
   },
   {
-   "dur": 3.318,
+   "dur": 3.55,
    "transition": "cut",
    "handlePos": "center",
    "titles": [
@@ -706,7 +706,7 @@
    ],
    "boxes": [
     {
-     "at": 0.4570000000000001,
+     "at": 0.45200000000000007,
      "x": 322,
      "y": 938,
      "w": 112,
@@ -715,7 +715,7 @@
      "color": "#FF4D4D"
     },
     {
-     "at": 0.7070000000000001,
+     "at": 0.7020000000000001,
      "x": 296,
      "y": 988,
      "w": 50,
@@ -724,7 +724,7 @@
      "color": "#FF4D4D"
     },
     {
-     "at": 0.9570000000000001,
+     "at": 0.9520000000000001,
      "x": 598,
      "y": 1088,
      "w": 176,
@@ -736,7 +736,7 @@
    "tags": [
     {
      "text": "Grammar",
-     "at": 0.507,
+     "at": 0.502,
      "x": 880,
      "y": 930,
      "bg": "#FFCC40",
@@ -744,7 +744,7 @@
     },
     {
      "text": "Vocab",
-     "at": 0.7570000000000001,
+     "at": 0.752,
      "x": 880,
      "y": 1000,
      "bg": "#FFCC40",
@@ -752,7 +752,7 @@
     },
     {
      "text": "Coherence",
-     "at": 1.0070000000000001,
+     "at": 1.002,
      "x": 880,
      "y": 1090,
      "bg": "#FFCC40",

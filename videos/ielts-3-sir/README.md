@@ -14,3 +14,13 @@ voice and @autopodveska.uz. 47.8 s, 13 beats, hard cuts.
 - **Sound**: auto cues (`sfx_cues.py`) plus a whoosh on every cut, mixed by `pro_mix.py`: voice -16, master -14 LUFS.
 
 Note: the reference's tips are rules of thumb, not official IELTS rules ("95 %" and "always the second option").
+
+## v2: the original voiceover kept (only the visuals changed)
+At the user's request the audio is the reference video's **own track, untouched** (their voice + music); only the
+picture was remade. The ElevenLabs key lacks the audio-isolation and speech-to-text permissions, and Whisper can't read
+this voice under the music, so the storyboard was re-timed instead:
+- `words_tts.json` (the Adizzbek take used only as a timing skeleton) was piecewise-linearly warped onto the original
+  voice with 27 anchors: sentence starts taken from the voice-band pauses in the reference audio, plus the moments the
+  reference's own captions change → `words.json`.
+- Render `--muted`, then mux the reference audio: `ffmpeg -i picture.mp4 -i ref.mp4 -map 0:v -map 1:a -c:v copy -c:a aac`.
+- `sync_vs_reference.png`: the reference (left) and the remake (right) at the same timestamps.
