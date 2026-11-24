@@ -1,0 +1,764 @@
+{
+ "handle": "@autopodveska.uz",
+ "voiceover": "vo.wav",
+ "muteAll": true,
+ "scenes": [
+  {
+   "dur": 2.748,
+   "transition": "cut",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "IELTS 8.0",
+     "at": 0.05,
+     "out": 1.117
+    },
+    {
+     "text": "Aslida unchalik\nqiyin emas",
+     "at": 1.167,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/score80.svg",
+     "w": 520,
+     "x": 500,
+     "y": 980,
+     "anim": "pop",
+     "animDur": 0.5,
+     "rotate": -4
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 130,
+     "x": 850,
+     "y": 1130,
+     "at": 0.4,
+     "anim": "slideRight"
+    }
+   ],
+   "glows": [
+    {
+     "at": 0.2,
+     "x": 500,
+     "y": 980,
+     "r": 420
+    }
+   ]
+  },
+  {
+   "dur": 3.768,
+   "transition": "cut",
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Ballingizni\nosongina +1–2",
+     "at": 0.05,
+     "out": 2.578,
+     "underline": true,
+     "size": 80
+    },
+    {
+     "text": "Uchta sir",
+     "at": 2.628,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/bars.svg",
+     "w": 560,
+     "x": 540,
+     "y": 900,
+     "anim": "fade"
+    },
+    {
+     "src": "img/folder1.svg",
+     "w": 260,
+     "x": 250,
+     "y": 1360,
+     "at": 2.798,
+     "anim": "pop"
+    },
+    {
+     "src": "img/folder2.svg",
+     "w": 260,
+     "x": 540,
+     "y": 1360,
+     "at": 2.918,
+     "anim": "pop"
+    },
+    {
+     "src": "img/folder3.svg",
+     "w": 260,
+     "x": 830,
+     "y": 1360,
+     "at": 3.038,
+     "anim": "pop"
+    }
+   ],
+   "tags": [
+    {
+     "text": "+1–2 ball",
+     "at": 1.565,
+     "x": 760,
+     "y": 650,
+     "bg": "#FFCC40"
+    }
+   ]
+  },
+  {
+   "dur": 7.397,
+   "transition": "cut",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Reading",
+     "kicker": "1-sir",
+     "at": 0.05,
+     "out": 3.819,
+     "underline": true
+    },
+    {
+     "text": "Qat'iy so'zlar",
+     "kicker": "True / False / Not Given",
+     "at": 3.869,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/reading.svg",
+     "w": 420,
+     "x": 540,
+     "y": 1000,
+     "anim": "slideUp"
+    }
+   ],
+   "tags": [
+    {
+     "text": "TRUE",
+     "at": 1.414,
+     "x": 250,
+     "y": 1360,
+     "bg": "#F2F1EC"
+    },
+    {
+     "text": "FALSE",
+     "at": 2.006,
+     "x": 540,
+     "y": 1410,
+     "bg": "#F2F1EC"
+    },
+    {
+     "text": "NOT GIVEN",
+     "at": 2.632,
+     "x": 820,
+     "y": 1360,
+     "bg": "#F2F1EC"
+    },
+    {
+     "text": "ALWAYS",
+     "at": 3.919,
+     "x": 540,
+     "y": 860,
+     "bg": "#FFCC40",
+     "size": 58
+    },
+    {
+     "text": "ONLY",
+     "at": 4.614,
+     "x": 540,
+     "y": 990,
+     "bg": "#FFCC40",
+     "size": 58
+    },
+    {
+     "text": "NEVER",
+     "at": 5.31,
+     "x": 540,
+     "y": 1120,
+     "bg": "#FFCC40",
+     "size": 58
+    }
+   ],
+   "boxes": [
+    {
+     "at": 4.069,
+     "x": 540,
+     "y": 860,
+     "w": 330,
+     "h": 100,
+     "radius": 50,
+     "color": "#FF4D4D"
+    },
+    {
+     "at": 4.764,
+     "x": 540,
+     "y": 990,
+     "w": 250,
+     "h": 100,
+     "radius": 50,
+     "color": "#FF4D4D"
+    },
+    {
+     "at": 5.46,
+     "x": 540,
+     "y": 1120,
+     "w": 290,
+     "h": 100,
+     "radius": 50,
+     "color": "#FF4D4D"
+    }
+   ]
+  },
+  {
+   "dur": 3.13,
+   "transition": "cut",
+   "handlePos": "center",
+   "counters": [
+    {
+     "at": 0.252,
+     "dur": 0.8,
+     "from": 0,
+     "to": 95,
+     "suffix": "%",
+     "sub": "javob TRUE bo'lmaydi",
+     "subAt": 1.739
+    }
+   ],
+   "titles": [
+    {
+     "text": "Bilingki",
+     "at": 0.0,
+     "out": 0.202
+    }
+   ],
+   "tags": [
+    {
+     "text": "TRUE",
+     "at": 1.639,
+     "x": 540,
+     "y": 1050,
+     "bg": "#F2F1EC",
+     "size": 96
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 2.365,
+     "x": 540,
+     "y": 1050,
+     "size": 170
+    }
+   ]
+  },
+  {
+   "dur": 4.174,
+   "transition": "cut",
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Listening",
+     "kicker": "2-sir",
+     "at": 0.05,
+     "out": 3.135,
+     "underline": true
+    },
+    {
+     "text": "Ehtiyot bo'ling!",
+     "at": 3.185,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/headphones.svg",
+     "w": 420,
+     "x": 540,
+     "y": 830,
+     "anim": "pop"
+    },
+    {
+     "src": "img/form.svg",
+     "w": 620,
+     "x": 540,
+     "y": 1240,
+     "at": 1.192,
+     "anim": "slideUp"
+    }
+   ],
+   "boxes": [
+    {
+     "at": 1.5919999999999999,
+     "x": 651,
+     "y": 1180,
+     "w": 300,
+     "h": 64,
+     "radius": 12,
+     "color": "#FF4D4D"
+    },
+    {
+     "at": 2.242,
+     "x": 651,
+     "y": 1277,
+     "w": 300,
+     "h": 64,
+     "radius": 12,
+     "color": "#FF4D4D"
+    }
+   ]
+  },
+  {
+   "dur": 5.079,
+   "transition": "cut",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "Gapirayotgan odam",
+     "at": 0.05,
+     "out": 3.842,
+     "size": 76
+    },
+    {
+     "text": "Fikrini o'zgartirsa",
+     "at": 3.8920000000000003,
+     "underline": true,
+     "size": 76
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/man_point.png",
+     "w": 330,
+     "x": 330,
+     "y": 1100,
+     "anim": "slideRight"
+    }
+   ],
+   "tags": [
+    {
+     "text": "Oh, sorry…",
+     "at": 1.183,
+     "x": 720,
+     "y": 720,
+     "bg": "#F2F1EC",
+     "size": 54
+    },
+    {
+     "text": "Wait, actually…",
+     "at": 2.644,
+     "x": 700,
+     "y": 860,
+     "bg": "#FFCC40",
+     "size": 54
+    }
+   ]
+  },
+  {
+   "dur": 1.774,
+   "transition": "cut",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Ikkinchi variant\nto'g'ri",
+     "kicker": "doim",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/card15.svg",
+     "w": 300,
+     "x": 330,
+     "y": 1060,
+     "anim": "pop",
+     "rotate": -5
+    },
+    {
+     "src": "img/card50.svg",
+     "w": 300,
+     "x": 750,
+     "y": 1060,
+     "at": 0.12,
+     "anim": "pop",
+     "rotate": 4
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 0.417,
+     "x": 330,
+     "y": 1060,
+     "size": 160
+    },
+    {
+     "type": "check",
+     "at": 1.043,
+     "x": 750,
+     "y": 1300,
+     "size": 110
+    }
+   ],
+   "boxes": [
+    {
+     "at": 1.043,
+     "x": 750,
+     "y": 1060,
+     "w": 340,
+     "h": 400,
+     "radius": 40,
+     "color": "#FFCC40"
+    }
+   ]
+  },
+  {
+   "dur": 4.104,
+   "transition": "cut",
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Speaking",
+     "kicker": "3-sir · eng zo'r",
+     "at": 0.05,
+     "out": 3.03,
+     "underline": true
+    },
+    {
+     "text": "Ustoz qidirmayman",
+     "at": 3.08,
+     "underline": true,
+     "size": 80
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/mic.svg",
+     "w": 250,
+     "x": 330,
+     "y": 1080,
+     "anim": "slideUp"
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 130,
+     "x": 760,
+     "y": 1100,
+     "at": 2.83,
+     "anim": "fade"
+    }
+   ],
+   "tags": [
+    {
+     "text": "Ustoz",
+     "at": 2.9299999999999997,
+     "x": 760,
+     "y": 640,
+     "bg": "#F2F1EC"
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 3.508,
+     "x": 760,
+     "y": 1080,
+     "size": 200
+    }
+   ]
+  },
+  {
+   "dur": 2.771,
+   "transition": "cut",
+   "handlePos": "right",
+   "titles": [
+    {
+     "text": "goprep.gg",
+     "kicker": "Shunchaki",
+     "at": 0.352,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/laptop.svg",
+     "w": 760,
+     "x": 540,
+     "y": 950,
+     "anim": "pop",
+     "animDur": 0.5
+    },
+    {
+     "src": "img/mock1.svg",
+     "w": 250,
+     "x": 270,
+     "y": 1420,
+     "at": 1.739,
+     "anim": "pop",
+     "rotate": -5
+    },
+    {
+     "src": "img/mock2.svg",
+     "w": 250,
+     "x": 540,
+     "y": 1420,
+     "at": 1.8690000000000002,
+     "anim": "pop",
+     "rotate": 0
+    },
+    {
+     "src": "img/mock3.svg",
+     "w": 250,
+     "x": 810,
+     "y": 1420,
+     "at": 1.999,
+     "anim": "pop",
+     "rotate": 5
+    }
+   ]
+  },
+  {
+   "dur": 3.142,
+   "transition": "cut",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "AI tekshiruviga\nishonmaydi",
+     "kicker": "Ko'pchilik",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/aichip.svg",
+     "w": 260,
+     "x": 540,
+     "y": 880,
+     "at": 1.512,
+     "anim": "pop"
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 100,
+     "x": 170,
+     "y": 1330,
+     "at": 0.1,
+     "anim": "fade"
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 112,
+     "x": 370,
+     "y": 1330,
+     "at": 0.18,
+     "anim": "fade"
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 108,
+     "x": 700,
+     "y": 1330,
+     "at": 0.26,
+     "anim": "fade"
+    },
+    {
+     "src": "img/man_stand.png",
+     "w": 98,
+     "x": 900,
+     "y": 1330,
+     "at": 0.33999999999999997,
+     "anim": "fade"
+    }
+   ],
+   "marks": [
+    {
+     "type": "question",
+     "at": 2.412,
+     "x": 760,
+     "y": 850,
+     "size": 120
+    }
+   ]
+  },
+  {
+   "dur": 3.791,
+   "transition": "cut",
+   "handlePos": "left",
+   "titles": [
+    {
+     "text": "Rasmiy IELTS\ntalablari",
+     "kicker": "Lekin",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/descriptors.svg",
+     "w": 620,
+     "x": 520,
+     "y": 980,
+     "anim": "slideUp"
+    },
+    {
+     "src": "img/aichip.svg",
+     "w": 200,
+     "x": 850,
+     "y": 1390,
+     "at": 0.874,
+     "anim": "pop"
+    }
+   ],
+   "flows": [
+    {
+     "d": "M850,1290 L760,1190",
+     "at": 1.426,
+     "draw": 0.4,
+     "color": "#FF4D4D",
+     "width": 6,
+     "dash": null
+    }
+   ],
+   "marks": [
+    {
+     "type": "check",
+     "at": 3.026,
+     "x": 520,
+     "y": 1320,
+     "size": 90
+    }
+   ]
+  },
+  {
+   "dur": 2.574,
+   "transition": "cut",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Maqtab qo'ymaydi",
+     "at": 0.24799999999999997,
+     "out": 1.535,
+     "size": 80
+    },
+    {
+     "text": "Aniq ball",
+     "at": 1.585,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/star.svg",
+     "w": 320,
+     "x": 540,
+     "y": 980,
+     "anim": "pop",
+     "out": 1.252
+    },
+    {
+     "src": "img/score75.svg",
+     "w": 480,
+     "x": 540,
+     "y": 980,
+     "at": 1.535,
+     "anim": "pop",
+     "rotate": 3
+    }
+   ],
+   "marks": [
+    {
+     "type": "cross",
+     "at": 0.7110000000000001,
+     "x": 540,
+     "y": 980,
+     "size": 180,
+     "out": 1.252
+    }
+   ],
+   "shakeAt": [
+    0.7110000000000001
+   ]
+  },
+  {
+   "dur": 3.318,
+   "transition": "cut",
+   "handlePos": "center",
+   "titles": [
+    {
+     "text": "Har bir xato\ntushuntiriladi",
+     "at": 0.05,
+     "underline": true
+    }
+   ],
+   "layers": [
+    {
+     "src": "img/essay.svg",
+     "w": 600,
+     "x": 520,
+     "y": 1080,
+     "anim": "slideUp"
+    }
+   ],
+   "boxes": [
+    {
+     "at": 0.4570000000000001,
+     "x": 322,
+     "y": 938,
+     "w": 112,
+     "h": 46,
+     "radius": 8,
+     "color": "#FF4D4D"
+    },
+    {
+     "at": 0.7070000000000001,
+     "x": 296,
+     "y": 988,
+     "w": 50,
+     "h": 46,
+     "radius": 8,
+     "color": "#FF4D4D"
+    },
+    {
+     "at": 0.9570000000000001,
+     "x": 598,
+     "y": 1088,
+     "w": 176,
+     "h": 46,
+     "radius": 8,
+     "color": "#FF4D4D"
+    }
+   ],
+   "tags": [
+    {
+     "text": "Grammar",
+     "at": 0.507,
+     "x": 880,
+     "y": 930,
+     "bg": "#FFCC40",
+     "size": 40
+    },
+    {
+     "text": "Vocab",
+     "at": 0.7570000000000001,
+     "x": 880,
+     "y": 1000,
+     "bg": "#FFCC40",
+     "size": 40
+    },
+    {
+     "text": "Coherence",
+     "at": 1.0070000000000001,
+     "x": 880,
+     "y": 1090,
+     "bg": "#FFCC40",
+     "size": 40
+    }
+   ]
+  }
+ ]
+}
